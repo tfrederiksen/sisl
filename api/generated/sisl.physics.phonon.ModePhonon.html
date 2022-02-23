@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>sisl.physics.phonon.ModePhonon &mdash; sisl 0.1.dev1+ga8efd77 documentation</title>
+  <title>sisl.physics.phonon.ModePhonon &mdash; sisl 0.1.dev1+g3fe7e49 documentation</title>
       <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="../../_static/plot_directive.css" type="text/css" />
@@ -37,7 +37,7 @@
             <a href="../../index.html" class="icon icon-home"> sisl
           </a>
               <div class="version">
-                0.1.dev1+ga8efd77
+                0.1.dev1+g3fe7e49
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
@@ -153,7 +153,7 @@
 <dl class="py class">
 <dt class="sig sig-object py" id="sisl.physics.phonon.ModePhonon">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">sisl.physics.phonon.</span></span><span class="sig-name descname"><span class="pre">ModePhonon</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">state</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">parent</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">info</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/sisl/physics/phonon.html#ModePhonon"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sisl.physics.phonon.ModePhonon" title="Permalink to this definition"></a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">sisl.physics.phonon._phonon_Mode</span></code>, <a class="reference internal" href="sisl.physics.State.html#sisl.physics.State" title="sisl.physics.State"><code class="xref py py-class docutils literal notranslate"><span class="pre">sisl.physics.State</span></code></a></p>
+<dd><p>Bases: <a class="reference internal" href="sisl.physics.State.html#sisl.physics.State" title="sisl.physics.State"><code class="xref py py-class docutils literal notranslate"><span class="pre">sisl.physics.State</span></code></a></p>
 <p>A mode describing a physical quantity related to phonons</p>
 <p class="rubric">Methods</p>
 <table class="longtable docutils align-default">
@@ -382,9 +382,20 @@ product with itself. The object itself will always be the bra <span class="math 
 \[I_{q,i} = \frac{\sum_\nu |\psi_{i\nu}|^{2q}}{
    \big[\sum_\nu |\psi_{i\nu}|^2\big]^q}\]</div>
 <p>where <span class="math notranslate nohighlight">\(i\)</span> is the band index and <span class="math notranslate nohighlight">\(\nu\)</span> is the orbital.
-The order of the IPR is defaulted to <span class="math notranslate nohighlight">\(q=2\)</span>.
+The order of the IPR is defaulted to <span class="math notranslate nohighlight">\(q=2\)</span>, see <a class="reference internal" href="#equation-ipr2">(1)</a> for details.
 The IPR may be used to distinguish Anderson localization and extended
-states, see <a class="footnote-reference brackets" href="#id2" id="id1">1</a> for details.</p>
+states:</p>
+<div class="math notranslate nohighlight" id="equation-ipr2">
+\begin{align}
+\lim_{L\to\infty} I_{2,i} = \left\{\begin{aligned}
+     1/L^d &amp; \text{extended state}
+     \\
+     const. &amp; \text{localized state}
+    \end{aligned}
+\end{align}</div><p>For further details see <a class="footnote-reference brackets" href="#id2" id="id1">1</a>. Note that for eigen states the IPR reduces to:</p>
+<div class="math notranslate nohighlight">
+\[I_{q,i} = \sum_\nu |\psi_{i\nu}|^{2q}\]</div>
+<p>since the denominator is <span class="math notranslate nohighlight">\(1^{q} = 1\)</span>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><p><strong>q</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.10)"><em>int</em></a><em>, </em><em>optional</em>) – order parameter for the IPR</p>
