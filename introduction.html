@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Introduction &mdash; sisl 0.1.dev1+g3fe7e49 documentation</title>
+  <title>Introduction &mdash; sisl 0.1.dev1+g851d78c documentation</title>
       <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="_static/plot_directive.css" type="text/css" />
@@ -17,15 +17,17 @@
         <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
         <script src="_static/jquery.js"></script>
         <script src="_static/underscore.js"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="_static/doctools.js"></script>
+        <script src="_static/sphinx_highlight.js"></script>
         <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-        <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
+        <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.1/dist/embed-amd.js"></script>
         <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
         <script defer="defer" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Contributing" href="contribute.html" />
+    <link rel="next" title="Release notes" href="changelog/index.html" />
     <link rel="prev" title="sisl: tight-binding and DFT interface library" href="index.html" /> 
 </head>
 
@@ -37,7 +39,7 @@
             <a href="index.html" class="icon icon-home"> sisl
           </a>
               <div class="version">
-                0.1.dev1+g3fe7e49
+                0.1.dev1+g851d78c
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
@@ -57,9 +59,11 @@
 <li class="toctree-l2"><a class="reference internal" href="#command-line-usage">Command line usage</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="changelog/index.html">Release notes</a></li>
 <li class="toctree-l1"><a class="reference internal" href="contribute.html">Contributing</a></li>
 <li class="toctree-l1"><a class="reference internal" href="other.html">Other resources</a></li>
 <li class="toctree-l1"><a class="reference internal" href="cite.html">Citing sisl</a></li>
+<li class="toctree-l1"><a class="reference internal" href="publications.html">Publications using sisl</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">User Guide</span></p>
 <ul>
@@ -94,8 +98,8 @@
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
-      <li>Introduction</li>
+      <li><a href="index.html" class="icon icon-home"></a></li>
+      <li class="breadcrumb-item active">Introduction</li>
       <li class="wy-breadcrumbs-aside">
             <a href="_sources/introduction.rst.txt" rel="nofollow"> View page source</a>
       </li>
@@ -130,7 +134,7 @@
 }
 </style>
 <section id="introduction">
-<span id="id1"></span><h1>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline"></a></h1>
+<span id="id1"></span><h1>Introduction<a class="headerlink" href="#introduction" title="Permalink to this heading"></a></h1>
 <p>sisl has a number of features which makes it easy to jump right into
 and perform a large variation of tasks.</p>
 <ol class="arabic simple">
@@ -154,18 +158,18 @@ sisl intrinsically implements such algorithms.</p></li>
 post-processing tools to use sisl on non-implemented data-files.</p></li>
 </ol>
 <section id="package">
-<h2>Package<a class="headerlink" href="#package" title="Permalink to this headline"></a></h2>
+<h2>Package<a class="headerlink" href="#package" title="Permalink to this heading"></a></h2>
 <p>sisl is mainly a Python package with many intrinsic capabilities.</p>
 <p>Follow <em class="xref py py-obj">these</em> instructions for installing sisl.</p>
 <section id="dft">
-<h3>DFT<a class="headerlink" href="#dft" title="Permalink to this headline"></a></h3>
+<h3>DFT<a class="headerlink" href="#dft" title="Permalink to this heading"></a></h3>
 <p>Many intrinsic DFT program files are handled by sisl and extraction of the necessary
 physical quantities are easily performed.</p>
 <p>Its main focus has been <a class="reference external" href="https://siesta-project.org">Siesta</a> which thus has the largest amount of implemented
 output files.</p>
 </section>
 <section id="geometry-manipulation">
-<h3>Geometry manipulation<a class="headerlink" href="#geometry-manipulation" title="Permalink to this headline"></a></h3>
+<h3>Geometry manipulation<a class="headerlink" href="#geometry-manipulation" title="Permalink to this heading"></a></h3>
 <p>Geometries can easily be generated from basic routines and enables easy repetitions,
 additions, removal etc. of different atoms/geometries, for instance to generate a
 graphene flake one can use this small snippet:</p>
@@ -177,7 +181,7 @@ graphene flake one can use this small snippet:</p>
 </section>
 </section>
 <section id="command-line-usage">
-<h2>Command line usage<a class="headerlink" href="#command-line-usage" title="Permalink to this headline"></a></h2>
+<h2>Command line usage<a class="headerlink" href="#command-line-usage" title="Permalink to this heading"></a></h2>
 <p>The functionality of sisl is also extended to command line utilities for easy manipulation
 of data from DFT programs. There are a variety of commands to manipulate generic data (<em class="xref py py-obj">sdata</em>),
 geometries (<em class="xref py py-obj">sgeom</em>) or grid-related quantities (<em class="xref py py-obj">sgrid</em>).</p>
@@ -191,13 +195,13 @@ and through the <em class="xref py py-obj">stoolbox</em> command.</p>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
         <a href="index.html" class="btn btn-neutral float-left" title="sisl: tight-binding and DFT interface library" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="contribute.html" class="btn btn-neutral float-right" title="Contributing" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="changelog/index.html" class="btn btn-neutral float-right" title="Release notes" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>
 
   <div role="contentinfo">
-    <p>&#169; Copyright 2015-2022, Nick Papior.</p>
+    <p>&#169; Copyright 2015-2023, Nick Papior.</p>
   </div>
 
   Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a

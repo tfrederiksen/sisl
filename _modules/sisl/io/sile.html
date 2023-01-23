@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>sisl.io.sile &mdash; sisl 0.1.dev1+g3fe7e49 documentation</title>
+  <title>sisl.io.sile &mdash; sisl 0.1.dev1+g851d78c documentation</title>
       <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="../../../_static/plot_directive.css" type="text/css" />
@@ -16,9 +16,11 @@
         <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
         <script src="../../../_static/jquery.js"></script>
         <script src="../../../_static/underscore.js"></script>
+        <script src="../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../../../_static/doctools.js"></script>
+        <script src="../../../_static/sphinx_highlight.js"></script>
         <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-        <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
+        <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.1/dist/embed-amd.js"></script>
     <script src="../../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" /> 
@@ -32,7 +34,7 @@
             <a href="../../../index.html" class="icon icon-home"> sisl
           </a>
               <div class="version">
-                0.1.dev1+g3fe7e49
+                0.1.dev1+g851d78c
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
@@ -44,9 +46,11 @@
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../../introduction.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../changelog/index.html">Release notes</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../contribute.html">Contributing</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../other.html">Other resources</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../cite.html">Citing sisl</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../publications.html">Publications using sisl</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">User Guide</span></p>
 <ul>
@@ -81,9 +85,9 @@
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="../../../index.html" class="icon icon-home"></a> &raquo;</li>
-          <li><a href="../../index.html">Module code</a> &raquo;</li>
-      <li>sisl.io.sile</li>
+      <li><a href="../../../index.html" class="icon icon-home"></a></li>
+          <li class="breadcrumb-item"><a href="../../index.html">Module code</a></li>
+      <li class="breadcrumb-item active">sisl.io.sile</li>
       <li class="wy-breadcrumbs-aside">
       </li>
   </ul>
@@ -97,11 +101,10 @@
 <span class="c1"># License, v. 2.0. If a copy of the MPL was not distributed with this</span>
 <span class="c1"># file, You can obtain one at https://mozilla.org/MPL/2.0/.</span>
 <span class="kn">from</span> <span class="nn">functools</span> <span class="kn">import</span> <span class="n">wraps</span>
-<span class="kn">from</span> <span class="nn">os.path</span> <span class="kn">import</span> <span class="n">splitext</span><span class="p">,</span> <span class="n">isfile</span><span class="p">,</span> <span class="n">dirname</span><span class="p">,</span> <span class="n">abspath</span><span class="p">,</span> <span class="n">basename</span>
+<span class="kn">from</span> <span class="nn">os.path</span> <span class="kn">import</span> <span class="n">splitext</span><span class="p">,</span> <span class="n">basename</span>
 <span class="kn">import</span> <span class="nn">gzip</span>
+<span class="kn">from</span> <span class="nn">io</span> <span class="kn">import</span> <span class="n">TextIOBase</span>
 <span class="kn">from</span> <span class="nn">pathlib</span> <span class="kn">import</span> <span class="n">Path</span>
-
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 
 <span class="kn">from</span> <span class="nn">sisl._internal</span> <span class="kn">import</span> <span class="n">set_module</span>
 <span class="kn">from</span> <span class="nn">sisl.messages</span> <span class="kn">import</span> <span class="n">SislWarning</span><span class="p">,</span> <span class="n">SislInfo</span>
@@ -120,6 +123,7 @@
 
 <span class="n">__all__</span> <span class="o">+=</span> <span class="p">[</span>
     <span class="s1">&#39;BaseSile&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;BufferSile&#39;</span><span class="p">,</span>
     <span class="s1">&#39;Sile&#39;</span><span class="p">,</span>
     <span class="s1">&#39;SileCDF&#39;</span><span class="p">,</span>
     <span class="s1">&#39;SileBin&#39;</span><span class="p">,</span>
@@ -149,7 +153,7 @@
 
 
 <span class="k">class</span> <span class="nc">_sile_rule</span><span class="p">:</span>
-    <span class="sd">&quot;&quot;&quot; Internal data-structure to check whether a file is the same as this sile &quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot; Internal data-structure to check whether a file is the same as this sile &quot;&quot;&quot;</span>
 
     <span class="vm">__slots__</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;cls&#39;</span><span class="p">,</span> <span class="s1">&#39;case&#39;</span><span class="p">,</span> <span class="s1">&#39;suffix&#39;</span><span class="p">,</span> <span class="s1">&#39;gzip&#39;</span><span class="p">,</span> <span class="s1">&#39;bases&#39;</span><span class="p">,</span> <span class="s1">&#39;base_names&#39;</span><span class="p">)</span>
 
@@ -172,7 +176,7 @@
         <span class="k">return</span> <span class="n">s</span><span class="p">[:</span><span class="o">-</span><span class="mi">3</span><span class="p">]</span> <span class="o">+</span> <span class="s1">&#39;</span><span class="se">\n</span><span class="s1">}&#39;</span>
 
     <span class="k">def</span> <span class="nf">build_bases</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot; Return a list of all classes that this file is inheriting from (except Sile, SileBin or SileCDF) &quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot; Return a list of all classes that this file is inheriting from (except Sile, SileBin or SileCDF) &quot;&quot;&quot;</span>
         <span class="n">children</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">cls</span><span class="o">.</span><span class="vm">__bases__</span><span class="p">)</span> <span class="o">+</span> <span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">cls</span><span class="p">]</span>
         <span class="n">nl</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span>
         <span class="k">while</span> <span class="nb">len</span><span class="p">(</span><span class="n">children</span><span class="p">)</span> <span class="o">!=</span> <span class="n">nl</span><span class="p">:</span>
@@ -182,7 +186,7 @@
                 <span class="k">try</span><span class="p">:</span>
                     <span class="n">i</span> <span class="o">=</span> <span class="n">children</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">obj</span><span class="p">)</span>
                     <span class="n">children</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
-                <span class="k">except</span><span class="p">:</span>
+                <span class="k">except</span> <span class="ne">Exception</span><span class="p">:</span>
                     <span class="k">pass</span>
             <span class="k">for</span> <span class="n">child</span> <span class="ow">in</span> <span class="nb">list</span><span class="p">(</span><span class="n">children</span><span class="p">):</span> <span class="c1"># ensure we have a copy for infinite loops</span>
                 <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">child</span><span class="o">.</span><span class="vm">__bases__</span><span class="p">:</span>
@@ -192,7 +196,7 @@
         <span class="k">return</span> <span class="n">children</span>
 
     <span class="k">def</span> <span class="nf">in_bases</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">base</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot; Whether any of the inherited bases starts with `base` in their class-name (non-case sensitive) &quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot; Whether any of the inherited bases starts with `base` in their class-name (non-case sensitive) &quot;&quot;&quot;</span>
         <span class="k">if</span> <span class="n">base</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
             <span class="k">return</span> <span class="kc">True</span>
         <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">base</span><span class="p">,</span> <span class="nb">object</span><span class="p">):</span>
@@ -203,7 +207,7 @@
         <span class="k">return</span> <span class="kc">False</span>
 
     <span class="k">def</span> <span class="nf">get_base</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">base</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot; Whether any of the inherited bases starts with `base` in their class-name (non-case sensitive) &quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot; Whether any of the inherited bases starts with `base` in their class-name (non-case sensitive) &quot;&quot;&quot;</span>
         <span class="k">if</span> <span class="n">base</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
             <span class="k">return</span> <span class="kc">None</span>
         <span class="k">for</span> <span class="n">bn</span><span class="p">,</span> <span class="n">b</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">base_names</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">bases</span><span class="p">):</span>
@@ -212,7 +216,7 @@
         <span class="k">return</span> <span class="kc">None</span>
 
     <span class="k">def</span> <span class="nf">in_class</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">base</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot; Whether any of the inherited bases starts with `base` in their class-name (non-case sensitive) &quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot; Whether any of the inherited bases starts with `base` in their class-name (non-case sensitive) &quot;&quot;&quot;</span>
         <span class="k">if</span> <span class="n">base</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
             <span class="k">return</span> <span class="kc">False</span>
         <span class="n">n</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">cls</span><span class="o">.</span><span class="vm">__name__</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
@@ -238,7 +242,7 @@
 
 <span class="nd">@set_module</span><span class="p">(</span><span class="s2">&quot;sisl.io&quot;</span><span class="p">)</span>
 <span class="k">def</span> <span class="nf">add_sile</span><span class="p">(</span><span class="n">suffix</span><span class="p">,</span> <span class="bp">cls</span><span class="p">,</span> <span class="n">case</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">gzip</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot; Add files to the global lookup table</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot; Add files to the global lookup table</span>
 
 <span class="sd">    Public for attaching lookup tables for allowing</span>
 <span class="sd">    users to attach files externally.</span>
@@ -274,7 +278,7 @@
 
 <span class="nd">@set_module</span><span class="p">(</span><span class="s2">&quot;sisl.io&quot;</span><span class="p">)</span>
 <span class="k">def</span> <span class="nf">get_sile_class</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot; Retrieve a class from the global lookup table via filename and the extension</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot; Retrieve a class from the global lookup table via filename and the extension</span>
 
 <span class="sd">    Parameters</span>
 <span class="sd">    ----------</span>
@@ -369,9 +373,13 @@
 
 <span class="nd">@set_module</span><span class="p">(</span><span class="s2">&quot;sisl.io&quot;</span><span class="p">)</span>
 <span class="k">def</span> <span class="nf">get_sile</span><span class="p">(</span><span class="n">file</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot; Retrieve an object from the global lookup table via filename and the extension</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot; Retrieve an object from the global lookup table via filename and the extension</span>
 
 <span class="sd">    Internally this is roughly equivalent to ``get_sile_class(...)()``.</span>
+
+<span class="sd">    When the file suffix is not recognized and you know which file-type it is</span>
+<span class="sd">    it is recommended to get the file class from the known suffixes and use that</span>
+<span class="sd">    class to construct the file object, see examples.</span>
 
 <span class="sd">    Parameters</span>
 <span class="sd">    ----------</span>
@@ -386,6 +394,21 @@
 <span class="sd">       you may query the exact base-class that should be chosen.</span>
 <span class="sd">       If there are several files with similar file-endings this</span>
 <span class="sd">       function returns a random one.</span>
+
+<span class="sd">    Examples</span>
+<span class="sd">    --------</span>
+<span class="sd">    A file named ``water.dat`` contains the xyz-coordinates as the `xyzSile`.</span>
+<span class="sd">    One can forcefully get the sile by:</span>
+
+<span class="sd">    &gt;&gt;&gt; obj = get_sile(&quot;water.dat{xyzSile}&quot;)</span>
+
+<span class="sd">    Alternatively one can query the xyz file and use that class reference</span>
+<span class="sd">    in future instantiations. This ensures a future proof method without</span>
+<span class="sd">    explicitly typing the Sile object.</span>
+
+<span class="sd">    &gt;&gt;&gt; cls = get_sile_class(&quot;anyfile.xyz&quot;)</span>
+<span class="sd">    &gt;&gt;&gt; obj = cls(&quot;water.dat&quot;)</span>
+<span class="sd">    &gt;&gt;&gt; another_xyz = cls(&quot;water2.dat&quot;)</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="bp">cls</span> <span class="o">=</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s1">&#39;cls&#39;</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
     <span class="n">sile</span> <span class="o">=</span> <span class="n">get_sile_class</span><span class="p">(</span><span class="n">file</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="bp">cls</span><span class="o">=</span><span class="bp">cls</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
@@ -394,7 +417,7 @@
 
 <span class="nd">@set_module</span><span class="p">(</span><span class="s2">&quot;sisl.io&quot;</span><span class="p">)</span>
 <span class="k">def</span> <span class="nf">get_siles</span><span class="p">(</span><span class="n">attrs</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot; Retrieve all files with specific attributes or methods</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot; Retrieve all files with specific attributes or methods</span>
 
 <span class="sd">    Parameters</span>
 <span class="sd">    ----------</span>
@@ -422,7 +445,7 @@
 
 <span class="nd">@set_module</span><span class="p">(</span><span class="s2">&quot;sisl.io&quot;</span><span class="p">)</span>
 <span class="k">def</span> <span class="nf">get_sile_rules</span><span class="p">(</span><span class="n">attrs</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="bp">cls</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Retrieve all sile rules of siles with specific attributes or methods</span>
 
 <span class="sd">    Parameters</span>
@@ -452,26 +475,26 @@
 
 <span class="nd">@set_module</span><span class="p">(</span><span class="s2">&quot;sisl.io&quot;</span><span class="p">)</span>
 <span class="k">class</span> <span class="nc">BaseSile</span><span class="p">:</span>
-    <span class="sd">&quot;&quot;&quot; Base class for all sisl files &quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot; Base class for all sisl files &quot;&quot;&quot;</span>
 
     <span class="nd">@property</span>
     <span class="k">def</span> <span class="nf">file</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot; File of the current `Sile` &quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot; File of the current `Sile` &quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_file</span>
 
     <span class="nd">@property</span>
     <span class="k">def</span> <span class="nf">base_file</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot; File of the current `Sile` &quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot; File of the current `Sile` &quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="n">basename</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_file</span><span class="p">)</span>
 
 <div class="viewcode-block" id="BaseSile.dir_file"><a class="viewcode-back" href="../../../api/io/generated/sisl.io.BaseSile.html#sisl.io.BaseSile.dir_file">[docs]</a>    <span class="k">def</span> <span class="nf">dir_file</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">filename</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">filename_base</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot; File of the current `Sile` &quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot; File of the current `Sile` &quot;&quot;&quot;</span>
         <span class="k">if</span> <span class="n">filename</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
             <span class="n">filename</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_file</span><span class="p">)</span><span class="o">.</span><span class="n">name</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_directory</span> <span class="o">/</span> <span class="n">filename_base</span> <span class="o">/</span> <span class="n">filename</span></div>
 
 <div class="viewcode-block" id="BaseSile.read"><a class="viewcode-back" href="../../../api/io/generated/sisl.io.BaseSile.html#sisl.io.BaseSile.read">[docs]</a>    <span class="k">def</span> <span class="nf">read</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot; Generic read method which should be overloaded in child-classes</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot; Generic read method which should be overloaded in child-classes</span>
 
 <span class="sd">        Parameters</span>
 <span class="sd">        ----------</span>
@@ -494,7 +517,7 @@
     <span class="n">_write_default_only</span> <span class="o">=</span> <span class="kc">False</span>
 
 <div class="viewcode-block" id="BaseSile.write"><a class="viewcode-back" href="../../../api/io/generated/sisl.io.BaseSile.html#sisl.io.BaseSile.write">[docs]</a>    <span class="k">def</span> <span class="nf">write</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot; Generic write method which should be overloaded in child-classes</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot; Generic write method which should be overloaded in child-classes</span>
 
 <span class="sd">        Parameters</span>
 <span class="sd">        ----------</span>
@@ -515,7 +538,7 @@
                 <span class="n">func</span><span class="p">(</span><span class="n">kwargs</span><span class="p">[</span><span class="n">key</span><span class="p">],</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></div>
 
     <span class="k">def</span> <span class="nf">_setup</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot; Setup the `Sile` after initialization</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot; Setup the `Sile` after initialization</span>
 
 <span class="sd">        Inherited method for setting up the sile.</span>
 
@@ -524,7 +547,7 @@
         <span class="k">pass</span>
 
     <span class="k">def</span> <span class="nf">_base_setup</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot; Setup the `Sile` after initialization</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot; Setup the `Sile` after initialization</span>
 
 <span class="sd">        Inherited method for setting up the sile.</span>
 
@@ -544,23 +567,23 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">_setup</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
 
     <span class="k">def</span> <span class="nf">_base_file</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">f</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot; Make `f` refer to the file with the appropriate base directory &quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot; Make `f` refer to the file with the appropriate base directory &quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_directory</span> <span class="o">/</span> <span class="n">f</span>
 
     <span class="k">def</span> <span class="fm">__getattr__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot; Override to check the handle &quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot; Override to check the handle &quot;&quot;&quot;</span>
         <span class="k">if</span> <span class="n">name</span> <span class="o">==</span> <span class="s1">&#39;fh&#39;</span><span class="p">:</span>
             <span class="k">raise</span> <span class="ne">AttributeError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;The filehandle for </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">file</span><span class="si">}</span><span class="s2"> has not been opened yet...&quot;</span><span class="p">)</span>
         <span class="k">return</span> <span class="nb">getattr</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">fh</span><span class="p">,</span> <span class="n">name</span><span class="p">)</span>
 
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">_ArgumentParser_args_single</span><span class="p">(</span><span class="bp">cls</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot; Default arguments for the Sile &quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot; Default arguments for the Sile &quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="p">{}</span>
 
     <span class="c1"># Define the custom ArgumentParser</span>
     <span class="k">def</span> <span class="nf">ArgumentParser</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">p</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot; Returns the arguments that may be available for this Sile</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot; Returns the arguments that may be available for this Sile</span>
 
 <span class="sd">        Parameters</span>
 <span class="sd">        ----------</span>
@@ -570,7 +593,7 @@
         <span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;The ArgumentParser of &#39;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="vm">__class__</span><span class="o">.</span><span class="vm">__name__</span><span class="si">}</span><span class="s2">&#39; has not been implemented yet.&quot;</span><span class="p">)</span>
 
     <span class="k">def</span> <span class="nf">ArgumentParser_out</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">p</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot; Appends additional arguments based on the output of the file</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot; Appends additional arguments based on the output of the file</span>
 
 <span class="sd">        Parameters</span>
 <span class="sd">        ----------</span>
@@ -580,19 +603,19 @@
         <span class="k">pass</span>
 
     <span class="k">def</span> <span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot; Return a representation of the `Sile` &quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot; Return a representation of the `Sile` &quot;&quot;&quot;</span>
         <span class="c1"># Check if the directory is relative to the current path</span>
         <span class="c1"># If so, only print the relative path, otherwise print the full path</span>
         <span class="n">d</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_directory</span>
         <span class="k">try</span><span class="p">:</span>
             <span class="c1"># bypass d.is_relative_to, added in 3.9</span>
             <span class="n">d</span> <span class="o">=</span> <span class="n">d</span><span class="o">.</span><span class="n">relative_to</span><span class="p">(</span><span class="n">Path</span><span class="p">(</span><span class="s1">&#39;.&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">resolve</span><span class="p">())</span>
-        <span class="k">except</span><span class="p">:</span> <span class="k">pass</span>
+        <span class="k">except</span> <span class="ne">Exception</span><span class="p">:</span> <span class="k">pass</span>
         <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="vm">__class__</span><span class="o">.</span><span class="vm">__name__</span><span class="si">}</span><span class="s2">(</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">base_file</span><span class="si">!s}</span><span class="s2">, base=</span><span class="si">{</span><span class="n">d</span><span class="si">!s}</span><span class="s2">)&quot;</span>
 
 
 <span class="k">def</span> <span class="nf">sile_fh_open</span><span class="p">(</span><span class="n">from_closed</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot; Method decorator for objects to directly implement opening of the</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot; Method decorator for objects to directly implement opening of the</span>
 <span class="sd">    file-handle upon entry (if it isn&#39;t already).</span>
 
 <span class="sd">    Parameters</span>
@@ -623,22 +646,102 @@
 
 
 <span class="nd">@set_module</span><span class="p">(</span><span class="s2">&quot;sisl.io&quot;</span><span class="p">)</span>
+<span class="k">class</span> <span class="nc">BufferSile</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot; Sile for handling `StringIO` and `TextIOBase` objects</span>
+
+<span class="sd">    These are basically meant for users passing down the above objects</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">filename</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="c1"># here, filename is actually a file-handle.</span>
+        <span class="c1"># However, to accommodate keyword arguments we *must* have the same name</span>
+        <span class="n">filehandle</span> <span class="o">=</span> <span class="n">filename</span>
+
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">filename</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="n">filehandle</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>
+        <span class="k">except</span> <span class="ne">AttributeError</span><span class="p">:</span>
+            <span class="c1"># this is not optimal, it will be the current directory, but one should not be able</span>
+            <span class="c1"># to write to it</span>
+            <span class="n">filename</span> <span class="o">=</span> <span class="n">Path</span><span class="p">()</span>
+
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">mode</span> <span class="o">=</span> <span class="n">filehandle</span><span class="o">.</span><span class="n">mode</span>
+        <span class="k">except</span> <span class="ne">AttributeError</span><span class="p">:</span>
+            <span class="c1"># a StringIO will always be able to read *and* write</span>
+            <span class="c1"># to its buffer</span>
+            <span class="n">mode</span> <span class="o">=</span> <span class="s2">&quot;rw&quot;</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">fh</span> <span class="o">=</span> <span class="n">filehandle</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_fh_init_tell</span> <span class="o">=</span> <span class="n">filehandle</span><span class="o">.</span><span class="n">tell</span><span class="p">()</span>
+
+        <span class="c1"># pass mode to the file to let it know what happened</span>
+        <span class="c1"># we can&#39;t use super here due to the coupling to the Sile class</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="n">mode</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">_open</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">fh</span><span class="o">.</span><span class="n">seek</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_fh_init_tell</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_line</span> <span class="o">=</span> <span class="mi">0</span>
+
+    <span class="k">def</span> <span class="fm">__exit__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="nb">type</span><span class="p">,</span> <span class="n">value</span><span class="p">,</span> <span class="n">traceback</span><span class="p">):</span>
+        <span class="c1"># we will not close a file-handle</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_line</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="k">return</span> <span class="kc">False</span>
+
+    <span class="k">def</span> <span class="nf">close</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot; Will not close the file since this is passed by the user &quot;&quot;&quot;</span>
+        <span class="k">pass</span>
+
+
+<span class="nd">@set_module</span><span class="p">(</span><span class="s2">&quot;sisl.io&quot;</span><span class="p">)</span>
 <span class="k">class</span> <span class="nc">Sile</span><span class="p">(</span><span class="n">BaseSile</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot; Base class for ASCII files</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot; Base class for ASCII files</span>
 
 <span class="sd">    All ASCII files that needs to be added to the global lookup table can</span>
 <span class="sd">    with benefit inherit this class.</span>
+
+<span class="sd">    By subclassing a `Sile` one can manually specify the buffer class used</span>
+<span class="sd">    when passing a `buffer_cls` keyword argument. This enables one to overwrite</span>
+<span class="sd">    buffer classes for custom siles.</span>
+
+<span class="sd">    &gt;&gt;&gt; class mySile(otherSislSile, buffer_cls=myBufferClass): ...</span>
 <span class="sd">    &quot;&quot;&quot;</span>
 
-<div class="viewcode-block" id="Sile.__init__"><a class="viewcode-back" href="../../../api/io/generated/sisl.io.Sile.html#sisl.io.Sile.__init__">[docs]</a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">filename</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="n">comment</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__new__</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">filename</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+
+        <span class="c1"># check whether filename is an actual str, or StringIO or some buffer</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="n">TextIOBase</span><span class="p">):</span>
+            <span class="c1"># this is just a regular sile opening</span>
+            <span class="k">return</span> <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__new__</span><span class="p">(</span><span class="bp">cls</span><span class="p">)</span>
+
+        <span class="k">return</span> <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__new__</span><span class="p">(</span><span class="bp">cls</span><span class="o">.</span><span class="n">_buffer_cls</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">__init_subclass__</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">buffer_cls</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="k">if</span> <span class="nb">issubclass</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">BufferSile</span><span class="p">):</span>
+            <span class="c1"># return since it already inherits BufferSile</span>
+            <span class="k">return</span>
+
+        <span class="k">if</span> <span class="n">buffer_cls</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">buffer_cls</span> <span class="o">=</span> <span class="nb">type</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="bp">cls</span><span class="o">.</span><span class="vm">__name__</span><span class="si">}</span><span class="s2">Buffer&quot;</span><span class="p">,</span> <span class="p">(</span><span class="n">BufferSile</span><span class="p">,</span> <span class="bp">cls</span><span class="p">),</span>
+                              <span class="c1"># Ensure the module is the same</span>
+                              <span class="p">{</span><span class="s2">&quot;__module__&quot;</span><span class="p">:</span> <span class="bp">cls</span><span class="o">.</span><span class="vm">__module__</span><span class="p">})</span>
+        <span class="k">elif</span> <span class="ow">not</span> <span class="nb">issubclass</span><span class="p">(</span><span class="n">buffer_cls</span><span class="p">,</span> <span class="n">BufferSile</span><span class="p">):</span>
+            <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;The passed buffer_cls should inherit from sisl.io.BufferSile to &quot;</span>
+                            <span class="s2">&quot;ensure correct behaviour.&quot;</span><span class="p">)</span>
+
+        <span class="bp">cls</span><span class="o">.</span><span class="n">_buffer_cls</span> <span class="o">=</span> <span class="n">buffer_cls</span>
+
+<div class="viewcode-block" id="Sile.__init__"><a class="viewcode-back" href="../../../api/io/generated/sisl.io.Sile.html#sisl.io.Sile.__init__">[docs]</a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">filename</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_file</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="n">filename</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_mode</span> <span class="o">=</span> <span class="n">mode</span>
+
+        <span class="n">comment</span> <span class="o">=</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s2">&quot;comment&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
         <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">comment</span><span class="p">,</span> <span class="p">(</span><span class="nb">list</span><span class="p">,</span> <span class="nb">tuple</span><span class="p">)):</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">_comment</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">comment</span><span class="p">)</span>
         <span class="k">elif</span> <span class="ow">not</span> <span class="n">comment</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">_comment</span> <span class="o">=</span> <span class="p">[</span><span class="n">comment</span><span class="p">]</span>
         <span class="k">else</span><span class="p">:</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">_comment</span> <span class="o">=</span> <span class="p">[]</span>
+
         <span class="bp">self</span><span class="o">.</span><span class="n">_line</span> <span class="o">=</span> <span class="mi">0</span>
 
         <span class="c1"># Initialize</span>
@@ -657,32 +760,35 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">_line</span> <span class="o">=</span> <span class="mi">0</span>
 
     <span class="k">def</span> <span class="fm">__enter__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot; Opens the output file and returns it self &quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot; Opens the output file and returns it self &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_open</span><span class="p">()</span>
         <span class="k">return</span> <span class="bp">self</span>
 
     <span class="k">def</span> <span class="fm">__exit__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="nb">type</span><span class="p">,</span> <span class="n">value</span><span class="p">,</span> <span class="n">traceback</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">fh</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
         <span class="c1"># clean-up so that it does not exist</span>
-        <span class="nb">delattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="s1">&#39;fh&#39;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_line</span> <span class="o">=</span> <span class="mi">0</span>
         <span class="k">return</span> <span class="kc">False</span>
 
+<div class="viewcode-block" id="Sile.close"><a class="viewcode-back" href="../../../api/io/generated/sisl.io.Sile.html#sisl.io.Sile.close">[docs]</a>    <span class="k">def</span> <span class="nf">close</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">fh</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+        <span class="nb">delattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="s1">&#39;fh&#39;</span><span class="p">)</span></div>
+
     <span class="nd">@staticmethod</span>
     <span class="k">def</span> <span class="nf">is_keys</span><span class="p">(</span><span class="n">keys</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot; Returns true if ``not isinstance(keys, str)`` &quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot; Returns true if ``not isinstance(keys, str)`` &quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">keys</span><span class="p">,</span> <span class="nb">str</span><span class="p">)</span>
 
     <span class="nd">@staticmethod</span>
     <span class="k">def</span> <span class="nf">key2case</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="n">case</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot; Converts str/list of keywords to proper case &quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot; Converts str/list of keywords to proper case &quot;&quot;&quot;</span>
         <span class="k">if</span> <span class="n">case</span><span class="p">:</span>
             <span class="k">return</span> <span class="n">key</span>
         <span class="k">return</span> <span class="n">key</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
 
     <span class="nd">@staticmethod</span>
     <span class="k">def</span> <span class="nf">keys2case</span><span class="p">(</span><span class="n">keys</span><span class="p">,</span> <span class="n">case</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot; Converts str/list of keywords to proper case &quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot; Converts str/list of keywords to proper case &quot;&quot;&quot;</span>
         <span class="k">if</span> <span class="n">case</span><span class="p">:</span>
             <span class="k">return</span> <span class="n">keys</span>
         <span class="k">return</span> <span class="p">[</span><span class="n">k</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="n">keys</span><span class="p">]</span>
@@ -706,11 +812,14 @@
         <span class="k">return</span> <span class="n">found</span>
 
     <span class="k">def</span> <span class="fm">__iter__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sa">r</span><span class="sd">&quot;&quot;&quot; Iterator for file &quot;&quot;&quot;</span>
-        <span class="k">yield from</span> <span class="bp">self</span><span class="o">.</span><span class="n">fh</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot; Reading the entire content, without regarding comments &quot;&quot;&quot;</span>
+        <span class="n">l</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">readline</span><span class="p">(</span><span class="n">comment</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+        <span class="k">while</span> <span class="n">l</span><span class="p">:</span>
+            <span class="k">yield</span> <span class="n">l</span>
+            <span class="n">l</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">readline</span><span class="p">(</span><span class="n">comment</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 
     <span class="k">def</span> <span class="nf">readline</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">comment</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
-        <span class="sa">r</span><span class="sd">&quot;&quot;&quot; Reads the next line of the file &quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sa">r</span><span class="sd">&quot;&quot;&quot; Reads the next line of the file &quot;&quot;&quot;</span>
         <span class="n">l</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">fh</span><span class="o">.</span><span class="n">readline</span><span class="p">()</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_line</span> <span class="o">+=</span> <span class="mi">1</span>
         <span class="k">if</span> <span class="n">comment</span><span class="p">:</span>
@@ -720,8 +829,39 @@
             <span class="bp">self</span><span class="o">.</span><span class="n">_line</span> <span class="o">+=</span> <span class="mi">1</span>
         <span class="k">return</span> <span class="n">l</span>
 
-    <span class="k">def</span> <span class="nf">step_to</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">keywords</span><span class="p">,</span> <span class="n">case</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">reread</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">ret_index</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
-        <span class="sa">r</span><span class="sd">&quot;&quot;&quot; Steps the file-handle until the keyword(s) is found in the input &quot;&quot;&quot;</span>
+    <span class="k">def</span> <span class="nf">step_to</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">keywords</span><span class="p">,</span> <span class="n">case</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">allow_reread</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">ret_index</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">reopen</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+<span class="w">        </span><span class="sa">r</span><span class="sd">&quot;&quot;&quot; Steps the file-handle until the keyword(s) is found in the input</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        keywords : str or list</span>
+<span class="sd">            keyword(s) to find in the sile</span>
+<span class="sd">        case : bool, optional</span>
+<span class="sd">            whether to search case sensitive</span>
+<span class="sd">        allow_reread : bool, optional</span>
+<span class="sd">            whether the search from current position is allowed to</span>
+<span class="sd">            loop back to the beginning</span>
+<span class="sd">        ret_index : bool, optional</span>
+<span class="sd">            returns the index in the keyword list that was matched in the search</span>
+<span class="sd">        reopen : bool, optional</span>
+<span class="sd">            if True, the search is forced to start from the beginning</span>
+<span class="sd">            of the sile (search after sile close and reopen)</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        found : bool</span>
+<span class="sd">            whether the search was successful or not</span>
+<span class="sd">        l : str</span>
+<span class="sd">            the found line that matches the keyword(s)</span>
+<span class="sd">        idx : int, optional</span>
+<span class="sd">            index of the keyword from the list that was matched</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="k">if</span> <span class="n">reopen</span><span class="p">:</span>
+            <span class="c1"># ensure file is read from the beginning</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_open</span><span class="p">()</span>
+
         <span class="c1"># If keyword is a list, it just matches one of the inputs</span>
         <span class="n">found</span> <span class="o">=</span> <span class="kc">False</span>
         <span class="c1"># The previously read line...</span>
@@ -737,11 +877,11 @@
                 <span class="k">break</span>
             <span class="n">found</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">line_has_keys</span><span class="p">(</span><span class="n">l</span><span class="p">,</span> <span class="n">keys</span><span class="p">,</span> <span class="n">case</span><span class="p">)</span>
 
-        <span class="k">if</span> <span class="ow">not</span> <span class="n">found</span> <span class="ow">and</span> <span class="p">(</span><span class="n">l</span> <span class="o">==</span> <span class="s1">&#39;&#39;</span> <span class="ow">and</span> <span class="n">line</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span> <span class="ow">and</span> <span class="n">reread</span><span class="p">:</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">found</span> <span class="ow">and</span> <span class="p">(</span><span class="n">l</span> <span class="o">==</span> <span class="s1">&#39;&#39;</span> <span class="ow">and</span> <span class="n">line</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span> <span class="ow">and</span> <span class="n">allow_reread</span><span class="p">:</span>
             <span class="c1"># We may be in the case where the user request</span>
             <span class="c1"># reading the same twice...</span>
             <span class="c1"># So we need to re-read the file...</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">fh</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
             <span class="c1"># Re-open the file...</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">_open</span><span class="p">()</span>
 
@@ -768,7 +908,7 @@
         <span class="k">return</span> <span class="n">found</span><span class="p">,</span> <span class="n">l</span>
 
     <span class="k">def</span> <span class="nf">_write</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot; Wrapper to default the write statements &quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot; Wrapper to default the write statements &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">fh</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
 
 
@@ -786,7 +926,7 @@
 
 <span class="nd">@set_module</span><span class="p">(</span><span class="s2">&quot;sisl.io&quot;</span><span class="p">)</span>
 <span class="k">class</span> <span class="nc">SileCDF</span><span class="p">(</span><span class="n">BaseSile</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot; Creates/Opens a SileCDF</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot; Creates/Opens a SileCDF</span>
 
 <span class="sd">    Opens a SileCDF with `mode` and compression level `lvl`.</span>
 <span class="sd">    If `mode` is in read-mode (r) the compression level</span>
@@ -825,14 +965,14 @@
 
     <span class="nd">@property</span>
     <span class="k">def</span> <span class="nf">_cmp_args</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot; Returns the compression arguments for the NetCDF file</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot; Returns the compression arguments for the NetCDF file</span>
 
 <span class="sd">        &gt;&gt;&gt; nc.createVariable(..., **self._cmp_args)</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="p">{</span><span class="s1">&#39;zlib&#39;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">_lvl</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">,</span> <span class="s1">&#39;complevel&#39;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">_lvl</span><span class="p">}</span>
 
     <span class="k">def</span> <span class="fm">__enter__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot; Opens the output file and returns it self &quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot; Opens the output file and returns it self &quot;&quot;&quot;</span>
         <span class="c1"># We do the import here</span>
         <span class="k">if</span> <span class="s1">&#39;fh&#39;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="vm">__dict__</span><span class="p">:</span>
             <span class="n">_import_netCDF4</span><span class="p">()</span>
@@ -847,12 +987,12 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">fh</span><span class="o">.</span><span class="n">close</span><span class="p">()</span></div>
 
     <span class="k">def</span> <span class="nf">_dimension</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">tree</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot; Local method for obtaing the dimension in a certain tree &quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot; Local method for obtaing the dimension in a certain tree &quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_dimensions</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">tree</span><span class="p">)</span>
 
     <span class="nd">@staticmethod</span>
     <span class="k">def</span> <span class="nf">_dimensions</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">tree</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot; Retrieve  method to get the NetCDF variable &quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot; Retrieve  method to get the NetCDF variable &quot;&quot;&quot;</span>
         <span class="k">if</span> <span class="n">tree</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
             <span class="k">return</span> <span class="n">n</span><span class="o">.</span><span class="n">dimensions</span><span class="p">[</span><span class="n">name</span><span class="p">]</span>
 
@@ -866,7 +1006,7 @@
         <span class="k">return</span> <span class="n">g</span><span class="o">.</span><span class="n">dimensions</span><span class="p">[</span><span class="n">name</span><span class="p">]</span>
 
     <span class="k">def</span> <span class="nf">_variable</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">tree</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot; Local method for obtaining the data from the SileCDF.</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot; Local method for obtaining the data from the SileCDF.</span>
 
 <span class="sd">        This method returns the variable as-is.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
@@ -876,7 +1016,7 @@
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_variables</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">tree</span><span class="o">=</span><span class="n">tree</span><span class="p">)</span>
 
     <span class="k">def</span> <span class="nf">_value</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">tree</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot; Local method for obtaining the data from the SileCDF.</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot; Local method for obtaining the data from the SileCDF.</span>
 
 <span class="sd">        This method returns the value of the variable.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
@@ -884,7 +1024,7 @@
 
     <span class="nd">@staticmethod</span>
     <span class="k">def</span> <span class="nf">_variables</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">tree</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot; Retrieve  method to get the NetCDF variable &quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot; Retrieve  method to get the NetCDF variable &quot;&quot;&quot;</span>
         <span class="k">if</span> <span class="n">tree</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
             <span class="k">return</span> <span class="n">n</span><span class="o">.</span><span class="n">variables</span><span class="p">[</span><span class="n">name</span><span class="p">]</span>
 
@@ -934,7 +1074,7 @@
 
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">isDimension</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">obj</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot; Return true if ``obj`` is an instance of the NetCDF4 ``Dimension`` type</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot; Return true if ``obj`` is an instance of the NetCDF4 ``Dimension`` type</span>
 
 <span class="sd">        This is just a wrapper for ``isinstance(obj, netCDF4.Dimension)``.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
@@ -942,7 +1082,7 @@
 
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">isVariable</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">obj</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot; Return true if ``obj`` is an instance of the NetCDF4 ``Variable`` type</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot; Return true if ``obj`` is an instance of the NetCDF4 ``Variable`` type</span>
 
 <span class="sd">        This is just a wrapper for ``isinstance(obj, netCDF4.Variable)``.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
@@ -950,7 +1090,7 @@
 
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">isGroup</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">obj</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot; Return true if ``obj`` is an instance of the NetCDF4 ``Group`` type</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot; Return true if ``obj`` is an instance of the NetCDF4 ``Group`` type</span>
 
 <span class="sd">        This is just a wrapper for ``isinstance(obj, netCDF4.Group)``.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
@@ -958,7 +1098,7 @@
 
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">isDataset</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">obj</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot; Return true if ``obj`` is an instance of the NetCDF4 ``Dataset`` type</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot; Return true if ``obj`` is an instance of the NetCDF4 ``Dataset`` type</span>
 
 <span class="sd">        This is just a wrapper for ``isinstance(obj, netCDF4.Dataset)``.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
@@ -966,7 +1106,7 @@
     <span class="n">isRoot</span> <span class="o">=</span> <span class="n">isDataset</span>
 
 <div class="viewcode-block" id="SileCDF.iter"><a class="viewcode-back" href="../../../api/io/generated/sisl.io.SileCDF.html#sisl.io.SileCDF.iter">[docs]</a>    <span class="k">def</span> <span class="nf">iter</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">group</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">dimension</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">variable</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">levels</span><span class="o">=-</span><span class="mi">1</span><span class="p">,</span> <span class="n">root</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot; Iterator on all groups, variables and dimensions.</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot; Iterator on all groups, variables and dimensions.</span>
 
 <span class="sd">        This iterator iterates through all groups, variables and dimensions in the ``Dataset``</span>
 
@@ -1035,7 +1175,7 @@
 
 <span class="nd">@set_module</span><span class="p">(</span><span class="s2">&quot;sisl.io&quot;</span><span class="p">)</span>
 <span class="k">class</span> <span class="nc">SileBin</span><span class="p">(</span><span class="n">BaseSile</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot; Creates/Opens a SileBin</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot; Creates/Opens a SileBin</span>
 
 <span class="sd">    Opens a SileBin with `mode` (b).</span>
 <span class="sd">    If `mode` is in read-mode (r).</span>
@@ -1050,7 +1190,7 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">_base_setup</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></div>
 
     <span class="k">def</span> <span class="fm">__enter__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot; Opens the output file and returns it self &quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot; Opens the output file and returns it self &quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="bp">self</span>
 
     <span class="k">def</span> <span class="fm">__exit__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="nb">type</span><span class="p">,</span> <span class="n">value</span><span class="p">,</span> <span class="n">traceback</span><span class="p">):</span>
@@ -1077,7 +1217,7 @@
 
 <span class="nd">@set_module</span><span class="p">(</span><span class="s2">&quot;sisl.io&quot;</span><span class="p">)</span>
 <span class="k">class</span> <span class="nc">SileError</span><span class="p">(</span><span class="ne">IOError</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot; Define an error object related to the Sile objects &quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot; Define an error object related to the Sile objects &quot;&quot;&quot;</span>
 
 <div class="viewcode-block" id="SileError.__init__"><a class="viewcode-back" href="../../../api/io/generated/sisl.io.SileError.html#sisl.io.SileError.__init__">[docs]</a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">,</span> <span class="n">obj</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="n">value</span>
@@ -1092,7 +1232,7 @@
 
 <span class="nd">@set_module</span><span class="p">(</span><span class="s2">&quot;sisl.io&quot;</span><span class="p">)</span>
 <span class="k">class</span> <span class="nc">SileWarning</span><span class="p">(</span><span class="n">SislWarning</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot; Warnings that informs users of things to be carefull about when using their retrieved data</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot; Warnings that informs users of things to be carefull about when using their retrieved data</span>
 
 <span class="sd">    These warnings should be issued whenever a read/write routine is unable to retrieve all information</span>
 <span class="sd">    but are non-influential in the sense that sisl is still able to perform the action.</span>
@@ -1102,7 +1242,7 @@
 
 <span class="nd">@set_module</span><span class="p">(</span><span class="s2">&quot;sisl.io&quot;</span><span class="p">)</span>
 <span class="k">class</span> <span class="nc">SileInfo</span><span class="p">(</span><span class="n">SislInfo</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot; Information for the user, this is hidden in a warning, but is not as severe so as to issue a warning. &quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot; Information for the user, this is hidden in a warning, but is not as severe so as to issue a warning. &quot;&quot;&quot;</span>
     <span class="k">pass</span>
 </pre></div>
 
@@ -1113,7 +1253,7 @@
   <hr/>
 
   <div role="contentinfo">
-    <p>&#169; Copyright 2015-2022, Nick Papior.</p>
+    <p>&#169; Copyright 2015-2023, Nick Papior.</p>
   </div>
 
   Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a

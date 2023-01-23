@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Contributing &mdash; sisl 0.1.dev1+g3fe7e49 documentation</title>
+  <title>Contributing &mdash; sisl 0.1.dev1+g851d78c documentation</title>
       <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="_static/plot_directive.css" type="text/css" />
@@ -17,14 +17,16 @@
         <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
         <script src="_static/jquery.js"></script>
         <script src="_static/underscore.js"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="_static/doctools.js"></script>
+        <script src="_static/sphinx_highlight.js"></script>
         <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-        <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
+        <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.1/dist/embed-amd.js"></script>
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Other resources" href="other.html" />
-    <link rel="prev" title="Introduction" href="introduction.html" /> 
+    <link rel="prev" title="0.8.0" href="changelog/v0.8.0.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -35,7 +37,7 @@
             <a href="index.html" class="icon icon-home"> sisl
           </a>
               <div class="version">
-                0.1.dev1+g3fe7e49
+                0.1.dev1+g851d78c
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
@@ -47,12 +49,14 @@
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="introduction.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="changelog/index.html">Release notes</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Contributing</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#contribute-external-code">Contribute external code</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="other.html">Other resources</a></li>
 <li class="toctree-l1"><a class="reference internal" href="cite.html">Citing sisl</a></li>
+<li class="toctree-l1"><a class="reference internal" href="publications.html">Publications using sisl</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">User Guide</span></p>
 <ul>
@@ -87,8 +91,8 @@
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
-      <li>Contributing</li>
+      <li><a href="index.html" class="icon icon-home"></a></li>
+      <li class="breadcrumb-item active">Contributing</li>
       <li class="wy-breadcrumbs-aside">
             <a href="_sources/contribute.rst.txt" rel="nofollow"> View page source</a>
       </li>
@@ -123,7 +127,7 @@
 }
 </style>
 <section id="contributing">
-<span id="id1"></span><h1>Contributing<a class="headerlink" href="#contributing" title="Permalink to this headline"></a></h1>
+<span id="id1"></span><h1>Contributing<a class="headerlink" href="#contributing" title="Permalink to this heading"></a></h1>
 <p>The sisl code is open-source, and thus we encourage external users to contribute
 back to the code base.</p>
 <p>Any size of contribution is extremely welcome!</p>
@@ -134,10 +138,12 @@ back to the code base.</p>
 <li><p>If you’ve found a documentation error</p></li>
 <li><p>If you’ve created a tutorial</p></li>
 </ul>
-<p>Then please share them <a class="reference external" href="http://github.com/zerothi/sisl/issues">here</a>.</p>
+<p>Then please share them <a class="reference external" href="https://github.com/zerothi/sisl/issues">here</a>.
+It is recommended to test the development, please follow <a class="reference external" href="installation-testing">these instructions</a>.</p>
+<p>Contributing additional test files should be contributed <a class="reference external" href="sisl-files">here</a>.</p>
 <section id="contribute-external-code">
-<h2>Contribute external code<a class="headerlink" href="#contribute-external-code" title="Permalink to this headline"></a></h2>
-<p>External toolbox codes may be contributed <a class="reference external" href="http://github.com/zerothi/sisl/issues">here</a>, then press
+<h2>Contribute external code<a class="headerlink" href="#contribute-external-code" title="Permalink to this heading"></a></h2>
+<p>External toolbox codes may be contributed <a class="reference external" href="https://github.com/zerothi/sisl/issues">here</a>, then press
 “Issue” and select <em>Contribute toolbox</em>.</p>
 <p>There are two cases of external contributions:</p>
 <ol class="arabic simple">
@@ -153,14 +159,14 @@ implementation, it will be placed in toolbox directory.</p></li>
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="introduction.html" class="btn btn-neutral float-left" title="Introduction" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="changelog/v0.8.0.html" class="btn btn-neutral float-left" title="0.8.0" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
         <a href="other.html" class="btn btn-neutral float-right" title="Other resources" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>
 
   <div role="contentinfo">
-    <p>&#169; Copyright 2015-2022, Nick Papior.</p>
+    <p>&#169; Copyright 2015-2023, Nick Papior.</p>
   </div>
 
   Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a

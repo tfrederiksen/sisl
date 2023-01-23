@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>sisl.shape.prism4 &mdash; sisl 0.1.dev1+g3fe7e49 documentation</title>
+  <title>sisl.shape.prism4 &mdash; sisl 0.1.dev1+g851d78c documentation</title>
       <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="../../../_static/plot_directive.css" type="text/css" />
@@ -16,9 +16,11 @@
         <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
         <script src="../../../_static/jquery.js"></script>
         <script src="../../../_static/underscore.js"></script>
+        <script src="../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../../../_static/doctools.js"></script>
+        <script src="../../../_static/sphinx_highlight.js"></script>
         <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-        <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
+        <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.1/dist/embed-amd.js"></script>
     <script src="../../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" /> 
@@ -32,7 +34,7 @@
             <a href="../../../index.html" class="icon icon-home"> sisl
           </a>
               <div class="version">
-                0.1.dev1+g3fe7e49
+                0.1.dev1+g851d78c
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
@@ -44,9 +46,11 @@
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../../introduction.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../changelog/index.html">Release notes</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../contribute.html">Contributing</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../other.html">Other resources</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../cite.html">Citing sisl</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../publications.html">Publications using sisl</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">User Guide</span></p>
 <ul>
@@ -81,9 +85,9 @@
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="../../../index.html" class="icon icon-home"></a> &raquo;</li>
-          <li><a href="../../index.html">Module code</a> &raquo;</li>
-      <li>sisl.shape.prism4</li>
+      <li><a href="../../../index.html" class="icon icon-home"></a></li>
+          <li class="breadcrumb-item"><a href="../../index.html">Module code</a></li>
+      <li class="breadcrumb-item active">sisl.shape.prism4</li>
       <li class="wy-breadcrumbs-aside">
       </li>
   </ul>
@@ -97,7 +101,6 @@
 <span class="c1"># License, v. 2.0. If a copy of the MPL was not distributed with this</span>
 <span class="c1"># file, You can obtain one at https://mozilla.org/MPL/2.0/.</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">from</span> <span class="nn">numpy</span> <span class="kn">import</span> <span class="n">dot</span>
 
 <span class="kn">import</span> <span class="nn">sisl._array</span> <span class="k">as</span> <span class="nn">_a</span>
 <span class="kn">from</span> <span class="nn">sisl._internal</span> <span class="kn">import</span> <span class="n">set_module</span>
@@ -114,7 +117,7 @@
 
 <span class="nd">@set_module</span><span class="p">(</span><span class="s2">&quot;sisl.shape&quot;</span><span class="p">)</span>
 <span class="k">class</span> <span class="nc">Cuboid</span><span class="p">(</span><span class="n">PureShape</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot; A cuboid/rectangular prism (P4)</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot; A cuboid/rectangular prism (P4)</span>
 
 <span class="sd">    Parameters</span>
 <span class="sd">    ----------</span>
@@ -172,11 +175,11 @@
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="vm">__class__</span><span class="o">.</span><span class="vm">__name__</span> <span class="o">+</span> <span class="s1">&#39;{{O(</span><span class="si">{1}</span><span class="s1"> </span><span class="si">{2}</span><span class="s1"> </span><span class="si">{3}</span><span class="s1">), vol: </span><span class="si">{0}</span><span class="s1">}}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">volume</span><span class="p">(),</span> <span class="o">*</span><span class="bp">self</span><span class="o">.</span><span class="n">origin</span><span class="p">)</span>
 
 <div class="viewcode-block" id="Cuboid.volume"><a class="viewcode-back" href="../../../api/generated/sisl.shape.Cuboid.html#sisl.shape.Cuboid.volume">[docs]</a>    <span class="k">def</span> <span class="nf">volume</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot; Return volume of Cuboid &quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot; Return volume of Cuboid &quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="nb">abs</span><span class="p">(</span><span class="n">dot3</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_v</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="p">:],</span> <span class="n">cross3</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_v</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="p">:],</span> <span class="bp">self</span><span class="o">.</span><span class="n">_v</span><span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="p">:])))</span></div>
 
 <div class="viewcode-block" id="Cuboid.scale"><a class="viewcode-back" href="../../../api/generated/sisl.shape.Cuboid.html#sisl.shape.Cuboid.scale">[docs]</a>    <span class="k">def</span> <span class="nf">scale</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">scale</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot; Scale the cuboid box size (center is retained)</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot; Scale the cuboid box size (center is retained)</span>
 
 <span class="sd">        Parameters</span>
 <span class="sd">        ----------</span>
@@ -189,7 +192,7 @@
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="vm">__class__</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_v</span> <span class="o">*</span> <span class="n">scale</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">center</span><span class="p">)</span></div>
 
 <div class="viewcode-block" id="Cuboid.expand"><a class="viewcode-back" href="../../../api/generated/sisl.shape.Cuboid.html#sisl.shape.Cuboid.expand">[docs]</a>    <span class="k">def</span> <span class="nf">expand</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">length</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot; Expand the cuboid by a constant value along side vectors</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot; Expand the cuboid by a constant value along side vectors</span>
 
 <span class="sd">        Parameters</span>
 <span class="sd">        ----------</span>
@@ -210,24 +213,24 @@
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="vm">__class__</span><span class="p">([</span><span class="n">v0</span><span class="p">,</span> <span class="n">v1</span><span class="p">,</span> <span class="n">v2</span><span class="p">],</span> <span class="bp">self</span><span class="o">.</span><span class="n">center</span><span class="p">)</span></div>
 
 <div class="viewcode-block" id="Cuboid.toEllipsoid"><a class="viewcode-back" href="../../../api/generated/sisl.shape.Cuboid.html#sisl.shape.Cuboid.toEllipsoid">[docs]</a>    <span class="k">def</span> <span class="nf">toEllipsoid</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot; Return an ellipsoid that encompass this cuboid &quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot; Return an ellipsoid that encompass this cuboid &quot;&quot;&quot;</span>
         <span class="kn">from</span> <span class="nn">.ellipsoid</span> <span class="kn">import</span> <span class="n">Ellipsoid</span>
 
         <span class="c1"># Rescale each vector</span>
         <span class="k">return</span> <span class="n">Ellipsoid</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_v</span> <span class="o">/</span> <span class="mi">2</span> <span class="o">*</span> <span class="mi">3</span> <span class="o">**</span> <span class="mf">.5</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">center</span><span class="o">.</span><span class="n">copy</span><span class="p">())</span></div>
 
 <div class="viewcode-block" id="Cuboid.toSphere"><a class="viewcode-back" href="../../../api/generated/sisl.shape.Cuboid.html#sisl.shape.Cuboid.toSphere">[docs]</a>    <span class="k">def</span> <span class="nf">toSphere</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot; Return a sphere that encompass this cuboid &quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot; Return a sphere that encompass this cuboid &quot;&quot;&quot;</span>
         <span class="kn">from</span> <span class="nn">.ellipsoid</span> <span class="kn">import</span> <span class="n">Sphere</span>
 
         <span class="k">return</span> <span class="n">Sphere</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">edge_length</span><span class="o">.</span><span class="n">max</span><span class="p">()</span> <span class="o">/</span> <span class="mi">2</span> <span class="o">*</span> <span class="mi">3</span> <span class="o">**</span> <span class="mf">.5</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">center</span><span class="o">.</span><span class="n">copy</span><span class="p">())</span></div>
 
 <div class="viewcode-block" id="Cuboid.toCuboid"><a class="viewcode-back" href="../../../api/generated/sisl.shape.Cuboid.html#sisl.shape.Cuboid.toCuboid">[docs]</a>    <span class="k">def</span> <span class="nf">toCuboid</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot; Return a copy of itself &quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot; Return a copy of itself &quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span></div>
 
 <div class="viewcode-block" id="Cuboid.within_index"><a class="viewcode-back" href="../../../api/generated/sisl.shape.Cuboid.html#sisl.shape.Cuboid.within_index">[docs]</a>    <span class="k">def</span> <span class="nf">within_index</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">,</span> <span class="n">tol</span><span class="o">=</span><span class="mf">1.e-8</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot; Return indices of the `other` object which are contained in the shape</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot; Return indices of the `other` object which are contained in the shape</span>
 
 <span class="sd">        Parameters</span>
 <span class="sd">        ----------</span>
@@ -239,7 +242,7 @@
         <span class="n">other</span> <span class="o">=</span> <span class="n">_a</span><span class="o">.</span><span class="n">asarrayd</span><span class="p">(</span><span class="n">other</span><span class="p">)</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
 
         <span class="c1"># Offset origin</span>
-        <span class="n">tmp</span> <span class="o">=</span> <span class="n">dot</span><span class="p">(</span><span class="n">other</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">origin</span><span class="p">[</span><span class="kc">None</span><span class="p">,</span> <span class="p">:],</span> <span class="bp">self</span><span class="o">.</span><span class="n">_iv</span><span class="p">)</span>
+        <span class="n">tmp</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">other</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">origin</span><span class="p">[</span><span class="kc">None</span><span class="p">,</span> <span class="p">:],</span> <span class="bp">self</span><span class="o">.</span><span class="n">_iv</span><span class="p">)</span>
 
         <span class="c1"># First reject those that are definitely not inside</span>
         <span class="c1"># The proximity is 1e-12 of the inverse cell.</span>
@@ -249,17 +252,17 @@
 
     <span class="nd">@property</span>
     <span class="k">def</span> <span class="nf">origin</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot; Return the origin of the Cuboid (lower-left corner) &quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot; Return the origin of the Cuboid (lower-left corner) &quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">center</span> <span class="o">-</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_v</span> <span class="o">*</span> <span class="mf">0.5</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
 
     <span class="nd">@origin</span><span class="o">.</span><span class="n">setter</span>
     <span class="k">def</span> <span class="nf">origin</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">origin</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot; Re-setting the origin can sometimes be necessary &quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot; Re-setting the origin can sometimes be necessary &quot;&quot;&quot;</span>
         <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">origin</span> <span class="o">+</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_v</span> <span class="o">*</span> <span class="mf">0.5</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="mi">0</span><span class="p">))</span>
 
     <span class="nd">@property</span>
     <span class="k">def</span> <span class="nf">edge_length</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot; The lengths of each of the vector that defines the cuboid &quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot; The lengths of each of the vector that defines the cuboid &quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="n">fnorm</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_v</span><span class="p">)</span>
 
 
@@ -301,7 +304,7 @@
 
 <span class="nd">@set_module</span><span class="p">(</span><span class="s2">&quot;sisl.shape&quot;</span><span class="p">)</span>
 <span class="k">class</span> <span class="nc">Cube</span><span class="p">(</span><span class="n">Cuboid</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot; 3D Cube with equal sides</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot; 3D Cube with equal sides</span>
 
 <span class="sd">    Equivalent to ``Cuboid([r, r, r])``.</span>
 
@@ -330,7 +333,7 @@
   <hr/>
 
   <div role="contentinfo">
-    <p>&#169; Copyright 2015-2022, Nick Papior.</p>
+    <p>&#169; Copyright 2015-2023, Nick Papior.</p>
   </div>
 
   Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a

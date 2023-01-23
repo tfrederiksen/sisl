@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>sisl.geom.flat &mdash; sisl 0.1.dev1+g3fe7e49 documentation</title>
+  <title>sisl.geom.flat &mdash; sisl 0.1.dev1+g851d78c documentation</title>
       <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="../../../_static/plot_directive.css" type="text/css" />
@@ -16,9 +16,11 @@
         <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
         <script src="../../../_static/jquery.js"></script>
         <script src="../../../_static/underscore.js"></script>
+        <script src="../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../../../_static/doctools.js"></script>
+        <script src="../../../_static/sphinx_highlight.js"></script>
         <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-        <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
+        <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.1/dist/embed-amd.js"></script>
     <script src="../../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" /> 
@@ -32,7 +34,7 @@
             <a href="../../../index.html" class="icon icon-home"> sisl
           </a>
               <div class="version">
-                0.1.dev1+g3fe7e49
+                0.1.dev1+g851d78c
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
@@ -44,9 +46,11 @@
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../../introduction.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../changelog/index.html">Release notes</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../contribute.html">Contributing</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../other.html">Other resources</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../cite.html">Citing sisl</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../publications.html">Publications using sisl</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">User Guide</span></p>
 <ul>
@@ -81,9 +85,9 @@
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="../../../index.html" class="icon icon-home"></a> &raquo;</li>
-          <li><a href="../../index.html">Module code</a> &raquo;</li>
-      <li>sisl.geom.flat</li>
+      <li><a href="../../../index.html" class="icon icon-home"></a></li>
+          <li class="breadcrumb-item"><a href="../../index.html">Module code</a></li>
+      <li class="breadcrumb-item active">sisl.geom.flat</li>
       <li class="wy-breadcrumbs-aside">
       </li>
   </ul>
@@ -100,13 +104,14 @@
 
 <span class="kn">from</span> <span class="nn">sisl._internal</span> <span class="kn">import</span> <span class="n">set_module</span>
 <span class="kn">from</span> <span class="nn">sisl</span> <span class="kn">import</span> <span class="n">Atom</span><span class="p">,</span> <span class="n">Geometry</span><span class="p">,</span> <span class="n">SuperCell</span>
+<span class="kn">from</span> <span class="nn">._common</span> <span class="kn">import</span> <span class="n">geometry_define_nsc</span>
 
 <span class="n">__all__</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;honeycomb&#39;</span><span class="p">,</span> <span class="s1">&#39;graphene&#39;</span><span class="p">]</span>
 
 
 <span class="nd">@set_module</span><span class="p">(</span><span class="s2">&quot;sisl.geom&quot;</span><span class="p">)</span>
 <span class="k">def</span> <span class="nf">honeycomb</span><span class="p">(</span><span class="n">bond</span><span class="p">,</span> <span class="n">atoms</span><span class="p">,</span> <span class="n">orthogonal</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot; Honeycomb lattice with 2 or 4 atoms per unit-cell, latter orthogonal cell</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot; Honeycomb lattice with 2 or 4 atoms per unit-cell, latter orthogonal cell</span>
 
 <span class="sd">    This enables creating BN lattices with ease, or graphene lattices.</span>
 
@@ -128,30 +133,31 @@
     <span class="k">if</span> <span class="n">orthogonal</span><span class="p">:</span>
         <span class="n">sc</span> <span class="o">=</span> <span class="n">SuperCell</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mf">3.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">],</span>
                                  <span class="p">[</span><span class="mf">0.</span><span class="p">,</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">sq3h</span><span class="p">,</span> <span class="mf">0.</span><span class="p">],</span>
-                                 <span class="p">[</span><span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">10.</span><span class="p">]],</span> <span class="n">np</span><span class="o">.</span><span class="n">float64</span><span class="p">)</span> <span class="o">*</span> <span class="n">bond</span><span class="p">,</span> <span class="n">nsc</span><span class="o">=</span><span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span>
+                                 <span class="p">[</span><span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">10.</span><span class="p">]],</span> <span class="n">np</span><span class="o">.</span><span class="n">float64</span><span class="p">)</span> <span class="o">*</span> <span class="n">bond</span><span class="p">)</span>
         <span class="n">g</span> <span class="o">=</span> <span class="n">Geometry</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">],</span>
                                <span class="p">[</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">sq3h</span><span class="p">,</span> <span class="mf">0.</span><span class="p">],</span>
                                <span class="p">[</span><span class="mf">1.5</span><span class="p">,</span> <span class="n">sq3h</span><span class="p">,</span> <span class="mf">0.</span><span class="p">],</span>
                                <span class="p">[</span><span class="mf">2.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">]],</span> <span class="n">np</span><span class="o">.</span><span class="n">float64</span><span class="p">)</span> <span class="o">*</span> <span class="n">bond</span><span class="p">,</span>
                      <span class="n">atoms</span><span class="p">,</span> <span class="n">sc</span><span class="o">=</span><span class="n">sc</span><span class="p">)</span>
     <span class="k">else</span><span class="p">:</span>
-        <span class="n">sc</span> <span class="o">=</span> <span class="n">SuperCell</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mf">1.5</span><span class="p">,</span> <span class="n">sq3h</span><span class="p">,</span> <span class="mf">0.</span><span class="p">],</span>
-                                 <span class="p">[</span><span class="mf">1.5</span><span class="p">,</span> <span class="o">-</span><span class="n">sq3h</span><span class="p">,</span> <span class="mf">0.</span><span class="p">],</span>
-                                 <span class="p">[</span><span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">10.</span><span class="p">]],</span> <span class="n">np</span><span class="o">.</span><span class="n">float64</span><span class="p">)</span> <span class="o">*</span> <span class="n">bond</span><span class="p">,</span> <span class="n">nsc</span><span class="o">=</span><span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span>
+        <span class="n">sc</span> <span class="o">=</span> <span class="n">SuperCell</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mf">1.5</span><span class="p">,</span> <span class="o">-</span><span class="n">sq3h</span><span class="p">,</span> <span class="mf">0.</span><span class="p">],</span>
+                                 <span class="p">[</span><span class="mf">1.5</span><span class="p">,</span> <span class="n">sq3h</span><span class="p">,</span> <span class="mf">0.</span><span class="p">],</span>
+                                 <span class="p">[</span><span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">10.</span><span class="p">]],</span> <span class="n">np</span><span class="o">.</span><span class="n">float64</span><span class="p">)</span> <span class="o">*</span> <span class="n">bond</span><span class="p">)</span>
         <span class="n">g</span> <span class="o">=</span> <span class="n">Geometry</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">],</span>
                                <span class="p">[</span><span class="mf">1.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">]],</span> <span class="n">np</span><span class="o">.</span><span class="n">float64</span><span class="p">)</span> <span class="o">*</span> <span class="n">bond</span><span class="p">,</span>
                      <span class="n">atoms</span><span class="p">,</span> <span class="n">sc</span><span class="o">=</span><span class="n">sc</span><span class="p">)</span>
+    <span class="n">geometry_define_nsc</span><span class="p">(</span><span class="n">g</span><span class="p">,</span> <span class="p">[</span><span class="kc">True</span><span class="p">,</span> <span class="kc">True</span><span class="p">,</span> <span class="kc">False</span><span class="p">])</span>
     <span class="k">return</span> <span class="n">g</span>
 
 
 <div class="viewcode-block" id="graphene"><a class="viewcode-back" href="../../../api/generated/sisl.geom.graphene.html#sisl.geom.graphene">[docs]</a><span class="k">def</span> <span class="nf">graphene</span><span class="p">(</span><span class="n">bond</span><span class="o">=</span><span class="mf">1.42</span><span class="p">,</span> <span class="n">atoms</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">orthogonal</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot; Graphene lattice with 2 or 4 atoms per unit-cell, latter orthogonal cell</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot; Graphene lattice with 2 or 4 atoms per unit-cell, latter orthogonal cell</span>
 
 <span class="sd">    Parameters</span>
 <span class="sd">    ----------</span>
 <span class="sd">    bond : float</span>
 <span class="sd">        bond length between atoms (*not* lattice constant)</span>
-<span class="sd">    atom : Atom, optional</span>
+<span class="sd">    atoms : Atom, optional</span>
 <span class="sd">        the atom (or atoms) that the honeycomb lattice consists of.</span>
 <span class="sd">        Default to Carbon atom.</span>
 <span class="sd">    orthogonal : bool, optional</span>
@@ -163,7 +169,7 @@
 <span class="sd">    bilayer: create bilayer honeycomb lattices</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="k">if</span> <span class="n">atoms</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
-        <span class="k">return</span> <span class="n">honeycomb</span><span class="p">(</span><span class="n">bond</span><span class="p">,</span> <span class="n">Atom</span><span class="p">(</span><span class="n">Z</span><span class="o">=</span><span class="mi">6</span><span class="p">,</span> <span class="n">R</span><span class="o">=</span><span class="n">bond</span> <span class="o">*</span> <span class="mf">1.01</span><span class="p">),</span> <span class="n">orthogonal</span><span class="p">)</span>
+        <span class="n">atoms</span> <span class="o">=</span> <span class="n">Atom</span><span class="p">(</span><span class="n">Z</span><span class="o">=</span><span class="mi">6</span><span class="p">,</span> <span class="n">R</span><span class="o">=</span><span class="n">bond</span> <span class="o">*</span> <span class="mf">1.01</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">honeycomb</span><span class="p">(</span><span class="n">bond</span><span class="p">,</span> <span class="n">atoms</span><span class="p">,</span> <span class="n">orthogonal</span><span class="p">)</span></div>
 </pre></div>
 
@@ -174,7 +180,7 @@
   <hr/>
 
   <div role="contentinfo">
-    <p>&#169; Copyright 2015-2022, Nick Papior.</p>
+    <p>&#169; Copyright 2015-2023, Nick Papior.</p>
   </div>
 
   Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a

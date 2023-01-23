@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>sisl.io.gulp.fc &mdash; sisl 0.1.dev1+g3fe7e49 documentation</title>
+  <title>sisl.io.gulp.fc &mdash; sisl 0.1.dev1+g851d78c documentation</title>
       <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="../../../../_static/plot_directive.css" type="text/css" />
@@ -16,9 +16,11 @@
         <script data-url_root="../../../../" id="documentation_options" src="../../../../_static/documentation_options.js"></script>
         <script src="../../../../_static/jquery.js"></script>
         <script src="../../../../_static/underscore.js"></script>
+        <script src="../../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../../../../_static/doctools.js"></script>
+        <script src="../../../../_static/sphinx_highlight.js"></script>
         <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-        <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
+        <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.1/dist/embed-amd.js"></script>
     <script src="../../../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../search.html" /> 
@@ -32,7 +34,7 @@
             <a href="../../../../index.html" class="icon icon-home"> sisl
           </a>
               <div class="version">
-                0.1.dev1+g3fe7e49
+                0.1.dev1+g851d78c
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../../../../search.html" method="get">
@@ -44,9 +46,11 @@
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../../../introduction.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../changelog/index.html">Release notes</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../contribute.html">Contributing</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../other.html">Other resources</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../cite.html">Citing sisl</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../publications.html">Publications using sisl</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">User Guide</span></p>
 <ul>
@@ -81,9 +85,9 @@
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="../../../../index.html" class="icon icon-home"></a> &raquo;</li>
-          <li><a href="../../../index.html">Module code</a> &raquo;</li>
-      <li>sisl.io.gulp.fc</li>
+      <li><a href="../../../../index.html" class="icon icon-home"></a></li>
+          <li class="breadcrumb-item"><a href="../../../index.html">Module code</a></li>
+      <li class="breadcrumb-item active">sisl.io.gulp.fc</li>
       <li class="wy-breadcrumbs-aside">
       </li>
   </ul>
@@ -101,12 +105,11 @@
 <span class="sd">&quot;&quot;&quot;</span>
 
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">from</span> <span class="nn">numpy</span> <span class="kn">import</span> <span class="nb">abs</span> <span class="k">as</span> <span class="n">np_abs</span>
 <span class="kn">from</span> <span class="nn">scipy.sparse</span> <span class="kn">import</span> <span class="n">lil_matrix</span>
 
+<span class="kn">from</span> <span class="nn">..sile</span> <span class="kn">import</span> <span class="n">add_sile</span><span class="p">,</span> <span class="n">sile_fh_open</span>
 <span class="kn">from</span> <span class="nn">sisl._internal</span> <span class="kn">import</span> <span class="n">set_module</span>
 <span class="kn">from</span> <span class="nn">.sile</span> <span class="kn">import</span> <span class="n">SileGULP</span>
-<span class="kn">from</span> <span class="nn">..sile</span> <span class="kn">import</span> <span class="o">*</span>
 
 
 <span class="n">__all__</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;fcSileGULP&#39;</span><span class="p">]</span>
@@ -114,11 +117,11 @@
 
 <span class="nd">@set_module</span><span class="p">(</span><span class="s2">&quot;sisl.io.gulp&quot;</span><span class="p">)</span>
 <span class="k">class</span> <span class="nc">fcSileGULP</span><span class="p">(</span><span class="n">SileGULP</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot; GULP output file object &quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot; GULP output file object &quot;&quot;&quot;</span>
 
 <div class="viewcode-block" id="fcSileGULP.read_force_constant"><a class="viewcode-back" href="../../../../api/io/generated/sisl.io.gulp.fcSileGULP.html#sisl.io.gulp.fcSileGULP.read_force_constant">[docs]</a>    <span class="nd">@sile_fh_open</span><span class="p">()</span>
     <span class="k">def</span> <span class="nf">read_force_constant</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot; Returns a sparse matrix in coo format which contains the GULP force constant matrix.</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot; Returns a sparse matrix in coo format which contains the GULP force constant matrix.</span>
 
 <span class="sd">        This routine expects the units to be in eV/Ang**2.</span>
 
@@ -142,27 +145,34 @@
         <span class="n">no</span> <span class="o">=</span> <span class="n">na</span> <span class="o">*</span> <span class="mi">3</span>
 
         <span class="n">fc</span> <span class="o">=</span> <span class="n">lil_matrix</span><span class="p">((</span><span class="n">no</span><span class="p">,</span> <span class="n">no</span><span class="p">),</span> <span class="n">dtype</span><span class="o">=</span><span class="n">dtype</span><span class="p">)</span>
+        <span class="n">tmp</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">empty</span><span class="p">([</span><span class="mi">3</span><span class="p">,</span> <span class="n">na</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="n">dtype</span><span class="o">=</span><span class="n">dtype</span><span class="p">)</span>
 
         <span class="c1"># Reduce overhead...</span>
         <span class="n">rl</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">fh</span><span class="o">.</span><span class="n">readline</span>
 
         <span class="k">for</span> <span class="n">ia</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">na</span><span class="p">):</span>
+            <span class="n">i</span> <span class="o">=</span> <span class="n">ia</span> <span class="o">*</span> <span class="mi">3</span>
             <span class="k">for</span> <span class="n">ja</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">na</span><span class="p">):</span>
 
                 <span class="c1"># read line that should contain:</span>
                 <span class="c1">#  ia ja</span>
                 <span class="n">lsplit</span> <span class="o">=</span> <span class="n">rl</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
-                <span class="k">if</span> <span class="nb">int</span><span class="p">(</span><span class="n">lsplit</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span> <span class="o">!=</span> <span class="n">ia</span> <span class="o">+</span> <span class="mi">1</span> <span class="ow">or</span> <span class="nb">int</span><span class="p">(</span><span class="n">lsplit</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span> <span class="o">!=</span> <span class="n">ja</span> <span class="o">+</span> <span class="mi">1</span><span class="p">:</span>
-                    <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Inconsistent 2ND file data&quot;</span><span class="p">)</span>
+                <span class="k">assert</span> <span class="nb">int</span><span class="p">(</span><span class="n">lsplit</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span> <span class="o">==</span> <span class="n">ia</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;Inconsistent 2ND file data&quot;</span>
+                <span class="k">assert</span> <span class="nb">int</span><span class="p">(</span><span class="n">lsplit</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span> <span class="o">==</span> <span class="n">ja</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;Inconsistent 2ND file data&quot;</span>
 
                 <span class="c1"># Read 3x3 data</span>
-                <span class="n">i</span> <span class="o">=</span> <span class="n">ia</span> <span class="o">*</span> <span class="mi">3</span>
-                <span class="k">for</span> <span class="n">o</span> <span class="ow">in</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">]:</span>
-                    <span class="n">fc</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="n">o</span><span class="p">,</span> <span class="n">ja</span><span class="o">*</span><span class="mi">3</span><span class="p">:(</span><span class="n">ja</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="o">*</span><span class="mi">3</span><span class="p">]</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="nb">float</span><span class="p">,</span> <span class="n">rl</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">()[:</span><span class="mi">3</span><span class="p">]))</span>
+                <span class="n">tmp</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="n">ja</span><span class="p">,</span> <span class="p">:]</span> <span class="o">=</span> <span class="n">rl</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
+                <span class="n">tmp</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="n">ja</span><span class="p">,</span> <span class="p">:]</span> <span class="o">=</span> <span class="n">rl</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
+                <span class="n">tmp</span><span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="n">ja</span><span class="p">,</span> <span class="p">:]</span> <span class="o">=</span> <span class="n">rl</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
+
+            <span class="c1"># much faster assignment</span>
+            <span class="n">fc</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="p">:]</span> <span class="o">=</span> <span class="n">tmp</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">ravel</span><span class="p">()</span>
+            <span class="n">fc</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="p">:]</span> <span class="o">=</span> <span class="n">tmp</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">ravel</span><span class="p">()</span>
+            <span class="n">fc</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">2</span><span class="p">,</span> <span class="p">:]</span> <span class="o">=</span> <span class="n">tmp</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">ravel</span><span class="p">()</span>
 
         <span class="c1"># Convert to COO format</span>
         <span class="n">fc</span> <span class="o">=</span> <span class="n">fc</span><span class="o">.</span><span class="n">tocoo</span><span class="p">()</span>
-        <span class="n">fc</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="n">np_abs</span><span class="p">(</span><span class="n">fc</span><span class="o">.</span><span class="n">data</span><span class="p">)</span> <span class="o">&lt;</span> <span class="n">cutoff</span><span class="p">]</span> <span class="o">=</span> <span class="mf">0.</span>
+        <span class="n">fc</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">fabs</span><span class="p">(</span><span class="n">fc</span><span class="o">.</span><span class="n">data</span><span class="p">)</span> <span class="o">&lt;</span> <span class="n">cutoff</span><span class="p">]</span> <span class="o">=</span> <span class="mf">0.</span>
         <span class="n">fc</span><span class="o">.</span><span class="n">eliminate_zeros</span><span class="p">()</span>
 
         <span class="k">return</span> <span class="n">fc</span></div>
@@ -178,7 +188,7 @@
   <hr/>
 
   <div role="contentinfo">
-    <p>&#169; Copyright 2015-2022, Nick Papior.</p>
+    <p>&#169; Copyright 2015-2023, Nick Papior.</p>
   </div>
 
   Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a

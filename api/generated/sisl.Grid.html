@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>sisl.Grid &mdash; sisl 0.1.dev1+g3fe7e49 documentation</title>
+  <title>sisl.Grid &mdash; sisl 0.1.dev1+g851d78c documentation</title>
       <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="../../_static/plot_directive.css" type="text/css" />
@@ -17,9 +17,11 @@
         <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
         <script src="../../_static/jquery.js"></script>
         <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/sphinx_highlight.js"></script>
         <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-        <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
+        <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.1/dist/embed-amd.js"></script>
         <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
         <script defer="defer" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script src="../../_static/js/theme.js"></script>
@@ -37,7 +39,7 @@
             <a href="../../index.html" class="icon icon-home"> sisl
           </a>
               <div class="version">
-                0.1.dev1+g3fe7e49
+                0.1.dev1+g851d78c
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
@@ -49,9 +51,11 @@
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../introduction.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../changelog/index.html">Release notes</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../contribute.html">Contributing</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../other.html">Other resources</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../cite.html">Citing sisl</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../publications.html">Publications using sisl</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">User Guide</span></p>
 <ul>
@@ -77,6 +81,9 @@
 <li class="toctree-l4"><a class="reference internal" href="sisl.Orbital.html">sisl.Orbital</a></li>
 <li class="toctree-l4"><a class="reference internal" href="sisl.SphericalOrbital.html">sisl.SphericalOrbital</a></li>
 <li class="toctree-l4"><a class="reference internal" href="sisl.AtomicOrbital.html">sisl.AtomicOrbital</a></li>
+<li class="toctree-l4"><a class="reference internal" href="sisl.HydrogenicOrbital.html">sisl.HydrogenicOrbital</a></li>
+<li class="toctree-l4"><a class="reference internal" href="sisl.GTOrbital.html">sisl.GTOrbital</a></li>
+<li class="toctree-l4"><a class="reference internal" href="sisl.STOrbital.html">sisl.STOrbital</a></li>
 <li class="toctree-l4"><a class="reference internal" href="sisl.Atom.html">sisl.Atom</a></li>
 <li class="toctree-l4"><a class="reference internal" href="sisl.Atoms.html">sisl.Atoms</a></li>
 <li class="toctree-l4"><a class="reference internal" href="sisl.Geometry.html">sisl.Geometry</a></li>
@@ -91,6 +98,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../default_geom.html">Common geometries</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../physics.html">Physical objects</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../mixing.html">Mixing self-consistent quantities</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../viz/index.html">Visualization</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../unit_constant.html">Units and constants</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../utilities.html">Utilities</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../io/index.html">Input/Output</a></li>
@@ -111,10 +119,10 @@
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
-          <li><a href="../index.html">API documentation</a> &raquo;</li>
-          <li><a href="../basic.html">Basic classes</a> &raquo;</li>
-      <li>sisl.Grid</li>
+      <li><a href="../../index.html" class="icon icon-home"></a></li>
+          <li class="breadcrumb-item"><a href="../index.html">API documentation</a></li>
+          <li class="breadcrumb-item"><a href="../basic.html">Basic classes</a></li>
+      <li class="breadcrumb-item active">sisl.Grid</li>
       <li class="wy-breadcrumbs-aside">
             <a href="../../_sources/api/generated/sisl.Grid.rst.txt" rel="nofollow"> View page source</a>
       </li>
@@ -149,22 +157,22 @@
 }
 </style>
 <section id="sisl-grid">
-<h1>sisl.Grid<a class="headerlink" href="#sisl-grid" title="Permalink to this headline"></a></h1>
+<h1>sisl.Grid<a class="headerlink" href="#sisl-grid" title="Permalink to this heading"></a></h1>
 <dl class="py class">
 <dt class="sig sig-object py" id="sisl.Grid">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">sisl.</span></span><span class="sig-name descname"><span class="pre">Grid</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">shape</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bc</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sc</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dtype</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">geometry</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#sisl.Grid" title="Permalink to this definition"></a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">sisl.supercell.SuperCellChild</span></code></p>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">SuperCellChild</span></code></p>
 <p>Real-space grid information with associated geometry.</p>
 <p>This grid object handles cell vectors and divisions of said grid.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>shape</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.10)"><em>float</em></a><em> or </em><em>(</em><em>3</em><em>,</em><em>) </em><em>of int</em>) – the shape of the grid. A <code class="docutils literal notranslate"><span class="pre">float</span></code> specifies the grid spacing in Angstrom, while
+<li><p><strong>shape</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.11)"><em>float</em></a><em> or </em><em>(</em><em>3</em><em>,</em><em>) of </em><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.11)"><em>int</em></a>) – the shape of the grid. A <code class="docutils literal notranslate"><span class="pre">float</span></code> specifies the grid spacing in Angstrom, while
 a list of integers specifies the exact grid size.</p></li>
-<li><p><strong>bc</strong> (<em>list of int</em><em> (</em><em>3</em><em>, </em><em>2</em><em>) or </em><em>(</em><em>3</em><em>, </em><em>)</em><em>, </em><em>optional</em>) – the boundary conditions for each of the cell’s planes. Default to periodic BC.</p></li>
+<li><p><strong>bc</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.11)"><em>list</em></a><em> of </em><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.11)"><em>int</em></a><em> (</em><em>3</em><em>, </em><em>2</em><em>) or </em><em>(</em><em>3</em><em>, </em><em>)</em><em>, </em><em>optional</em>) – the boundary conditions for each of the cell’s planes. Default to periodic BC.</p></li>
 <li><p><strong>sc</strong> (<a class="reference internal" href="sisl.SuperCell.html#sisl.SuperCell" title="sisl.SuperCell"><em>SuperCell</em></a><em>, </em><em>optional</em>) – the supercell that this grid represents. <em class="xref py py-obj">sc</em> has precedence if both <code class="xref py py-obj docutils literal notranslate"><span class="pre">geometry</span></code> and <em class="xref py py-obj">sc</em>
 has been specified. Default to <code class="docutils literal notranslate"><span class="pre">[1,</span> <span class="pre">1,</span> <span class="pre">1]</span></code>.</p></li>
-<li><p><strong>dtype</strong> (<a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.dtype.html#numpy.dtype" title="(in NumPy v1.22)"><em>numpy.dtype</em></a><em>, </em><em>optional</em>) – the data-type of the grid, default to <a class="reference external" href="https://numpy.org/doc/stable/reference/arrays.scalars.html#numpy.float64" title="(in NumPy v1.22)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">numpy.float64</span></code></a>.</p></li>
+<li><p><strong>dtype</strong> (<a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.dtype.html#numpy.dtype" title="(in NumPy v1.24)"><em>numpy.dtype</em></a><em>, </em><em>optional</em>) – the data-type of the grid, default to <a class="reference external" href="https://numpy.org/doc/stable/reference/arrays.scalars.html#numpy.float64" title="(in NumPy v1.24)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">numpy.float64</span></code></a>.</p></li>
 <li><p><strong>geometry</strong> (<a class="reference internal" href="sisl.Geometry.html#sisl.Geometry" title="sisl.Geometry"><em>Geometry</em></a><em>, </em><em>optional</em>) – associated geometry with the grid. If <em class="xref py py-obj">sc</em> has not been passed the supercell will
 be taken from this geometry.</p></li>
 </ul>
@@ -184,7 +192,7 @@ be taken from this geometry.</p></li>
 </pre></div>
 </div>
 <p class="rubric">Methods</p>
-<table class="longtable docutils align-default">
+<table class="autosummary longtable docutils align-default">
 <colgroup>
 <col style="width: 10%" />
 <col style="width: 90%" />
@@ -274,77 +282,71 @@ be taken from this geometry.</p></li>
 <tr class="row-even"><td><p><a class="reference internal" href="#sisl.Grid.set_boundary_condition" title="sisl.Grid.set_boundary_condition"><code class="xref py py-obj docutils literal notranslate"><span class="pre">set_boundary_condition</span></code></a>([boundary, a, b, c])</p></td>
 <td><p>Set the boundary conditions on the grid</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#sisl.Grid.set_geom" title="sisl.Grid.set_geom"><code class="xref py py-obj docutils literal notranslate"><span class="pre">set_geom</span></code></a>(geometry)</p></td>
-<td><p>deprecated set_geom</p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#sisl.Grid.set_geometry" title="sisl.Grid.set_geometry"><code class="xref py py-obj docutils literal notranslate"><span class="pre">set_geometry</span></code></a>(geometry)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#sisl.Grid.set_geometry" title="sisl.Grid.set_geometry"><code class="xref py py-obj docutils literal notranslate"><span class="pre">set_geometry</span></code></a>(geometry)</p></td>
 <td><p>Sets the <a class="reference internal" href="sisl.Geometry.html#sisl.Geometry" title="sisl.Geometry"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Geometry</span></code></a> for the grid.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#sisl.Grid.set_grid" title="sisl.Grid.set_grid"><code class="xref py py-obj docutils literal notranslate"><span class="pre">set_grid</span></code></a>(shape[, dtype])</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#sisl.Grid.set_grid" title="sisl.Grid.set_grid"><code class="xref py py-obj docutils literal notranslate"><span class="pre">set_grid</span></code></a>(shape[, dtype])</p></td>
 <td><p>Create the internal grid of certain size.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#sisl.Grid.set_nsc" title="sisl.Grid.set_nsc"><code class="xref py py-obj docutils literal notranslate"><span class="pre">set_nsc</span></code></a>(*args, **kwargs)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#sisl.Grid.set_nsc" title="sisl.Grid.set_nsc"><code class="xref py py-obj docutils literal notranslate"><span class="pre">set_nsc</span></code></a>(*args, **kwargs)</p></td>
 <td><p>Set the number of super-cells in the <a class="reference internal" href="sisl.SuperCell.html#sisl.SuperCell" title="sisl.SuperCell"><code class="xref py py-obj docutils literal notranslate"><span class="pre">SuperCell</span></code></a> object</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#sisl.Grid.set_sc" title="sisl.Grid.set_sc"><code class="xref py py-obj docutils literal notranslate"><span class="pre">set_sc</span></code></a>(sc)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#sisl.Grid.set_sc" title="sisl.Grid.set_sc"><code class="xref py py-obj docutils literal notranslate"><span class="pre">set_sc</span></code></a>(sc)</p></td>
 <td><p>Overwrites the local supercell</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#sisl.Grid.set_supercell" title="sisl.Grid.set_supercell"><code class="xref py py-obj docutils literal notranslate"><span class="pre">set_supercell</span></code></a>(sc)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#sisl.Grid.set_supercell" title="sisl.Grid.set_supercell"><code class="xref py py-obj docutils literal notranslate"><span class="pre">set_supercell</span></code></a>(sc)</p></td>
 <td><p>Overwrites the local supercell</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#sisl.Grid.smooth" title="sisl.Grid.smooth"><code class="xref py py-obj docutils literal notranslate"><span class="pre">smooth</span></code></a>([r, method, mode])</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#sisl.Grid.smooth" title="sisl.Grid.smooth"><code class="xref py py-obj docutils literal notranslate"><span class="pre">smooth</span></code></a>([r, method, mode])</p></td>
 <td><p>Make a smoother grid by applying a filter.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#sisl.Grid.sub" title="sisl.Grid.sub"><code class="xref py py-obj docutils literal notranslate"><span class="pre">sub</span></code></a>(idx, axis)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#sisl.Grid.sub" title="sisl.Grid.sub"><code class="xref py py-obj docutils literal notranslate"><span class="pre">sub</span></code></a>(idx, axis)</p></td>
 <td><p>Retains certain indices from a specified axis.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#sisl.Grid.sub_part" title="sisl.Grid.sub_part"><code class="xref py py-obj docutils literal notranslate"><span class="pre">sub_part</span></code></a>(idx, axis, above)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#sisl.Grid.sub_part" title="sisl.Grid.sub_part"><code class="xref py py-obj docutils literal notranslate"><span class="pre">sub_part</span></code></a>(idx, axis, above)</p></td>
 <td><p>Retains parts of the grid via above/below designations.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#sisl.Grid.sum" title="sisl.Grid.sum"><code class="xref py py-obj docutils literal notranslate"><span class="pre">sum</span></code></a>(axis)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#sisl.Grid.sum" title="sisl.Grid.sum"><code class="xref py py-obj docutils literal notranslate"><span class="pre">sum</span></code></a>(axis)</p></td>
 <td><p>Sum grid values along axis <em class="xref py py-obj">axis</em>.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#sisl.Grid.swapaxes" title="sisl.Grid.swapaxes"><code class="xref py py-obj docutils literal notranslate"><span class="pre">swapaxes</span></code></a>(a, b)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#sisl.Grid.swapaxes" title="sisl.Grid.swapaxes"><code class="xref py py-obj docutils literal notranslate"><span class="pre">swapaxes</span></code></a>(a, b)</p></td>
 <td><p>Swap two axes in the grid (also swaps axes in the supercell)</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#sisl.Grid.tile" title="sisl.Grid.tile"><code class="xref py py-obj docutils literal notranslate"><span class="pre">tile</span></code></a>(reps, axis)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#sisl.Grid.tile" title="sisl.Grid.tile"><code class="xref py py-obj docutils literal notranslate"><span class="pre">tile</span></code></a>(reps, axis)</p></td>
 <td><p>Tile grid to create a bigger one</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#sisl.Grid.topyamg" title="sisl.Grid.topyamg"><code class="xref py py-obj docutils literal notranslate"><span class="pre">topyamg</span></code></a>([dtype])</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#sisl.Grid.topyamg" title="sisl.Grid.topyamg"><code class="xref py py-obj docutils literal notranslate"><span class="pre">topyamg</span></code></a>([dtype])</p></td>
 <td><p>Create a <em class="xref py py-obj">pyamg</em> stencil matrix to be used in pyamg</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#sisl.Grid.write" title="sisl.Grid.write"><code class="xref py py-obj docutils literal notranslate"><span class="pre">write</span></code></a>(sile, *args, **kwargs)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#sisl.Grid.write" title="sisl.Grid.write"><code class="xref py py-obj docutils literal notranslate"><span class="pre">write</span></code></a>(sile, *args, **kwargs)</p></td>
 <td><p>Writes grid to the <code class="xref py py-obj docutils literal notranslate"><span class="pre">Sile</span></code> using <em class="xref py py-obj">write_grid</em></p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#sisl.Grid.DIRICHLET" title="sisl.Grid.DIRICHLET"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DIRICHLET</span></code></a></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#sisl.Grid.DIRICHLET" title="sisl.Grid.DIRICHLET"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DIRICHLET</span></code></a></p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#sisl.Grid.NEUMANN" title="sisl.Grid.NEUMANN"><code class="xref py py-obj docutils literal notranslate"><span class="pre">NEUMANN</span></code></a></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#sisl.Grid.NEUMANN" title="sisl.Grid.NEUMANN"><code class="xref py py-obj docutils literal notranslate"><span class="pre">NEUMANN</span></code></a></p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#sisl.Grid.OPEN" title="sisl.Grid.OPEN"><code class="xref py py-obj docutils literal notranslate"><span class="pre">OPEN</span></code></a></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#sisl.Grid.OPEN" title="sisl.Grid.OPEN"><code class="xref py py-obj docutils literal notranslate"><span class="pre">OPEN</span></code></a></p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#sisl.Grid.PERIODIC" title="sisl.Grid.PERIODIC"><code class="xref py py-obj docutils literal notranslate"><span class="pre">PERIODIC</span></code></a></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#sisl.Grid.PERIODIC" title="sisl.Grid.PERIODIC"><code class="xref py py-obj docutils literal notranslate"><span class="pre">PERIODIC</span></code></a></p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#sisl.Grid.cell" title="sisl.Grid.cell"><code class="xref py py-obj docutils literal notranslate"><span class="pre">cell</span></code></a></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#sisl.Grid.cell" title="sisl.Grid.cell"><code class="xref py py-obj docutils literal notranslate"><span class="pre">cell</span></code></a></p></td>
 <td><p>Returns the inherent <a class="reference internal" href="sisl.SuperCell.html#sisl.SuperCell" title="sisl.SuperCell"><code class="xref py py-obj docutils literal notranslate"><span class="pre">SuperCell</span></code></a> objects <a class="reference internal" href="#sisl.Grid.cell" title="sisl.Grid.cell"><code class="xref py py-obj docutils literal notranslate"><span class="pre">cell</span></code></a></p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#sisl.Grid.dcell" title="sisl.Grid.dcell"><code class="xref py py-obj docutils literal notranslate"><span class="pre">dcell</span></code></a></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#sisl.Grid.dcell" title="sisl.Grid.dcell"><code class="xref py py-obj docutils literal notranslate"><span class="pre">dcell</span></code></a></p></td>
 <td><p>Voxel cell size</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#sisl.Grid.dkind" title="sisl.Grid.dkind"><code class="xref py py-obj docutils literal notranslate"><span class="pre">dkind</span></code></a></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#sisl.Grid.dkind" title="sisl.Grid.dkind"><code class="xref py py-obj docutils literal notranslate"><span class="pre">dkind</span></code></a></p></td>
 <td><p>The data-type of the grid (in str)</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#sisl.Grid.dtype" title="sisl.Grid.dtype"><code class="xref py py-obj docutils literal notranslate"><span class="pre">dtype</span></code></a></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#sisl.Grid.dtype" title="sisl.Grid.dtype"><code class="xref py py-obj docutils literal notranslate"><span class="pre">dtype</span></code></a></p></td>
 <td><p>Data-type used in grid</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#sisl.Grid.dvolume" title="sisl.Grid.dvolume"><code class="xref py py-obj docutils literal notranslate"><span class="pre">dvolume</span></code></a></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#sisl.Grid.dvolume" title="sisl.Grid.dvolume"><code class="xref py py-obj docutils literal notranslate"><span class="pre">dvolume</span></code></a></p></td>
 <td><p>Volume of the grid voxel elements</p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#sisl.Grid.geom" title="sisl.Grid.geom"><code class="xref py py-obj docutils literal notranslate"><span class="pre">geom</span></code></a></p></td>
-<td><p>deprecated geometry</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="#sisl.Grid.icell" title="sisl.Grid.icell"><code class="xref py py-obj docutils literal notranslate"><span class="pre">icell</span></code></a></p></td>
 <td><p>Returns the inherent <a class="reference internal" href="sisl.SuperCell.html#sisl.SuperCell" title="sisl.SuperCell"><code class="xref py py-obj docutils literal notranslate"><span class="pre">SuperCell</span></code></a> objects <a class="reference internal" href="#sisl.Grid.icell" title="sisl.Grid.icell"><code class="xref py py-obj docutils literal notranslate"><span class="pre">icell</span></code></a></p></td>
@@ -416,8 +418,8 @@ be taken from this geometry.</p></li>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>vacuum</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.10)"><em>float</em></a>) – amount of vacuum added, in Ang</p></li>
-<li><p><strong>axis</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.10)"><em>int</em></a>) – the lattice vector to add vacuum along</p></li>
+<li><p><strong>vacuum</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.11)"><em>float</em></a>) – amount of vacuum added, in Ang</p></li>
+<li><p><strong>axis</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.11)"><em>int</em></a>) – the lattice vector to add vacuum along</p></li>
 </ul>
 </dd>
 </dl>
@@ -438,7 +440,7 @@ some measurement). In that case, you will get the result instead of a <a class="
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>function</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><em>str</em></a><em> or </em><em>function</em>) – for a string the full module path to the function should be given.
+<li><p><strong>function</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.11)"><em>str</em></a><em> or </em><em>function</em>) – for a string the full module path to the function should be given.
 The function that will be called should have the grid as the first argument in its
 interface.</p></li>
 <li><p><strong>kwargs</strong> (<em>args and</em>) – arguments that go directly to the function call</p></li>
@@ -460,7 +462,7 @@ interface.</p></li>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>axis</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.10)"><em>int</em></a>) – unit-cell direction to average across</p></li>
+<li><p><strong>axis</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.11)"><em>int</em></a>) – unit-cell direction to average across</p></li>
 <li><p><strong>weights</strong> (<em>array_like</em><em>, </em><em>optional</em>) – the weights for the individual axis elements, if boolean it corresponds to 0 and 1
 for false/true.</p></li>
 </ul>
@@ -469,7 +471,7 @@ for false/true.</p></li>
 <div class="admonition seealso">
 <p class="admonition-title">See also</p>
 <dl class="simple">
-<dt><a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.average.html#numpy.average" title="(in NumPy v1.22)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">numpy.average</span></code></a></dt><dd><p>for details regarding the <em class="xref py py-obj">weights</em> argument</p>
+<dt><a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.average.html#numpy.average" title="(in NumPy v1.24)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">numpy.average</span></code></a></dt><dd><p>for details regarding the <em class="xref py py-obj">weights</em> argument</p>
 </dd>
 </dl>
 </div>
@@ -525,15 +527,9 @@ cuts via rotation of the axis</p>
 <dd><p>Fill the grid with this value</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>val</strong> (<a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.dtype.html#numpy.dtype" title="(in NumPy v1.22)"><em>numpy.dtype</em></a>) – all grid-points will have this value after execution</p>
+<dd class="field-odd"><p><strong>val</strong> (<a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.dtype.html#numpy.dtype" title="(in NumPy v1.24)"><em>numpy.dtype</em></a>) – all grid-points will have this value after execution</p>
 </dd>
 </dl>
-</dd></dl>
-
-<dl class="py property">
-<dt class="sig sig-object py" id="sisl.Grid.geom">
-<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">geom</span></span><a class="headerlink" href="#sisl.Grid.geom" title="Permalink to this definition"></a></dt>
-<dd><p>deprecated geometry</p>
 </dd></dl>
 
 <dl class="py property">
@@ -549,12 +545,12 @@ cuts via rotation of the axis</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>coord</strong> (<em>(</em><em>:</em><em>, </em><em>3</em><em>) or </em><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.10)"><em>float</em></a><em> or </em><a class="reference internal" href="sisl.shape.Shape.html#sisl.shape.Shape" title="sisl.shape.Shape"><em>Shape</em></a>) – the coordinate of the axis. If a float is passed <em class="xref py py-obj">axis</em> is
+<li><p><strong>coord</strong> (<em>(</em><em>:</em><em>, </em><em>3</em><em>) or </em><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.11)"><em>float</em></a><em> or </em><a class="reference internal" href="sisl.shape.Shape.html#sisl.shape.Shape" title="sisl.shape.Shape"><em>Shape</em></a>) – the coordinate of the axis. If a float is passed <em class="xref py py-obj">axis</em> is
 also required in which case it corresponds to the length along the
 lattice vector corresponding to <em class="xref py py-obj">axis</em>.
 If a Shape a list of coordinates that fits the voxel positions
 are returned (all internal points also).</p></li>
-<li><p><strong>axis</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.10)"><em>int</em></a><em>, </em><em>optional</em>) – the axis direction of the index, or for all axes if none.</p></li>
+<li><p><strong>axis</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.11)"><em>int</em></a><em>, </em><em>optional</em>) – the axis direction of the index, or for all axes if none.</p></li>
 </ul>
 </dd>
 </dl>
@@ -572,7 +568,7 @@ are returned (all internal points also).</p></li>
 <dd class="field-even"><p>coordinates of the indices with respect to this grid spacing</p>
 </dd>
 <dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p><a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.22)">numpy.ndarray</a></p>
+<dd class="field-odd"><p><a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.24)">numpy.ndarray</a></p>
 </dd>
 </dl>
 </dd></dl>
@@ -590,14 +586,14 @@ are returned (all internal points also).</p></li>
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>index</strong> (<em>array_like</em>) – indices for grid-positions</p></li>
-<li><p><strong>unique</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.10)"><em>bool</em></a><em>, </em><em>optional</em>) – if true the returned indices are made unique after having folded the index points</p></li>
+<li><p><strong>unique</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.11)"><em>bool</em></a><em>, </em><em>optional</em>) – if true the returned indices are made unique after having folded the index points</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><p>all indices are then within the shape of the grid</p>
 </dd>
 <dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p><a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.22)">numpy.ndarray</a></p>
+<dd class="field-odd"><p><a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.24)">numpy.ndarray</a></p>
 </dd>
 </dl>
 <div class="admonition seealso">
@@ -626,7 +622,7 @@ are returned (all internal points also).</p></li>
 <dd class="field-even"><p>all indices are then within the shape of the grid (others have been removed</p>
 </dd>
 <dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p><a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.22)">numpy.ndarray</a></p>
+<dd class="field-odd"><p><a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.24)">numpy.ndarray</a></p>
 </dd>
 </dl>
 <div class="admonition seealso">
@@ -642,25 +638,25 @@ are returned (all internal points also).</p></li>
 <dt class="sig sig-object py" id="sisl.Grid.interp">
 <span class="sig-name descname"><span class="pre">interp</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">shape</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">order</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mode</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'wrap'</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/sisl/grid.html#Grid.interp"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sisl.Grid.interp" title="Permalink to this definition"></a></dt>
 <dd><p>Interpolate grid values to a new grid of a different shape</p>
-<p>It uses the <a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.ndimage.zoom.html#scipy.ndimage.zoom" title="(in SciPy v1.8.0)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">scipy.ndimage.zoom</span></code></a>, which creates a finer or
+<p>It uses the <a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.ndimage.zoom.html#scipy.ndimage.zoom" title="(in SciPy v1.10.0)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">scipy.ndimage.zoom</span></code></a>, which creates a finer or
 more spaced grid using spline interpolation.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>shape</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.10)"><em>int</em></a><em>, </em><em>array_like of len 3</em>) – the new shape of the grid.</p></li>
+<li><p><strong>shape</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.11)"><em>int</em></a><em>, </em><em>array_like</em><em> of </em><em>len 3</em>) – the new shape of the grid.</p></li>
 <li><p><strong>order</strong> (<em>int 0-5</em><em>, </em><em>optional</em>) – the order of the spline interpolation.
 1 means linear, 2 quadratic, etc…</p></li>
 <li><p><strong>mode</strong> (<em>{'wrap'</em><em>, </em><em>'mirror'</em><em>, </em><em>'constant'</em><em>, </em><em>'reflect'</em><em>, </em><em>'nearest'}</em>) – determines how to compute the borders of the grid.
 The default is <code class="docutils literal notranslate"><span class="pre">'wrap'</span></code>, which accounts for periodic conditions.</p></li>
 <li><p><strong>**kwargs</strong> – optional arguments passed to the interpolation algorithm
-The interpolation routine is <a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.ndimage.zoom.html#scipy.ndimage.zoom" title="(in SciPy v1.8.0)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">scipy.ndimage.zoom</span></code></a></p></li>
+The interpolation routine is <a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.ndimage.zoom.html#scipy.ndimage.zoom" title="(in SciPy v1.10.0)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">scipy.ndimage.zoom</span></code></a></p></li>
 </ul>
 </dd>
 </dl>
 <div class="admonition seealso">
 <p class="admonition-title">See also</p>
 <dl class="simple">
-<dt><a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.ndimage.zoom.html#scipy.ndimage.zoom" title="(in SciPy v1.8.0)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">scipy.ndimage.zoom</span></code></a></dt><dd><p>method used for interpolation</p>
+<dt><a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.ndimage.zoom.html#scipy.ndimage.zoom" title="(in SciPy v1.10.0)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">scipy.ndimage.zoom</span></code></a></dt><dd><p>method used for interpolation</p>
 </dd>
 </dl>
 </div>
@@ -686,9 +682,9 @@ The interpolation routine is <a class="reference external" href="https://docs.sc
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>level</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.10)"><em>float</em></a>) – contour value to search for isosurfaces in the grid.
+<li><p><strong>level</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.11)"><em>float</em></a>) – contour value to search for isosurfaces in the grid.
 If not given or None, the average of the min and max of the grid is used.</p></li>
-<li><p><strong>step_size</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.10)"><em>int</em></a><em>, </em><em>optional</em>) – step size in voxels. Larger steps yield faster but coarser results.
+<li><p><strong>step_size</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.11)"><em>int</em></a><em>, </em><em>optional</em>) – step size in voxels. Larger steps yield faster but coarser results.
 The result will always be topologically correct though.</p></li>
 <li><p><strong>**kwargs</strong> – optional arguments passed directly to <a class="reference external" href="https://scikit-image.org/docs/stable/api/skimage.measure.html#skimage.measure.marching_cubes" title="(in skimage v0.19.2)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">skimage.measure.marching_cubes</span></code></a>
 for the calculation of isosurfaces.</p></li>
@@ -728,7 +724,7 @@ This can be used by visualization tools to apply a colormap to the mesh.</p></li
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>axis</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.10)"><em>int</em></a>) – unit-cell direction to average across</p></li>
+<li><p><strong>axis</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.11)"><em>int</em></a>) – unit-cell direction to average across</p></li>
 <li><p><strong>weights</strong> (<em>array_like</em><em>, </em><em>optional</em>) – the weights for the individual axis elements, if boolean it corresponds to 0 and 1
 for false/true.</p></li>
 </ul>
@@ -737,7 +733,7 @@ for false/true.</p></li>
 <div class="admonition seealso">
 <p class="admonition-title">See also</p>
 <dl class="simple">
-<dt><a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.average.html#numpy.average" title="(in NumPy v1.22)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">numpy.average</span></code></a></dt><dd><p>for details regarding the <em class="xref py py-obj">weights</em> argument</p>
+<dt><a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.average.html#numpy.average" title="(in NumPy v1.24)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">numpy.average</span></code></a></dt><dd><p>for details regarding the <em class="xref py py-obj">weights</em> argument</p>
 </dd>
 </dl>
 </div>
@@ -747,18 +743,18 @@ for false/true.</p></li>
 <dt class="sig sig-object py" id="sisl.Grid.mgrid">
 <em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">mgrid</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">slices</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/sisl/grid.html#Grid.mgrid"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sisl.Grid.mgrid" title="Permalink to this definition"></a></dt>
 <dd><p>Return a list of indices corresponding to the slices</p>
-<p>The returned values are equivalent to <a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.mgrid.html#numpy.mgrid" title="(in NumPy v1.22)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">numpy.mgrid</span></code></a> but they are returned
+<p>The returned values are equivalent to <a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.mgrid.html#numpy.mgrid" title="(in NumPy v1.24)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">numpy.mgrid</span></code></a> but they are returned
 in a (:, 3) array.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>*slices</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#slice" title="(in Python v3.10)"><em>slice</em></a><em> or </em><em>list of int</em><em> or </em><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.10)"><em>int</em></a>) – return a linear list of indices that points to the collective slice
+<dd class="field-odd"><p><strong>*slices</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#slice" title="(in Python v3.11)"><em>slice</em></a><em> or </em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.11)"><em>list</em></a><em> of </em><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.11)"><em>int</em></a><em> or </em><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.11)"><em>int</em></a>) – return a linear list of indices that points to the collective slice
 made by the passed arguments</p>
 </dd>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><p>linear indices for each of the sliced values, shape <code class="docutils literal notranslate"><span class="pre">(*,</span> <span class="pre">3)</span></code></p>
 </dd>
 <dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p><a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.22)">numpy.ndarray</a></p>
+<dd class="field-odd"><p><a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.24)">numpy.ndarray</a></p>
 </dd>
 </dl>
 </dd></dl>
@@ -787,6 +783,12 @@ made by the passed arguments</p>
 <dd><p>Returns the inherent <a class="reference internal" href="sisl.SuperCell.html#sisl.SuperCell" title="sisl.SuperCell"><code class="xref py py-obj docutils literal notranslate"><span class="pre">SuperCell</span></code></a> objects <a class="reference internal" href="#sisl.Grid.origin" title="sisl.Grid.origin"><code class="xref py py-obj docutils literal notranslate"><span class="pre">origin</span></code></a></p>
 </dd></dl>
 
+<dl class="py attribute">
+<dt class="sig sig-object py" id="sisl.Grid.plot">
+<span class="sig-name descname"><span class="pre">plot</span></span><a class="headerlink" href="#sisl.Grid.plot" title="Permalink to this definition"></a></dt>
+<dd><p>Handles all plotting possibilities for a class</p>
+</dd></dl>
+
 <dl class="py method">
 <dt class="sig sig-object py" id="sisl.Grid.pyamg_boundary_condition">
 <span class="sig-name descname"><span class="pre">pyamg_boundary_condition</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">A</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">b</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bc</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/sisl/grid.html#Grid.pyamg_boundary_condition"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sisl.Grid.pyamg_boundary_condition" title="Permalink to this definition"></a></dt>
@@ -794,9 +796,9 @@ made by the passed arguments</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>A</strong> (<a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.sparse.csr_matrix.html#scipy.sparse.csr_matrix" title="(in SciPy v1.8.0)"><em>scipy.sparse.csr_matrix</em></a>) – sparse matrix describing the grid</p></li>
-<li><p><strong>b</strong> (<a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.22)"><em>numpy.ndarray</em></a>) – a vector containing RHS of <span class="math notranslate nohighlight">\(A x = b\)</span> for the solution of the grid stencil</p></li>
-<li><p><strong>bc</strong> (<em>list of BC</em><em>, </em><em>optional</em>) – the specified boundary conditions.
+<li><p><strong>A</strong> (<a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.sparse.csr_matrix.html#scipy.sparse.csr_matrix" title="(in SciPy v1.10.0)"><em>scipy.sparse.csr_matrix</em></a>) – sparse matrix describing the grid</p></li>
+<li><p><strong>b</strong> (<a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.24)"><em>numpy.ndarray</em></a>) – a vector containing RHS of <span class="math notranslate nohighlight">\(A x = b\)</span> for the solution of the grid stencil</p></li>
+<li><p><strong>bc</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.11)"><em>list</em></a><em> of </em><em>BC</em><em>, </em><em>optional</em>) – the specified boundary conditions.
 Default to the grid’s boundary conditions, else <em class="xref py py-obj">bc</em> <em>must</em> be a list of elements
 with elements corresponding to <a class="reference internal" href="#sisl.Grid.PERIODIC" title="sisl.Grid.PERIODIC"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Grid.PERIODIC</span></code></a>/<a class="reference internal" href="#sisl.Grid.NEUMANN" title="sisl.Grid.NEUMANN"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Grid.NEUMANN</span></code></a>…</p></li>
 </ul>
@@ -811,11 +813,11 @@ with elements corresponding to <a class="reference internal" href="#sisl.Grid.PE
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>A</strong> (<a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.sparse.csr_matrix.html#scipy.sparse.csr_matrix" title="(in SciPy v1.8.0)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">csr_matrix</span></code></a>/<a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.sparse.csc_matrix.html#scipy.sparse.csc_matrix" title="(in SciPy v1.8.0)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">csc_matrix</span></code></a>) – sparse matrix describing the LHS for the linear system of equations</p></li>
-<li><p><strong>b</strong> (<a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.22)"><em>numpy.ndarray</em></a>) – a vector containing RHS of <span class="math notranslate nohighlight">\(A x = b\)</span> for the solution of the grid stencil</p></li>
-<li><p><strong>pyamg_indices</strong> (<em>list of int</em>) – the linear pyamg matrix indices where the value of the grid is fixed. I.e. the indices should
+<li><p><strong>A</strong> (<a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.sparse.csr_matrix.html#scipy.sparse.csr_matrix" title="(in SciPy v1.10.0)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">csr_matrix</span></code></a>/<a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.sparse.csc_matrix.html#scipy.sparse.csc_matrix" title="(in SciPy v1.10.0)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">csc_matrix</span></code></a>) – sparse matrix describing the LHS for the linear system of equations</p></li>
+<li><p><strong>b</strong> (<a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.24)"><em>numpy.ndarray</em></a>) – a vector containing RHS of <span class="math notranslate nohighlight">\(A x = b\)</span> for the solution of the grid stencil</p></li>
+<li><p><strong>pyamg_indices</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.11)"><em>list</em></a><em> of </em><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.11)"><em>int</em></a>) – the linear pyamg matrix indices where the value of the grid is fixed. I.e. the indices should
 correspond to returned quantities from <em class="xref py py-obj">pyamg_indices</em>.</p></li>
-<li><p><strong>value</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.10)"><em>float</em></a>) – the value of the grid to fix the value at</p></li>
+<li><p><strong>value</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.11)"><em>float</em></a>) – the value of the grid to fix the value at</p></li>
 </ul>
 </dd>
 </dl>
@@ -827,13 +829,13 @@ correspond to returned quantities from <em class="xref py py-obj">pyamg_indices<
 <dd><p>Calculate <em class="xref py py-obj">pyamg</em> matrix indices from a list of grid indices</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>index</strong> (<em>(</em><em>:</em><em>, </em><em>3</em><em>) </em><em>of int</em>) – a list of indices of the grid along each grid axis</p>
+<dd class="field-odd"><p><strong>index</strong> (<em>(</em><em>:</em><em>, </em><em>3</em><em>) of </em><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.11)"><em>int</em></a>) – a list of indices of the grid along each grid axis</p>
 </dd>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><p>linear indices for the matrix</p>
 </dd>
 <dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p><a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.22)">numpy.ndarray</a></p>
+<dd class="field-odd"><p><a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.24)">numpy.ndarray</a></p>
 </dd>
 </dl>
 <div class="admonition seealso">
@@ -841,13 +843,13 @@ correspond to returned quantities from <em class="xref py py-obj">pyamg_indices<
 <dl class="simple">
 <dt><a class="reference internal" href="#sisl.Grid.index" title="sisl.Grid.index"><code class="xref py py-obj docutils literal notranslate"><span class="pre">index</span></code></a></dt><dd><p>query indices from coordinates (directly passable to this method)</p>
 </dd>
-<dt><a class="reference internal" href="#sisl.Grid.mgrid" title="sisl.Grid.mgrid"><code class="xref py py-obj docutils literal notranslate"><span class="pre">mgrid</span></code></a></dt><dd><p>Grid equivalent to <a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.mgrid.html#numpy.mgrid" title="(in NumPy v1.22)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">numpy.mgrid</span></code></a>. Grid.mgrid returns indices in shapes (:, 3), contrary to numpy’s <a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.mgrid.html#numpy.mgrid" title="(in NumPy v1.22)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">numpy.mgrid</span></code></a></p>
+<dt><a class="reference internal" href="#sisl.Grid.mgrid" title="sisl.Grid.mgrid"><code class="xref py py-obj docutils literal notranslate"><span class="pre">mgrid</span></code></a></dt><dd><p>Grid equivalent to <a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.mgrid.html#numpy.mgrid" title="(in NumPy v1.24)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">numpy.mgrid</span></code></a>. Grid.mgrid returns indices in shapes (:, 3), contrary to numpy’s <a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.mgrid.html#numpy.mgrid" title="(in NumPy v1.24)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">numpy.mgrid</span></code></a></p>
 </dd>
 </dl>
 </div>
 <dl class="field-list simple">
 <dt class="field-odd">Raises</dt>
-<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/exceptions.html#ValueError" title="(in Python v3.10)"><strong>ValueError</strong></a> – if any of the passed indices are below 0 or above the number of elements per axis</p>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/exceptions.html#ValueError" title="(in Python v3.11)"><strong>ValueError</strong></a> – if any of the passed indices are below 0 or above the number of elements per axis</p>
 </dd>
 </dl>
 </dd></dl>
@@ -859,8 +861,8 @@ correspond to returned quantities from <em class="xref py py-obj">pyamg_indices<
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>b</strong> (<a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.22)"><em>numpy.ndarray</em></a>) – a vector containing RHS of <span class="math notranslate nohighlight">\(A x = b\)</span> for the solution of the grid stencil</p></li>
-<li><p><strong>pyamg_indices</strong> (<em>list of int</em>) – the linear pyamg matrix indices where the value of the grid is fixed. I.e. the indices should
+<li><p><strong>b</strong> (<a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.24)"><em>numpy.ndarray</em></a>) – a vector containing RHS of <span class="math notranslate nohighlight">\(A x = b\)</span> for the solution of the grid stencil</p></li>
+<li><p><strong>pyamg_indices</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.11)"><em>list</em></a><em> of </em><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.11)"><em>int</em></a>) – the linear pyamg matrix indices where the value of the grid is fixed. I.e. the indices should
 correspond to returned quantities from <em class="xref py py-obj">pyamg_indices</em>.</p></li>
 </ul>
 </dd>
@@ -880,7 +882,7 @@ correspond to returned quantities from <em class="xref py py-obj">pyamg_indices<
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>sile</strong> (<a class="reference internal" href="../io/generated/sisl.io.Sile.html#sisl.io.Sile" title="sisl.io.Sile"><em>Sile</em></a><em>, </em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><em>str</em></a><em> or </em><a class="reference external" href="https://docs.python.org/3/library/pathlib.html#pathlib.Path" title="(in Python v3.10)"><em>pathlib.Path</em></a>) – a <code class="xref py py-obj docutils literal notranslate"><span class="pre">Sile</span></code> object which will be used to read the grid
+<li><p><strong>sile</strong> (<a class="reference internal" href="../io/generated/sisl.io.Sile.html#sisl.io.Sile" title="sisl.io.Sile"><em>Sile</em></a><em>, </em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.11)"><em>str</em></a><em> or </em><a class="reference external" href="https://docs.python.org/3/library/pathlib.html#pathlib.Path" title="(in Python v3.11)"><em>pathlib.Path</em></a>) – a <code class="xref py py-obj docutils literal notranslate"><span class="pre">Sile</span></code> object which will be used to read the grid
 if it is a string it will create a new sile using <code class="xref py py-obj docutils literal notranslate"><span class="pre">get_sile</span></code>.</p></li>
 <li><p><strong>*</strong> (args passed directly to <code class="docutils literal notranslate"><span class="pre">read_grid(,**)</span></code>) – </p></li>
 </ul>
@@ -897,7 +899,7 @@ if it is a string it will create a new sile using <code class="xref py py-obj do
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>idx</strong> (<em>array_like</em>) – the indices of the grid axis <em class="xref py py-obj">axis</em> to be removed</p></li>
-<li><p><strong>axis</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.10)"><em>int</em></a>) – the axis segment from which we remove all indices <em class="xref py py-obj">idx</em></p></li>
+<li><p><strong>axis</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.11)"><em>int</em></a>) – the axis segment from which we remove all indices <em class="xref py py-obj">idx</em></p></li>
 </ul>
 </dd>
 </dl>
@@ -911,11 +913,11 @@ if it is a string it will create a new sile using <code class="xref py py-obj do
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>idx</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.10)"><em>int</em></a>) – the index of the grid axis <em class="xref py py-obj">axis</em> to be removed
+<li><p><strong>idx</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.11)"><em>int</em></a>) – the index of the grid axis <em class="xref py py-obj">axis</em> to be removed
 for <code class="docutils literal notranslate"><span class="pre">above=True</span></code> grid[:idx,…]
 for <code class="docutils literal notranslate"><span class="pre">above=False</span></code> grid[idx:,…]</p></li>
-<li><p><strong>axis</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.10)"><em>int</em></a>) – the axis segment from which we retain the indices <em class="xref py py-obj">idx</em></p></li>
-<li><p><strong>above</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.10)"><em>bool</em></a>) – <dl class="simple">
+<li><p><strong>axis</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.11)"><em>int</em></a>) – the axis segment from which we retain the indices <em class="xref py py-obj">idx</em></p></li>
+<li><p><strong>above</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.11)"><em>bool</em></a>) – <dl class="simple">
 <dt>if <code class="docutils literal notranslate"><span class="pre">True</span></code> will retain the grid:</dt><dd><p><code class="docutils literal notranslate"><span class="pre">grid[:idx,...]</span></code></p>
 </dd>
 <dt>else it will retain the grid:</dt><dd><p><code class="docutils literal notranslate"><span class="pre">grid[idx:,...]</span></code></p>
@@ -946,14 +948,14 @@ for <code class="docutils literal notranslate"><span class="pre">above=False</sp
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>boundary</strong> (<em>(</em><em>3</em><em>, </em><em>2</em><em>) or </em><em>(</em><em>3</em><em>, </em><em>) or </em><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.10)"><em>int</em></a><em>, </em><em>optional</em>) – boundary condition for all boundaries (or the same for all)</p></li>
-<li><p><strong>a</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.10)"><em>int</em></a><em> or </em><em>list of int</em><em>, </em><em>optional</em>) – boundary condition for the first unit-cell vector direction</p></li>
-<li><p><strong>b</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.10)"><em>int</em></a><em> or </em><em>list of int</em><em>, </em><em>optional</em>) – boundary condition for the second unit-cell vector direction</p></li>
-<li><p><strong>c</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.10)"><em>int</em></a><em> or </em><em>list of int</em><em>, </em><em>optional</em>) – boundary condition for the third unit-cell vector direction</p></li>
+<li><p><strong>boundary</strong> (<em>(</em><em>3</em><em>, </em><em>2</em><em>) or </em><em>(</em><em>3</em><em>, </em><em>) or </em><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.11)"><em>int</em></a><em>, </em><em>optional</em>) – boundary condition for all boundaries (or the same for all)</p></li>
+<li><p><strong>a</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.11)"><em>int</em></a><em> or </em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.11)"><em>list</em></a><em> of </em><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.11)"><em>int</em></a><em>, </em><em>optional</em>) – boundary condition for the first unit-cell vector direction</p></li>
+<li><p><strong>b</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.11)"><em>int</em></a><em> or </em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.11)"><em>list</em></a><em> of </em><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.11)"><em>int</em></a><em>, </em><em>optional</em>) – boundary condition for the second unit-cell vector direction</p></li>
+<li><p><strong>c</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.11)"><em>int</em></a><em> or </em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.11)"><em>list</em></a><em> of </em><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.11)"><em>int</em></a><em>, </em><em>optional</em>) – boundary condition for the third unit-cell vector direction</p></li>
 </ul>
 </dd>
 <dt class="field-even">Raises</dt>
-<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/exceptions.html#ValueError" title="(in Python v3.10)"><strong>ValueError</strong></a> – if specifying periodic one one boundary, so must the opposite side.</p>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/exceptions.html#ValueError" title="(in Python v3.11)"><strong>ValueError</strong></a> – if specifying periodic one one boundary, so must the opposite side.</p>
 </dd>
 </dl>
 </dd></dl>
@@ -965,14 +967,14 @@ for <code class="docutils literal notranslate"><span class="pre">above=False</sp
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>boundary</strong> (<em>(</em><em>3</em><em>, </em><em>2</em><em>) or </em><em>(</em><em>3</em><em>, </em><em>) or </em><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.10)"><em>int</em></a><em>, </em><em>optional</em>) – boundary condition for all boundaries (or the same for all)</p></li>
-<li><p><strong>a</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.10)"><em>int</em></a><em> or </em><em>list of int</em><em>, </em><em>optional</em>) – boundary condition for the first unit-cell vector direction</p></li>
-<li><p><strong>b</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.10)"><em>int</em></a><em> or </em><em>list of int</em><em>, </em><em>optional</em>) – boundary condition for the second unit-cell vector direction</p></li>
-<li><p><strong>c</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.10)"><em>int</em></a><em> or </em><em>list of int</em><em>, </em><em>optional</em>) – boundary condition for the third unit-cell vector direction</p></li>
+<li><p><strong>boundary</strong> (<em>(</em><em>3</em><em>, </em><em>2</em><em>) or </em><em>(</em><em>3</em><em>, </em><em>) or </em><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.11)"><em>int</em></a><em>, </em><em>optional</em>) – boundary condition for all boundaries (or the same for all)</p></li>
+<li><p><strong>a</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.11)"><em>int</em></a><em> or </em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.11)"><em>list</em></a><em> of </em><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.11)"><em>int</em></a><em>, </em><em>optional</em>) – boundary condition for the first unit-cell vector direction</p></li>
+<li><p><strong>b</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.11)"><em>int</em></a><em> or </em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.11)"><em>list</em></a><em> of </em><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.11)"><em>int</em></a><em>, </em><em>optional</em>) – boundary condition for the second unit-cell vector direction</p></li>
+<li><p><strong>c</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.11)"><em>int</em></a><em> or </em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.11)"><em>list</em></a><em> of </em><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.11)"><em>int</em></a><em>, </em><em>optional</em>) – boundary condition for the third unit-cell vector direction</p></li>
 </ul>
 </dd>
 <dt class="field-even">Raises</dt>
-<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/exceptions.html#ValueError" title="(in Python v3.10)"><strong>ValueError</strong></a> – if specifying periodic one one boundary, so must the opposite side.</p>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/exceptions.html#ValueError" title="(in Python v3.11)"><strong>ValueError</strong></a> – if specifying periodic one one boundary, so must the opposite side.</p>
 </dd>
 </dl>
 </dd></dl>
@@ -984,22 +986,16 @@ for <code class="docutils literal notranslate"><span class="pre">above=False</sp
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>boundary</strong> (<em>(</em><em>3</em><em>, </em><em>2</em><em>) or </em><em>(</em><em>3</em><em>, </em><em>) or </em><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.10)"><em>int</em></a><em>, </em><em>optional</em>) – boundary condition for all boundaries (or the same for all)</p></li>
-<li><p><strong>a</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.10)"><em>int</em></a><em> or </em><em>list of int</em><em>, </em><em>optional</em>) – boundary condition for the first unit-cell vector direction</p></li>
-<li><p><strong>b</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.10)"><em>int</em></a><em> or </em><em>list of int</em><em>, </em><em>optional</em>) – boundary condition for the second unit-cell vector direction</p></li>
-<li><p><strong>c</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.10)"><em>int</em></a><em> or </em><em>list of int</em><em>, </em><em>optional</em>) – boundary condition for the third unit-cell vector direction</p></li>
+<li><p><strong>boundary</strong> (<em>(</em><em>3</em><em>, </em><em>2</em><em>) or </em><em>(</em><em>3</em><em>, </em><em>) or </em><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.11)"><em>int</em></a><em>, </em><em>optional</em>) – boundary condition for all boundaries (or the same for all)</p></li>
+<li><p><strong>a</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.11)"><em>int</em></a><em> or </em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.11)"><em>list</em></a><em> of </em><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.11)"><em>int</em></a><em>, </em><em>optional</em>) – boundary condition for the first unit-cell vector direction</p></li>
+<li><p><strong>b</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.11)"><em>int</em></a><em> or </em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.11)"><em>list</em></a><em> of </em><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.11)"><em>int</em></a><em>, </em><em>optional</em>) – boundary condition for the second unit-cell vector direction</p></li>
+<li><p><strong>c</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.11)"><em>int</em></a><em> or </em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.11)"><em>list</em></a><em> of </em><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.11)"><em>int</em></a><em>, </em><em>optional</em>) – boundary condition for the third unit-cell vector direction</p></li>
 </ul>
 </dd>
 <dt class="field-even">Raises</dt>
-<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/exceptions.html#ValueError" title="(in Python v3.10)"><strong>ValueError</strong></a> – if specifying periodic one one boundary, so must the opposite side.</p>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/exceptions.html#ValueError" title="(in Python v3.11)"><strong>ValueError</strong></a> – if specifying periodic one one boundary, so must the opposite side.</p>
 </dd>
 </dl>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="sisl.Grid.set_geom">
-<span class="sig-name descname"><span class="pre">set_geom</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">geometry</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/sisl/grid.html#Grid.set_geom"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sisl.Grid.set_geom" title="Permalink to this definition"></a></dt>
-<dd><p>deprecated set_geom</p>
 </dd></dl>
 
 <dl class="py method">
@@ -1062,7 +1058,7 @@ to attach atoms to the grid.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>r</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.10)"><em>float</em></a><em> or </em><em>array-like of len 3</em><em>, </em><em>optional</em>) – <p>the radius of the filter in Angstrom for each axis.
+<li><p><strong>r</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.11)"><em>float</em></a><em> or </em><em>array-like</em><em> of </em><em>len 3</em><em>, </em><em>optional</em>) – <p>the radius of the filter in Angstrom for each axis.
 If the method is <code class="docutils literal notranslate"><span class="pre">&quot;gaussian&quot;</span></code>, this is the standard deviation!</p>
 <p>If a single float is provided, then the same distance will be used for all axes.</p>
 </p></li>
@@ -1074,7 +1070,7 @@ The default is wrap, which accounts for periodic conditions.</p></li>
 </dl>
 <div class="admonition seealso">
 <p class="admonition-title">See also</p>
-<p><a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.ndimage.gaussian_filter.html#scipy.ndimage.gaussian_filter" title="(in SciPy v1.8.0)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">scipy.ndimage.gaussian_filter</span></code></a></p>
+<p><a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.ndimage.gaussian_filter.html#scipy.ndimage.gaussian_filter" title="(in SciPy v1.10.0)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">scipy.ndimage.gaussian_filter</span></code></a></p>
 </div>
 </dd></dl>
 
@@ -1087,7 +1083,7 @@ The default is wrap, which accounts for periodic conditions.</p></li>
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>idx</strong> (<em>array_like</em>) – the indices of the grid axis <em class="xref py py-obj">axis</em> to be retained</p></li>
-<li><p><strong>axis</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.10)"><em>int</em></a>) – the axis segment from which we retain the indices <em class="xref py py-obj">idx</em></p></li>
+<li><p><strong>axis</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.11)"><em>int</em></a>) – the axis segment from which we retain the indices <em class="xref py py-obj">idx</em></p></li>
 </ul>
 </dd>
 </dl>
@@ -1101,11 +1097,11 @@ The default is wrap, which accounts for periodic conditions.</p></li>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>idx</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.10)"><em>int</em></a>) – the index of the grid axis <em class="xref py py-obj">axis</em> to be retained
+<li><p><strong>idx</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.11)"><em>int</em></a>) – the index of the grid axis <em class="xref py py-obj">axis</em> to be retained
 for <code class="docutils literal notranslate"><span class="pre">above=True</span></code> grid[idx:,…]
 for <code class="docutils literal notranslate"><span class="pre">above=False</span></code> grid[:idx,…]</p></li>
-<li><p><strong>axis</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.10)"><em>int</em></a>) – the axis segment from which we retain the indices <em class="xref py py-obj">idx</em></p></li>
-<li><p><strong>above</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.10)"><em>bool</em></a>) – <dl class="simple">
+<li><p><strong>axis</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.11)"><em>int</em></a>) – the axis segment from which we retain the indices <em class="xref py py-obj">idx</em></p></li>
+<li><p><strong>above</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.11)"><em>bool</em></a>) – <dl class="simple">
 <dt>if <code class="docutils literal notranslate"><span class="pre">True</span></code> will retain the grid:</dt><dd><p><code class="docutils literal notranslate"><span class="pre">grid[idx:,...]</span></code></p>
 </dd>
 <dt>else it will retain the grid:</dt><dd><p><code class="docutils literal notranslate"><span class="pre">grid[:idx,...]</span></code></p>
@@ -1123,7 +1119,7 @@ for <code class="docutils literal notranslate"><span class="pre">above=False</sp
 <dd><p>Sum grid values along axis <em class="xref py py-obj">axis</em>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>axis</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.10)"><em>int</em></a>) – unit-cell direction to sum across</p>
+<dd class="field-odd"><p><strong>axis</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.11)"><em>int</em></a>) – unit-cell direction to sum across</p>
 </dd>
 </dl>
 </dd></dl>
@@ -1136,8 +1132,8 @@ for <code class="docutils literal notranslate"><span class="pre">above=False</sp
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>a</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.10)"><em>int</em></a>) – axes indices to be swapped</p></li>
-<li><p><strong>b</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.10)"><em>int</em></a>) – axes indices to be swapped</p></li>
+<li><p><strong>a</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.11)"><em>int</em></a>) – axes indices to be swapped</p></li>
+<li><p><strong>b</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.11)"><em>int</em></a>) – axes indices to be swapped</p></li>
 </ul>
 </dd>
 </dl>
@@ -1151,8 +1147,8 @@ for <code class="docutils literal notranslate"><span class="pre">above=False</sp
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>reps</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.10)"><em>int</em></a>) – number of tiles (repetitions)</p></li>
-<li><p><strong>axis</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.10)"><em>int</em></a>) – direction of tiling, 0, 1, 2 according to the cell-direction</p></li>
+<li><p><strong>reps</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.11)"><em>int</em></a>) – number of tiles (repetitions)</p></li>
+<li><p><strong>axis</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.11)"><em>int</em></a>) – direction of tiling, 0, 1, 2 according to the cell-direction</p></li>
 </ul>
 </dd>
 </dl>
@@ -1175,7 +1171,7 @@ Subsequently the returned matrix may be used in pyamg for solutions etc.</p>
 For details we refer to <a class="reference external" href="pyamghttps://github.com/pyamg/pyamg/">pyamg</a>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>dtype</strong> (<a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.dtype.html#numpy.dtype" title="(in NumPy v1.22)"><em>numpy.dtype</em></a><em>, </em><em>optional</em>) – data-type used for the sparse matrix, default to use the grid data-type</p>
+<dd class="field-odd"><p><strong>dtype</strong> (<a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.dtype.html#numpy.dtype" title="(in NumPy v1.24)"><em>numpy.dtype</em></a><em>, </em><em>optional</em>) – data-type used for the sparse matrix, default to use the grid data-type</p>
 </dd>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><p><ul class="simple">
@@ -1224,7 +1220,7 @@ For details we refer to <a class="reference external" href="pyamghttps://github.
 <dd><p>Writes grid to the <code class="xref py py-obj docutils literal notranslate"><span class="pre">Sile</span></code> using <em class="xref py py-obj">write_grid</em></p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>sile</strong> (<a class="reference internal" href="../io/generated/sisl.io.Sile.html#sisl.io.Sile" title="sisl.io.Sile"><em>Sile</em></a><em>, </em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><em>str</em></a><em> or </em><a class="reference external" href="https://docs.python.org/3/library/pathlib.html#pathlib.Path" title="(in Python v3.10)"><em>pathlib.Path</em></a>) – a <code class="xref py py-obj docutils literal notranslate"><span class="pre">Sile</span></code> object which will be used to write the grid
+<dd class="field-odd"><p><strong>sile</strong> (<a class="reference internal" href="../io/generated/sisl.io.Sile.html#sisl.io.Sile" title="sisl.io.Sile"><em>Sile</em></a><em>, </em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.11)"><em>str</em></a><em> or </em><a class="reference external" href="https://docs.python.org/3/library/pathlib.html#pathlib.Path" title="(in Python v3.11)"><em>pathlib.Path</em></a>) – a <code class="xref py py-obj docutils literal notranslate"><span class="pre">Sile</span></code> object which will be used to write the grid
 if it is a string it will create a new sile using <code class="xref py py-obj docutils literal notranslate"><span class="pre">get_sile</span></code></p>
 </dd>
 </dl>
@@ -1245,7 +1241,7 @@ if it is a string it will create a new sile using <code class="xref py py-obj do
   <hr/>
 
   <div role="contentinfo">
-    <p>&#169; Copyright 2015-2022, Nick Papior.</p>
+    <p>&#169; Copyright 2015-2023, Nick Papior.</p>
   </div>
 
   Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a

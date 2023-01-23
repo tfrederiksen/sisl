@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Unit conversion &mdash; sisl 0.1.dev1+g3fe7e49 documentation</title>
+  <title>Unit conversion &mdash; sisl 0.1.dev1+g851d78c documentation</title>
       <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="../_static/plot_directive.css" type="text/css" />
@@ -17,9 +17,11 @@
         <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
         <script src="../_static/jquery.js"></script>
         <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../_static/doctools.js"></script>
+        <script src="../_static/sphinx_highlight.js"></script>
         <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-        <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
+        <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.1/dist/embed-amd.js"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -35,7 +37,7 @@
             <a href="../index.html" class="icon icon-home"> sisl
           </a>
               <div class="version">
-                0.1.dev1+g3fe7e49
+                0.1.dev1+g851d78c
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
@@ -47,9 +49,11 @@
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <ul>
 <li class="toctree-l1"><a class="reference internal" href="../introduction.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../changelog/index.html">Release notes</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../contribute.html">Contributing</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../other.html">Other resources</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../cite.html">Citing sisl</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../publications.html">Publications using sisl</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">User Guide</span></p>
 <ul>
@@ -73,6 +77,7 @@
 <li class="toctree-l2"><a class="reference internal" href="default_geom.html">Common geometries</a></li>
 <li class="toctree-l2"><a class="reference internal" href="physics.html">Physical objects</a></li>
 <li class="toctree-l2"><a class="reference internal" href="mixing.html">Mixing self-consistent quantities</a></li>
+<li class="toctree-l2"><a class="reference internal" href="viz/index.html">Visualization</a></li>
 <li class="toctree-l2 current"><a class="reference internal" href="unit_constant.html">Units and constants</a><ul class="current">
 <li class="toctree-l3 current"><a class="current reference internal" href="#">Unit conversion</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="generated/sisl.unit.unit_group.html">unit_group</a></li>
@@ -104,10 +109,10 @@
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
-          <li><a href="index.html">API documentation</a> &raquo;</li>
-          <li><a href="unit_constant.html">Units and constants</a> &raquo;</li>
-      <li>Unit conversion</li>
+      <li><a href="../index.html" class="icon icon-home"></a></li>
+          <li class="breadcrumb-item"><a href="index.html">API documentation</a></li>
+          <li class="breadcrumb-item"><a href="unit_constant.html">Units and constants</a></li>
+      <li class="breadcrumb-item active">Unit conversion</li>
       <li class="wy-breadcrumbs-aside">
             <a href="../_sources/api/unit_constant.unit.rst.txt" rel="nofollow"> View page source</a>
       </li>
@@ -142,14 +147,14 @@
 }
 </style>
 <section id="module-sisl.unit">
-<span id="unit-conversion"></span><span id="unit"></span><h1>Unit conversion<a class="headerlink" href="#module-sisl.unit" title="Permalink to this headline"></a></h1>
+<span id="unit-conversion"></span><span id="unit"></span><h1>Unit conversion<a class="headerlink" href="#module-sisl.unit" title="Permalink to this heading"></a></h1>
 <p>Generic conversion utility between different units.</p>
 <p>All different codes unit conversion routines
 should adhere to the same routine names for consistency and
 readability. This package should supply a subpackage for each
 code where specific unit conversions are required. I.e. if
 the codes unit conversion are not the same as the sisl defaults.</p>
-<table class="longtable docutils align-default">
+<table class="autosummary longtable docutils align-default">
 <colgroup>
 <col style="width: 10%" />
 <col style="width: 90%" />
@@ -159,7 +164,7 @@ the codes unit conversion are not the same as the sisl defaults.</p>
 <td><p>The group of units that <em class="xref py py-obj">unit</em> belong to</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="generated/sisl.unit.unit_convert.html#sisl.unit.unit_convert" title="sisl.unit.unit_convert"><code class="xref py py-obj docutils literal notranslate"><span class="pre">unit_convert</span></code></a>(fr, to[, opts, tbl])</p></td>
-<td><p>Factor that takes 'fr' to the units of 'to'.</p></td>
+<td><p>Factor that takes <em class="xref py py-obj">fr</em> to the units of <em class="xref py py-obj">to</em></p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="generated/sisl.unit.unit_default.html#sisl.unit.unit_default" title="sisl.unit.unit_default"><code class="xref py py-obj docutils literal notranslate"><span class="pre">unit_default</span></code></a>(group[, tbl])</p></td>
 <td><p>The default unit of the unit group <em class="xref py py-obj">group</em>.</p></td>
@@ -176,7 +181,7 @@ the units defined in the respective code.</p>
 complex units (Ry/kg/Bohr N) while <a class="reference internal" href="generated/sisl.unit.unit_convert.html#sisl.unit.unit_convert" title="sisl.unit.unit_convert"><code class="xref py py-obj docutils literal notranslate"><span class="pre">unit_convert</span></code></a> is the basic unit-conversion
 table that only converts simple units. E.g. Ry to eV etc.</p>
 <section id="module-sisl.unit.siesta">
-<span id="siesta-units"></span><h2>Siesta units<a class="headerlink" href="#module-sisl.unit.siesta" title="Permalink to this headline"></a></h2>
+<span id="siesta-units"></span><h2>Siesta units<a class="headerlink" href="#module-sisl.unit.siesta" title="Permalink to this heading"></a></h2>
 <p>This subpackage implements the unit conversions used in <a class="reference external" href="https://siesta-project.org">Siesta</a>.</p>
 <p>To use the unit conversion from <a class="reference external" href="https://siesta-project.org">Siesta</a>, simply import <code class="xref py py-obj docutils literal notranslate"><span class="pre">units</span></code> as:</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sisl.unit</span> <span class="kn">import</span> <span class="n">units</span>
@@ -199,7 +204,7 @@ will use the unit definitions in <a class="reference external" href="https://sie
   <hr/>
 
   <div role="contentinfo">
-    <p>&#169; Copyright 2015-2022, Nick Papior.</p>
+    <p>&#169; Copyright 2015-2023, Nick Papior.</p>
   </div>
 
   Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a

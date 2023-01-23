@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>spin_squared &mdash; sisl 0.1.dev1+g3fe7e49 documentation</title>
+  <title>spin_squared &mdash; sisl 0.1.dev1+g851d78c documentation</title>
       <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="../../_static/plot_directive.css" type="text/css" />
@@ -17,9 +17,11 @@
         <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
         <script src="../../_static/jquery.js"></script>
         <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/sphinx_highlight.js"></script>
         <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-        <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
+        <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.1/dist/embed-amd.js"></script>
         <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
         <script defer="defer" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script src="../../_static/js/theme.js"></script>
@@ -37,7 +39,7 @@
             <a href="../../index.html" class="icon icon-home"> sisl
           </a>
               <div class="version">
-                0.1.dev1+g3fe7e49
+                0.1.dev1+g851d78c
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
@@ -49,9 +51,11 @@
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../introduction.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../changelog/index.html">Release notes</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../contribute.html">Contributing</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../other.html">Other resources</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../cite.html">Citing sisl</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../publications.html">Publications using sisl</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">User Guide</span></p>
 <ul>
@@ -79,8 +83,7 @@
 <li class="toctree-l3 current"><a class="reference internal" href="../physics.electron.html">Electron related functions</a><ul class="current">
 <li class="toctree-l4"><a class="reference internal" href="sisl.physics.electron.DOS.html">DOS</a></li>
 <li class="toctree-l4"><a class="reference internal" href="sisl.physics.electron.PDOS.html">PDOS</a></li>
-<li class="toctree-l4"><a class="reference internal" href="sisl.physics.electron.velocity.html">velocity</a></li>
-<li class="toctree-l4"><a class="reference internal" href="sisl.physics.electron.velocity_matrix.html">velocity_matrix</a></li>
+<li class="toctree-l4"><a class="reference internal" href="sisl.physics.electron.COP.html">COP</a></li>
 <li class="toctree-l4"><a class="reference internal" href="sisl.physics.electron.berry_phase.html">berry_phase</a></li>
 <li class="toctree-l4"><a class="reference internal" href="sisl.physics.electron.berry_curvature.html">berry_curvature</a></li>
 <li class="toctree-l4"><a class="reference internal" href="sisl.physics.electron.conductivity.html">conductivity</a></li>
@@ -96,6 +99,7 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../mixing.html">Mixing self-consistent quantities</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../viz/index.html">Visualization</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../unit_constant.html">Units and constants</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../utilities.html">Utilities</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../io/index.html">Input/Output</a></li>
@@ -116,11 +120,11 @@
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
-          <li><a href="../index.html">API documentation</a> &raquo;</li>
-          <li><a href="../physics.html">Physical objects</a> &raquo;</li>
-          <li><a href="../physics.electron.html">Electron related functions</a> &raquo;</li>
-      <li>spin_squared</li>
+      <li><a href="../../index.html" class="icon icon-home"></a></li>
+          <li class="breadcrumb-item"><a href="../index.html">API documentation</a></li>
+          <li class="breadcrumb-item"><a href="../physics.html">Physical objects</a></li>
+          <li class="breadcrumb-item"><a href="../physics.electron.html">Electron related functions</a></li>
+      <li class="breadcrumb-item active">spin_squared</li>
       <li class="wy-breadcrumbs-aside">
             <a href="../../_sources/api/generated/sisl.physics.electron.spin_squared.rst.txt" rel="nofollow"> View page source</a>
       </li>
@@ -155,7 +159,7 @@
 }
 </style>
 <section id="spin-squared">
-<h1>spin_squared<a class="headerlink" href="#spin-squared" title="Permalink to this headline"></a></h1>
+<h1>spin_squared<a class="headerlink" href="#spin-squared" title="Permalink to this heading"></a></h1>
 <dl class="py function">
 <dt class="sig sig-object py" id="sisl.physics.electron.spin_squared">
 <span class="sig-prename descclassname"><span class="pre">sisl.physics.electron.</span></span><span class="sig-name descname"><span class="pre">spin_squared</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">state_alpha</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">state_beta</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">S</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/sisl/physics/electron.html#spin_squared"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sisl.physics.electron.spin_squared" title="Permalink to this definition"></a></dt>
@@ -204,7 +208,7 @@ have been evaluated at.</p></li>
   <hr/>
 
   <div role="contentinfo">
-    <p>&#169; Copyright 2015-2022, Nick Papior.</p>
+    <p>&#169; Copyright 2015-2023, Nick Papior.</p>
   </div>
 
   Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a

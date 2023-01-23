@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>sisl.io.siesta.tsvncSileSiesta &mdash; sisl 0.1.dev1+g3fe7e49 documentation</title>
+  <title>sisl.io.siesta.tsvncSileSiesta &mdash; sisl 0.1.dev1+g851d78c documentation</title>
       <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="../../../_static/plot_directive.css" type="text/css" />
@@ -17,13 +17,15 @@
         <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
         <script src="../../../_static/jquery.js"></script>
         <script src="../../../_static/underscore.js"></script>
+        <script src="../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../../../_static/doctools.js"></script>
+        <script src="../../../_static/sphinx_highlight.js"></script>
         <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-        <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
+        <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.1/dist/embed-amd.js"></script>
     <script src="../../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
-    <link rel="next" title="sisl.io.tbtrans.tbtncSileTBtrans" href="sisl.io.tbtrans.tbtncSileTBtrans.html" />
+    <link rel="next" title="TBtrans" href="../tbtrans.html" />
     <link rel="prev" title="sisl.io.siesta.tsgfSileSiesta" href="sisl.io.siesta.tsgfSileSiesta.html" /> 
 </head>
 
@@ -35,7 +37,7 @@
             <a href="../../../index.html" class="icon icon-home"> sisl
           </a>
               <div class="version">
-                0.1.dev1+g3fe7e49
+                0.1.dev1+g851d78c
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
@@ -47,9 +49,11 @@
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../../introduction.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../changelog/index.html">Release notes</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../contribute.html">Contributing</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../other.html">Other resources</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../cite.html">Citing sisl</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../publications.html">Publications using sisl</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">User Guide</span></p>
 <ul>
@@ -73,14 +77,17 @@
 <li class="toctree-l2"><a class="reference internal" href="../../default_geom.html">Common geometries</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../physics.html">Physical objects</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../mixing.html">Mixing self-consistent quantities</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../viz/index.html">Visualization</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../unit_constant.html">Units and constants</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../utilities.html">Utilities</a></li>
 <li class="toctree-l2 current"><a class="reference internal" href="../index.html">Input/Output</a><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="../basic.html">Basic IO methods/classes</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../generic.html">Generic files</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../bigdft.html">BigDFT</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../fhiaims.html">FHIaims</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../gulp.html">GULP</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../openmx.html">OpenMX</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../orca.html">ORCA</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../scaleup.html">ScaleUP</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../siesta.html">Siesta</a></li>
 <li class="toctree-l3 current"><a class="reference internal" href="../siesta.html#transiesta">TranSiesta</a><ul class="current">
@@ -90,7 +97,8 @@
 <li class="toctree-l4 current"><a class="current reference internal" href="#">sisl.io.siesta.tsvncSileSiesta</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="../siesta.html#module-sisl.io.tbtrans">TBtrans</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../tbtrans.html">TBtrans</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../tbtrans.html#phtrans">PHtrans</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../vasp.html">VASP</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../wannier90.html">Wannier90</a></li>
 </ul>
@@ -112,11 +120,11 @@
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="../../../index.html" class="icon icon-home"></a> &raquo;</li>
-          <li><a href="../../index.html">API documentation</a> &raquo;</li>
-          <li><a href="../index.html">Input/Output</a> &raquo;</li>
-          <li><a href="../siesta.html">Siesta</a> &raquo;</li>
-      <li>sisl.io.siesta.tsvncSileSiesta</li>
+      <li><a href="../../../index.html" class="icon icon-home"></a></li>
+          <li class="breadcrumb-item"><a href="../../index.html">API documentation</a></li>
+          <li class="breadcrumb-item"><a href="../index.html">Input/Output</a></li>
+          <li class="breadcrumb-item"><a href="../siesta.html">Siesta</a></li>
+      <li class="breadcrumb-item active">sisl.io.siesta.tsvncSileSiesta</li>
       <li class="wy-breadcrumbs-aside">
             <a href="../../../_sources/api/io/generated/sisl.io.siesta.tsvncSileSiesta.rst.txt" rel="nofollow"> View page source</a>
       </li>
@@ -151,11 +159,11 @@
 }
 </style>
 <section id="sisl-io-siesta-tsvncsilesiesta">
-<h1>sisl.io.siesta.tsvncSileSiesta<a class="headerlink" href="#sisl-io-siesta-tsvncsilesiesta" title="Permalink to this headline"></a></h1>
+<h1>sisl.io.siesta.tsvncSileSiesta<a class="headerlink" href="#sisl-io-siesta-tsvncsilesiesta" title="Permalink to this heading"></a></h1>
 <dl class="py class">
 <dt class="sig sig-object py" id="sisl.io.siesta.tsvncSileSiesta">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">sisl.io.siesta.</span></span><span class="sig-name descname"><span class="pre">tsvncSileSiesta</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mode</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'r'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lvl</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">access</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#sisl.io.siesta.tsvncSileSiesta" title="Permalink to this definition"></a></dt>
-<dd><p>Bases: <a class="reference internal" href="sisl.io.siesta.gridncSileSiesta.html#sisl.io.siesta.gridncSileSiesta" title="sisl.io.siesta.gridncSileSiesta"><code class="xref py py-class docutils literal notranslate"><span class="pre">sisl.io.siesta.gridncSileSiesta</span></code></a></p>
+<dd><p>Bases: <a class="reference internal" href="sisl.io.siesta.gridncSileSiesta.html#sisl.io.siesta.gridncSileSiesta" title="sisl.io.siesta.gridncSileSiesta"><code class="xref py py-class docutils literal notranslate"><span class="pre">gridncSileSiesta</span></code></a></p>
 <p>TranSiesta potential input Grid file object</p>
 <p>This potential input file is mainly intended for the Hartree solution
 which complements N-electrode calculations in TranSiesta.</p>
@@ -167,7 +175,7 @@ which complements N-electrode calculations in TranSiesta.</p>
 </dl>
 </div>
 <p class="rubric">Methods</p>
-<table class="longtable docutils align-default">
+<table class="autosummary longtable docutils align-default">
 <colgroup>
 <col style="width: 10%" />
 <col style="width: 90%" />
@@ -238,7 +246,7 @@ which complements N-electrode calculations in TranSiesta.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sisl.io.siesta.tsvncSileSiesta.iter">
-<span class="sig-name descname"><span class="pre">iter</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">group</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dimension</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">variable</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">levels</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">-</span> <span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">root</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#sisl.io.siesta.tsvncSileSiesta.iter" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">iter</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">group</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dimension</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">variable</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">levels</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">-1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">root</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#sisl.io.siesta.tsvncSileSiesta.iter" title="Permalink to this definition"></a></dt>
 <dd><p>Iterator on all groups, variables and dimensions.</p>
 <p>This iterator iterates through all groups, variables and dimensions in the <code class="docutils literal notranslate"><span class="pre">Dataset</span></code></p>
 <p>The generator sequence will _always_ be:</p>
@@ -277,6 +285,12 @@ sub-groups this iterator will return.</p></li>
 </div>
 </dd></dl>
 
+<dl class="py attribute">
+<dt class="sig sig-object py" id="sisl.io.siesta.tsvncSileSiesta.plot">
+<span class="sig-name descname"><span class="pre">plot</span></span><a class="headerlink" href="#sisl.io.siesta.tsvncSileSiesta.plot" title="Permalink to this definition"></a></dt>
+<dd><p>Handles all plotting possibilities for a class</p>
+</dd></dl>
+
 <dl class="py method">
 <dt class="sig sig-object py" id="sisl.io.siesta.tsvncSileSiesta.read">
 <span class="sig-name descname"><span class="pre">read</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#sisl.io.siesta.tsvncSileSiesta.read" title="Permalink to this definition"></a></dt>
@@ -300,6 +314,11 @@ and call it with the remaining <code class="docutils literal notranslate"><span 
 <span class="sig-name descname"><span class="pre">read_supercell</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sisl.io.siesta.tsvncSileSiesta.read_supercell" title="Permalink to this definition"></a></dt>
 <dd><p>Returns a SuperCell object from a Siesta.grid.nc file</p>
 </dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sisl.io.siesta.tsvncSileSiesta.to_json">
+<span class="sig-name descname"><span class="pre">to_json</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sisl.io.siesta.tsvncSileSiesta.to_json" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sisl.io.siesta.tsvncSileSiesta.write">
@@ -334,13 +353,13 @@ and call it with the remaining <code class="docutils literal notranslate"><span 
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
         <a href="sisl.io.siesta.tsgfSileSiesta.html" class="btn btn-neutral float-left" title="sisl.io.siesta.tsgfSileSiesta" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="sisl.io.tbtrans.tbtncSileTBtrans.html" class="btn btn-neutral float-right" title="sisl.io.tbtrans.tbtncSileTBtrans" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="../tbtrans.html" class="btn btn-neutral float-right" title="TBtrans" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>
 
   <div role="contentinfo">
-    <p>&#169; Copyright 2015-2022, Nick Papior.</p>
+    <p>&#169; Copyright 2015-2023, Nick Papior.</p>
   </div>
 
   Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a

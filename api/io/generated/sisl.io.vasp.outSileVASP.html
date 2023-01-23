@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>sisl.io.vasp.outSileVASP &mdash; sisl 0.1.dev1+g3fe7e49 documentation</title>
+  <title>sisl.io.vasp.outSileVASP &mdash; sisl 0.1.dev1+g851d78c documentation</title>
       <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="../../../_static/plot_directive.css" type="text/css" />
@@ -17,9 +17,11 @@
         <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
         <script src="../../../_static/jquery.js"></script>
         <script src="../../../_static/underscore.js"></script>
+        <script src="../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../../../_static/doctools.js"></script>
+        <script src="../../../_static/sphinx_highlight.js"></script>
         <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-        <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
+        <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.1/dist/embed-amd.js"></script>
     <script src="../../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
@@ -35,7 +37,7 @@
             <a href="../../../index.html" class="icon icon-home"> sisl
           </a>
               <div class="version">
-                0.1.dev1+g3fe7e49
+                0.1.dev1+g851d78c
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
@@ -47,9 +49,11 @@
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../../introduction.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../changelog/index.html">Release notes</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../contribute.html">Contributing</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../other.html">Other resources</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../cite.html">Citing sisl</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../publications.html">Publications using sisl</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">User Guide</span></p>
 <ul>
@@ -73,18 +77,22 @@
 <li class="toctree-l2"><a class="reference internal" href="../../default_geom.html">Common geometries</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../physics.html">Physical objects</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../mixing.html">Mixing self-consistent quantities</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../viz/index.html">Visualization</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../unit_constant.html">Units and constants</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../utilities.html">Utilities</a></li>
 <li class="toctree-l2 current"><a class="reference internal" href="../index.html">Input/Output</a><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="../basic.html">Basic IO methods/classes</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../generic.html">Generic files</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../bigdft.html">BigDFT</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../fhiaims.html">FHIaims</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../gulp.html">GULP</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../openmx.html">OpenMX</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../orca.html">ORCA</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../scaleup.html">ScaleUP</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../siesta.html">Siesta</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../siesta.html#transiesta">TranSiesta</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../siesta.html#module-sisl.io.tbtrans">TBtrans</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../tbtrans.html">TBtrans</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../tbtrans.html#phtrans">PHtrans</a></li>
 <li class="toctree-l3 current"><a class="reference internal" href="../vasp.html">VASP</a><ul class="current">
 <li class="toctree-l4"><a class="reference internal" href="sisl.io.vasp.carSileVASP.html">sisl.io.vasp.carSileVASP</a></li>
 <li class="toctree-l4"><a class="reference internal" href="sisl.io.vasp.doscarSileVASP.html">sisl.io.vasp.doscarSileVASP</a></li>
@@ -114,11 +122,11 @@
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="../../../index.html" class="icon icon-home"></a> &raquo;</li>
-          <li><a href="../../index.html">API documentation</a> &raquo;</li>
-          <li><a href="../index.html">Input/Output</a> &raquo;</li>
-          <li><a href="../vasp.html">VASP</a> &raquo;</li>
-      <li>sisl.io.vasp.outSileVASP</li>
+      <li><a href="../../../index.html" class="icon icon-home"></a></li>
+          <li class="breadcrumb-item"><a href="../../index.html">API documentation</a></li>
+          <li class="breadcrumb-item"><a href="../index.html">Input/Output</a></li>
+          <li class="breadcrumb-item"><a href="../vasp.html">VASP</a></li>
+      <li class="breadcrumb-item active">sisl.io.vasp.outSileVASP</li>
       <li class="wy-breadcrumbs-aside">
             <a href="../../../_sources/api/io/generated/sisl.io.vasp.outSileVASP.rst.txt" rel="nofollow"> View page source</a>
       </li>
@@ -153,14 +161,14 @@
 }
 </style>
 <section id="sisl-io-vasp-outsilevasp">
-<h1>sisl.io.vasp.outSileVASP<a class="headerlink" href="#sisl-io-vasp-outsilevasp" title="Permalink to this headline"></a></h1>
+<h1>sisl.io.vasp.outSileVASP<a class="headerlink" href="#sisl-io-vasp-outsilevasp" title="Permalink to this heading"></a></h1>
 <dl class="py class">
 <dt class="sig sig-object py" id="sisl.io.vasp.outSileVASP">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">sisl.io.vasp.</span></span><span class="sig-name descname"><span class="pre">outSileVASP</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mode</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'r'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">comment</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#sisl.io.vasp.outSileVASP" title="Permalink to this definition"></a></dt>
-<dd><p>Bases: <a class="reference internal" href="sisl.io.vasp.SileVASP.html#sisl.io.vasp.SileVASP" title="sisl.io.vasp.SileVASP"><code class="xref py py-class docutils literal notranslate"><span class="pre">sisl.io.vasp.SileVASP</span></code></a></p>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">sisl.io.vasp.</span></span><span class="sig-name descname"><span class="pre">outSileVASP</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#sisl.io.vasp.outSileVASP" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="sisl.io.vasp.SileVASP.html#sisl.io.vasp.SileVASP" title="sisl.io.vasp.SileVASP"><code class="xref py py-class docutils literal notranslate"><span class="pre">SileVASP</span></code></a></p>
 <p>Output file from VASP</p>
 <p class="rubric">Methods</p>
-<table class="longtable docutils align-default">
+<table class="autosummary longtable docutils align-default">
 <colgroup>
 <col style="width: 10%" />
 <col style="width: 90%" />
@@ -169,38 +177,41 @@
 <tr class="row-odd"><td><p><a class="reference internal" href="#sisl.io.vasp.outSileVASP.accuracy_reached" title="sisl.io.vasp.outSileVASP.accuracy_reached"><code class="xref py py-obj docutils literal notranslate"><span class="pre">accuracy_reached</span></code></a>()</p></td>
 <td><p>True if the line &quot;reached required accuracy&quot; was found.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#sisl.io.vasp.outSileVASP.completed" title="sisl.io.vasp.outSileVASP.completed"><code class="xref py py-obj docutils literal notranslate"><span class="pre">completed</span></code></a>()</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#sisl.io.vasp.outSileVASP.close" title="sisl.io.vasp.outSileVASP.close"><code class="xref py py-obj docutils literal notranslate"><span class="pre">close</span></code></a>()</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#sisl.io.vasp.outSileVASP.completed" title="sisl.io.vasp.outSileVASP.completed"><code class="xref py py-obj docutils literal notranslate"><span class="pre">completed</span></code></a>()</p></td>
 <td><p>True if the line &quot;General timing and accounting&quot; was found.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#sisl.io.vasp.outSileVASP.cpu_time" title="sisl.io.vasp.outSileVASP.cpu_time"><code class="xref py py-obj docutils literal notranslate"><span class="pre">cpu_time</span></code></a>([flag])</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#sisl.io.vasp.outSileVASP.cpu_time" title="sisl.io.vasp.outSileVASP.cpu_time"><code class="xref py py-obj docutils literal notranslate"><span class="pre">cpu_time</span></code></a>([flag])</p></td>
 <td><p>Returns the consumed cpu time (in seconds) from a given section</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#sisl.io.vasp.outSileVASP.dir_file" title="sisl.io.vasp.outSileVASP.dir_file"><code class="xref py py-obj docutils literal notranslate"><span class="pre">dir_file</span></code></a>([filename, filename_base])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#sisl.io.vasp.outSileVASP.dir_file" title="sisl.io.vasp.outSileVASP.dir_file"><code class="xref py py-obj docutils literal notranslate"><span class="pre">dir_file</span></code></a>([filename, filename_base])</p></td>
 <td><p>File of the current <em class="xref py py-obj">Sile</em></p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#sisl.io.vasp.outSileVASP.geometry_group" title="sisl.io.vasp.outSileVASP.geometry_group"><code class="xref py py-obj docutils literal notranslate"><span class="pre">geometry_group</span></code></a>(geometry[, ret_index])</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#sisl.io.vasp.outSileVASP.geometry_group" title="sisl.io.vasp.outSileVASP.geometry_group"><code class="xref py py-obj docutils literal notranslate"><span class="pre">geometry_group</span></code></a>(geometry[, ret_index])</p></td>
 <td><p>Order atoms in geometry according to species such that all of one specie is consecutive</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#sisl.io.vasp.outSileVASP.read" title="sisl.io.vasp.outSileVASP.read"><code class="xref py py-obj docutils literal notranslate"><span class="pre">read</span></code></a>(*args, **kwargs)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#sisl.io.vasp.outSileVASP.read" title="sisl.io.vasp.outSileVASP.read"><code class="xref py py-obj docutils literal notranslate"><span class="pre">read</span></code></a>(*args, **kwargs)</p></td>
 <td><p>Generic read method which should be overloaded in child-classes</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#sisl.io.vasp.outSileVASP.read_energy" title="sisl.io.vasp.outSileVASP.read_energy"><code class="xref py py-obj docutils literal notranslate"><span class="pre">read_energy</span></code></a>([all])</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#sisl.io.vasp.outSileVASP.read_energy" title="sisl.io.vasp.outSileVASP.read_energy"><code class="xref py py-obj docutils literal notranslate"><span class="pre">read_energy</span></code></a>([all])</p></td>
 <td><p>Reads the energy specification from OUTCAR and returns energy dictionary in units of eV</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#sisl.io.vasp.outSileVASP.write" title="sisl.io.vasp.outSileVASP.write"><code class="xref py py-obj docutils literal notranslate"><span class="pre">write</span></code></a>(*args, **kwargs)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#sisl.io.vasp.outSileVASP.write" title="sisl.io.vasp.outSileVASP.write"><code class="xref py py-obj docutils literal notranslate"><span class="pre">write</span></code></a>(*args, **kwargs)</p></td>
 <td><p>Generic write method which should be overloaded in child-classes</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#sisl.io.vasp.outSileVASP.base_file" title="sisl.io.vasp.outSileVASP.base_file"><code class="xref py py-obj docutils literal notranslate"><span class="pre">base_file</span></code></a></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#sisl.io.vasp.outSileVASP.base_file" title="sisl.io.vasp.outSileVASP.base_file"><code class="xref py py-obj docutils literal notranslate"><span class="pre">base_file</span></code></a></p></td>
 <td><p>File of the current <em class="xref py py-obj">Sile</em></p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#sisl.io.vasp.outSileVASP.file" title="sisl.io.vasp.outSileVASP.file"><code class="xref py py-obj docutils literal notranslate"><span class="pre">file</span></code></a></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#sisl.io.vasp.outSileVASP.file" title="sisl.io.vasp.outSileVASP.file"><code class="xref py py-obj docutils literal notranslate"><span class="pre">file</span></code></a></p></td>
 <td><p>File of the current <em class="xref py py-obj">Sile</em></p></td>
 </tr>
 </tbody>
 </table>
 <dl class="py method">
 <dt class="sig sig-object py" id="sisl.io.vasp.outSileVASP.__init__">
-<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mode</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'r'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">comment</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#sisl.io.vasp.outSileVASP.__init__" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mode</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'r'</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#sisl.io.vasp.outSileVASP.__init__" title="Permalink to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
@@ -214,6 +225,11 @@
 <em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">base_file</span></span><a class="headerlink" href="#sisl.io.vasp.outSileVASP.base_file" title="Permalink to this definition"></a></dt>
 <dd><p>File of the current <em class="xref py py-obj">Sile</em></p>
 </dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sisl.io.vasp.outSileVASP.close">
+<span class="sig-name descname"><span class="pre">close</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sisl.io.vasp.outSileVASP.close" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sisl.io.vasp.outSileVASP.completed">
@@ -257,7 +273,7 @@ in blocks.</p>
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>geometry</strong> (<a class="reference internal" href="../../generated/sisl.Geometry.html#sisl.Geometry" title="sisl.Geometry"><em>Geometry</em></a>) – geometry to be re-ordered</p></li>
-<li><p><strong>ret_index</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.10)"><em>bool</em></a><em>, </em><em>optional</em>) – return sorted indices</p></li>
+<li><p><strong>ret_index</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.11)"><em>bool</em></a><em>, </em><em>optional</em>) – return sorted indices</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns</dt>
@@ -305,7 +321,7 @@ energy(sigma-&gt;0)      = sigma0</p>
 </dl>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>all</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.10)"><em>bool</em></a><em>, </em><em>optional</em>) – return a list of energy dictionaries from each step</p>
+<dd class="field-odd"><p><strong>all</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.11)"><em>bool</em></a><em>, </em><em>optional</em>) – return a list of energy dictionaries from each step</p>
 </dd>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><p><strong>PropertyDict</strong></p>
@@ -315,6 +331,11 @@ energy(sigma-&gt;0)      = sigma0</p>
 </dd>
 </dl>
 </dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sisl.io.vasp.outSileVASP.to_json">
+<span class="sig-name descname"><span class="pre">to_json</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sisl.io.vasp.outSileVASP.to_json" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sisl.io.vasp.outSileVASP.write">
@@ -343,7 +364,7 @@ and call it with the remaining <code class="docutils literal notranslate"><span 
   <hr/>
 
   <div role="contentinfo">
-    <p>&#169; Copyright 2015-2022, Nick Papior.</p>
+    <p>&#169; Copyright 2015-2023, Nick Papior.</p>
   </div>
 
   Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a

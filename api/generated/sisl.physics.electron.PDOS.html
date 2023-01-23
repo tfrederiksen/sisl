@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>PDOS &mdash; sisl 0.1.dev1+g3fe7e49 documentation</title>
+  <title>PDOS &mdash; sisl 0.1.dev1+g851d78c documentation</title>
       <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="../../_static/plot_directive.css" type="text/css" />
@@ -17,15 +17,17 @@
         <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
         <script src="../../_static/jquery.js"></script>
         <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/sphinx_highlight.js"></script>
         <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-        <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
+        <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.1/dist/embed-amd.js"></script>
         <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
         <script defer="defer" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script src="../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="velocity" href="sisl.physics.electron.velocity.html" />
+    <link rel="next" title="COP" href="sisl.physics.electron.COP.html" />
     <link rel="prev" title="DOS" href="sisl.physics.electron.DOS.html" /> 
 </head>
 
@@ -37,7 +39,7 @@
             <a href="../../index.html" class="icon icon-home"> sisl
           </a>
               <div class="version">
-                0.1.dev1+g3fe7e49
+                0.1.dev1+g851d78c
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
@@ -49,9 +51,11 @@
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../introduction.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../changelog/index.html">Release notes</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../contribute.html">Contributing</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../other.html">Other resources</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../cite.html">Citing sisl</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../publications.html">Publications using sisl</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">User Guide</span></p>
 <ul>
@@ -79,8 +83,7 @@
 <li class="toctree-l3 current"><a class="reference internal" href="../physics.electron.html">Electron related functions</a><ul class="current">
 <li class="toctree-l4"><a class="reference internal" href="sisl.physics.electron.DOS.html">DOS</a></li>
 <li class="toctree-l4 current"><a class="current reference internal" href="#">PDOS</a></li>
-<li class="toctree-l4"><a class="reference internal" href="sisl.physics.electron.velocity.html">velocity</a></li>
-<li class="toctree-l4"><a class="reference internal" href="sisl.physics.electron.velocity_matrix.html">velocity_matrix</a></li>
+<li class="toctree-l4"><a class="reference internal" href="sisl.physics.electron.COP.html">COP</a></li>
 <li class="toctree-l4"><a class="reference internal" href="sisl.physics.electron.berry_phase.html">berry_phase</a></li>
 <li class="toctree-l4"><a class="reference internal" href="sisl.physics.electron.berry_curvature.html">berry_curvature</a></li>
 <li class="toctree-l4"><a class="reference internal" href="sisl.physics.electron.conductivity.html">conductivity</a></li>
@@ -96,6 +99,7 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../mixing.html">Mixing self-consistent quantities</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../viz/index.html">Visualization</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../unit_constant.html">Units and constants</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../utilities.html">Utilities</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../io/index.html">Input/Output</a></li>
@@ -116,11 +120,11 @@
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
-          <li><a href="../index.html">API documentation</a> &raquo;</li>
-          <li><a href="../physics.html">Physical objects</a> &raquo;</li>
-          <li><a href="../physics.electron.html">Electron related functions</a> &raquo;</li>
-      <li>PDOS</li>
+      <li><a href="../../index.html" class="icon icon-home"></a></li>
+          <li class="breadcrumb-item"><a href="../index.html">API documentation</a></li>
+          <li class="breadcrumb-item"><a href="../physics.html">Physical objects</a></li>
+          <li class="breadcrumb-item"><a href="../physics.electron.html">Electron related functions</a></li>
+      <li class="breadcrumb-item active">PDOS</li>
       <li class="wy-breadcrumbs-aside">
             <a href="../../_sources/api/generated/sisl.physics.electron.PDOS.rst.txt" rel="nofollow"> View page source</a>
       </li>
@@ -155,7 +159,7 @@
 }
 </style>
 <section id="pdos">
-<h1>PDOS<a class="headerlink" href="#pdos" title="Permalink to this headline"></a></h1>
+<h1>PDOS<a class="headerlink" href="#pdos" title="Permalink to this heading"></a></h1>
 <dl class="py function">
 <dt class="sig sig-object py" id="sisl.physics.electron.PDOS">
 <span class="sig-prename descclassname"><span class="pre">sisl.physics.electron.</span></span><span class="sig-name descname"><span class="pre">PDOS</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">E</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">eig</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">state</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">S</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">distribution</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'gaussian'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">spin</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/sisl/physics/electron.html#PDOS"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sisl.physics.electron.PDOS" title="Permalink to this definition"></a></dt>
@@ -198,9 +202,9 @@ separated into 4 components (in this order):</p>
 <li><p><strong>S</strong> (<em>array_like</em><em>, </em><em>optional</em>) – overlap matrix used in the <span class="math notranslate nohighlight">\(\langle\psi|\mathbf S|\psi\rangle\)</span> calculation. If <em class="xref py py-obj">None</em> the identity
 matrix is assumed. For non-colinear calculations this matrix may be halve the size of <code class="docutils literal notranslate"><span class="pre">len(state[0,</span> <span class="pre">:])</span></code> to
 trigger the non-colinear calculation of PDOS.</p></li>
-<li><p><strong>distribution</strong> (<em>func</em><em> or </em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><em>str</em></a><em>, </em><em>optional</em>) – a function that accepts <span class="math notranslate nohighlight">\(E-\epsilon\)</span> as argument and calculates the
+<li><p><strong>distribution</strong> (<em>func</em><em> or </em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.11)"><em>str</em></a><em>, </em><em>optional</em>) – a function that accepts <span class="math notranslate nohighlight">\(E-\epsilon\)</span> as argument and calculates the
 distribution function.</p></li>
-<li><p><strong>spin</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><em>str</em></a><em> or </em><a class="reference internal" href="sisl.physics.Spin.html#sisl.physics.Spin" title="sisl.physics.Spin"><em>Spin</em></a><em>, </em><em>optional</em>) – the spin configuration. This is generally only needed when the eigenvectors correspond to a non-colinear
+<li><p><strong>spin</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.11)"><em>str</em></a><em> or </em><a class="reference internal" href="sisl.physics.Spin.html#sisl.physics.Spin" title="sisl.physics.Spin"><em>Spin</em></a><em>, </em><em>optional</em>) – the spin configuration. This is generally only needed when the eigenvectors correspond to a non-colinear
 calculation.</p></li>
 </ul>
 </dd>
@@ -212,7 +216,7 @@ calculation.</p></li>
 </dd>
 <dt><a class="reference internal" href="sisl.physics.electron.DOS.html#sisl.physics.electron.DOS" title="sisl.physics.electron.DOS"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DOS</span></code></a></dt><dd><p>total DOS (same as summing over orbitals)</p>
 </dd>
-<dt><code class="xref py py-obj docutils literal notranslate"><span class="pre">COP</span></code></dt><dd><p>calculate COOP or COHP curves</p>
+<dt><a class="reference internal" href="sisl.physics.electron.COP.html#sisl.physics.electron.COP" title="sisl.physics.electron.COP"><code class="xref py py-obj docutils literal notranslate"><span class="pre">COP</span></code></a></dt><dd><p>calculate COOP or COHP curves</p>
 </dd>
 <dt><a class="reference internal" href="sisl.physics.electron.spin_moment.html#sisl.physics.electron.spin_moment" title="sisl.physics.electron.spin_moment"><code class="xref py py-obj docutils literal notranslate"><span class="pre">spin_moment</span></code></a></dt><dd><p>spin moment</p>
 </dd>
@@ -220,12 +224,12 @@ calculation.</p></li>
 </div>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p>projected DOS calculated at energies, has dimension <code class="docutils literal notranslate"><span class="pre">(state.shape[1],</span> <span class="pre">len(E))</span></code>.
+<dd class="field-odd"><p>projected DOS calculated at energies, has dimension <code class="docutils literal notranslate"><span class="pre">(1,</span> <span class="pre">state.shape[1],</span> <span class="pre">len(E))</span></code>.
 For non-colinear calculations it will be <code class="docutils literal notranslate"><span class="pre">(4,</span> <span class="pre">state.shape[1]</span> <span class="pre">//</span> <span class="pre">2,</span> <span class="pre">len(E))</span></code>, ordered as
 indicated in the above list.</p>
 </dd>
 <dt class="field-even">Return type</dt>
-<dd class="field-even"><p><a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.22)">numpy.ndarray</a></p>
+<dd class="field-even"><p><a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.24)">numpy.ndarray</a></p>
 </dd>
 </dl>
 </dd></dl>
@@ -237,13 +241,13 @@ indicated in the above list.</p>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
         <a href="sisl.physics.electron.DOS.html" class="btn btn-neutral float-left" title="DOS" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="sisl.physics.electron.velocity.html" class="btn btn-neutral float-right" title="velocity" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="sisl.physics.electron.COP.html" class="btn btn-neutral float-right" title="COP" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>
 
   <div role="contentinfo">
-    <p>&#169; Copyright 2015-2022, Nick Papior.</p>
+    <p>&#169; Copyright 2015-2023, Nick Papior.</p>
   </div>
 
   Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a

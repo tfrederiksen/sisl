@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>sisl.physics.phonon.CoefficientPhonon &mdash; sisl 0.1.dev1+g3fe7e49 documentation</title>
+  <title>sisl.physics.phonon.CoefficientPhonon &mdash; sisl 0.1.dev1+g851d78c documentation</title>
       <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="../../_static/plot_directive.css" type="text/css" />
@@ -17,14 +17,16 @@
         <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
         <script src="../../_static/jquery.js"></script>
         <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/sphinx_highlight.js"></script>
         <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-        <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
+        <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.1/dist/embed-amd.js"></script>
     <script src="../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="sisl.physics.phonon.ModePhonon" href="sisl.physics.phonon.ModePhonon.html" />
-    <link rel="prev" title="displacement" href="sisl.physics.phonon.displacement.html" /> 
+    <link rel="prev" title="PDOS" href="sisl.physics.phonon.PDOS.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -35,7 +37,7 @@
             <a href="../../index.html" class="icon icon-home"> sisl
           </a>
               <div class="version">
-                0.1.dev1+g3fe7e49
+                0.1.dev1+g851d78c
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
@@ -47,9 +49,11 @@
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../introduction.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../changelog/index.html">Release notes</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../contribute.html">Contributing</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../other.html">Other resources</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../cite.html">Citing sisl</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../publications.html">Publications using sisl</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">User Guide</span></p>
 <ul>
@@ -78,8 +82,6 @@
 <li class="toctree-l3 current"><a class="reference internal" href="../physics.phonon.html">Phonon related functions</a><ul class="current">
 <li class="toctree-l4"><a class="reference internal" href="sisl.physics.phonon.DOS.html">DOS</a></li>
 <li class="toctree-l4"><a class="reference internal" href="sisl.physics.phonon.PDOS.html">PDOS</a></li>
-<li class="toctree-l4"><a class="reference internal" href="sisl.physics.phonon.velocity.html">velocity</a></li>
-<li class="toctree-l4"><a class="reference internal" href="sisl.physics.phonon.displacement.html">displacement</a></li>
 <li class="toctree-l4 current"><a class="reference internal" href="../physics.phonon.html#supporting-classes">Supporting classes</a></li>
 </ul>
 </li>
@@ -88,6 +90,7 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../mixing.html">Mixing self-consistent quantities</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../viz/index.html">Visualization</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../unit_constant.html">Units and constants</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../utilities.html">Utilities</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../io/index.html">Input/Output</a></li>
@@ -108,11 +111,11 @@
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
-          <li><a href="../index.html">API documentation</a> &raquo;</li>
-          <li><a href="../physics.html">Physical objects</a> &raquo;</li>
-          <li><a href="../physics.phonon.html">Phonon related functions</a> &raquo;</li>
-      <li>sisl.physics.phonon.CoefficientPhonon</li>
+      <li><a href="../../index.html" class="icon icon-home"></a></li>
+          <li class="breadcrumb-item"><a href="../index.html">API documentation</a></li>
+          <li class="breadcrumb-item"><a href="../physics.html">Physical objects</a></li>
+          <li class="breadcrumb-item"><a href="../physics.phonon.html">Phonon related functions</a></li>
+      <li class="breadcrumb-item active">sisl.physics.phonon.CoefficientPhonon</li>
       <li class="wy-breadcrumbs-aside">
             <a href="../../_sources/api/generated/sisl.physics.phonon.CoefficientPhonon.rst.txt" rel="nofollow"> View page source</a>
       </li>
@@ -147,14 +150,14 @@
 }
 </style>
 <section id="sisl-physics-phonon-coefficientphonon">
-<h1>sisl.physics.phonon.CoefficientPhonon<a class="headerlink" href="#sisl-physics-phonon-coefficientphonon" title="Permalink to this headline"></a></h1>
+<h1>sisl.physics.phonon.CoefficientPhonon<a class="headerlink" href="#sisl-physics-phonon-coefficientphonon" title="Permalink to this heading"></a></h1>
 <dl class="py class">
 <dt class="sig sig-object py" id="sisl.physics.phonon.CoefficientPhonon">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">sisl.physics.phonon.</span></span><span class="sig-name descname"><span class="pre">CoefficientPhonon</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">c</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">parent</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">info</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/sisl/physics/phonon.html#CoefficientPhonon"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sisl.physics.phonon.CoefficientPhonon" title="Permalink to this definition"></a></dt>
-<dd><p>Bases: <a class="reference internal" href="sisl.physics.Coefficient.html#sisl.physics.Coefficient" title="sisl.physics.Coefficient"><code class="xref py py-class docutils literal notranslate"><span class="pre">sisl.physics.Coefficient</span></code></a></p>
+<dd><p>Bases: <a class="reference internal" href="sisl.physics.Coefficient.html#sisl.physics.Coefficient" title="sisl.physics.Coefficient"><code class="xref py py-class docutils literal notranslate"><span class="pre">Coefficient</span></code></a></p>
 <p>Coefficients describing some physical quantity related to phonons</p>
 <p class="rubric">Methods</p>
-<table class="longtable docutils align-default">
+<table class="autosummary longtable docutils align-default">
 <colgroup>
 <col style="width: 10%" />
 <col style="width: 90%" />
@@ -217,13 +220,13 @@
 <dd><p>Find degenerate coefficients with a specified precision</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>eps</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.10)"><em>float</em></a><em>, </em><em>optional</em>) – the precision above which coefficients are not considered degenerate</p>
+<dd class="field-odd"><p><strong>eps</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.11)"><em>float</em></a><em>, </em><em>optional</em>) – the precision above which coefficients are not considered degenerate</p>
 </dd>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><p>a list of indices</p>
 </dd>
 <dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p>list of numpy.ndarray</p>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.11)">list</a> of <a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.24)">numpy.ndarray</a></p>
 </dd>
 </dl>
 </dd></dl>
@@ -251,7 +254,7 @@
 <dd><p>An iterator looping over the coefficients in this system</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>asarray</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.10)"><em>bool</em></a><em>, </em><em>optional</em>) – if true the yielded values are the coefficient vectors, i.e. a numpy array.
+<dd class="field-odd"><p><strong>asarray</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.11)"><em>bool</em></a><em>, </em><em>optional</em>) – if true the yielded values are the coefficient vectors, i.e. a numpy array.
 Otherwise an equivalent object is yielded.</p>
 </dd>
 <dt class="field-even">Yields</dt>
@@ -275,8 +278,8 @@ Otherwise an equivalent object is yielded.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>idx</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.10)"><em>int</em></a><em> or </em><em>array_like</em>) – indices that are removed in the returned object</p></li>
-<li><p><strong>inplace</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.10)"><em>bool</em></a><em>, </em><em>optional</em>) – whether the values will be removed inplace</p></li>
+<li><p><strong>idx</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.11)"><em>int</em></a><em> or </em><em>array_like</em>) – indices that are removed in the returned object</p></li>
+<li><p><strong>inplace</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.11)"><em>bool</em></a><em>, </em><em>optional</em>) – whether the values will be removed inplace</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns</dt>
@@ -301,8 +304,8 @@ Otherwise an equivalent object is yielded.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>idx</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.10)"><em>int</em></a><em> or </em><em>array_like</em>) – indices that are retained in the returned object</p></li>
-<li><p><strong>inplace</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.10)"><em>bool</em></a><em>, </em><em>optional</em>) – whether the values will be retained inplace</p></li>
+<li><p><strong>idx</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.11)"><em>int</em></a><em> or </em><em>array_like</em>) – indices that are retained in the returned object</p></li>
+<li><p><strong>inplace</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.11)"><em>bool</em></a><em>, </em><em>optional</em>) – whether the values will be retained inplace</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns</dt>
@@ -322,14 +325,14 @@ Otherwise an equivalent object is yielded.</p>
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="sisl.physics.phonon.displacement.html" class="btn btn-neutral float-left" title="displacement" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="sisl.physics.phonon.PDOS.html" class="btn btn-neutral float-left" title="PDOS" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
         <a href="sisl.physics.phonon.ModePhonon.html" class="btn btn-neutral float-right" title="sisl.physics.phonon.ModePhonon" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>
 
   <div role="contentinfo">
-    <p>&#169; Copyright 2015-2022, Nick Papior.</p>
+    <p>&#169; Copyright 2015-2023, Nick Papior.</p>
   </div>
 
   Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a

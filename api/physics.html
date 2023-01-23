@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Physical objects &mdash; sisl 0.1.dev1+g3fe7e49 documentation</title>
+  <title>Physical objects &mdash; sisl 0.1.dev1+g851d78c documentation</title>
       <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="../_static/plot_directive.css" type="text/css" />
@@ -17,9 +17,11 @@
         <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
         <script src="../_static/jquery.js"></script>
         <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../_static/doctools.js"></script>
+        <script src="../_static/sphinx_highlight.js"></script>
         <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-        <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
+        <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.1/dist/embed-amd.js"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -35,7 +37,7 @@
             <a href="../index.html" class="icon icon-home"> sisl
           </a>
               <div class="version">
-                0.1.dev1+g3fe7e49
+                0.1.dev1+g851d78c
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
@@ -47,9 +49,11 @@
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <ul>
 <li class="toctree-l1"><a class="reference internal" href="../introduction.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../changelog/index.html">Release notes</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../contribute.html">Contributing</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../other.html">Other resources</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../cite.html">Citing sisl</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../publications.html">Publications using sisl</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">User Guide</span></p>
 <ul>
@@ -85,6 +89,7 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="mixing.html">Mixing self-consistent quantities</a></li>
+<li class="toctree-l2"><a class="reference internal" href="viz/index.html">Visualization</a></li>
 <li class="toctree-l2"><a class="reference internal" href="unit_constant.html">Units and constants</a></li>
 <li class="toctree-l2"><a class="reference internal" href="utilities.html">Utilities</a></li>
 <li class="toctree-l2"><a class="reference internal" href="io/index.html">Input/Output</a></li>
@@ -105,9 +110,9 @@
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
-          <li><a href="index.html">API documentation</a> &raquo;</li>
-      <li>Physical objects</li>
+      <li><a href="../index.html" class="icon icon-home"></a></li>
+          <li class="breadcrumb-item"><a href="index.html">API documentation</a></li>
+      <li class="breadcrumb-item active">Physical objects</li>
       <li class="wy-breadcrumbs-aside">
             <a href="../_sources/api/physics.rst.txt" rel="nofollow"> View page source</a>
       </li>
@@ -142,7 +147,7 @@
 }
 </style>
 <section id="module-sisl.physics">
-<span id="physical-objects"></span><span id="physics"></span><h1>Physical objects<a class="headerlink" href="#module-sisl.physics" title="Permalink to this headline"></a></h1>
+<span id="physical-objects"></span><span id="physics"></span><h1>Physical objects<a class="headerlink" href="#module-sisl.physics" title="Permalink to this heading"></a></h1>
 <p>Implementations of various DFT and tight-binding related quantities
 are defined. The implementations range from simple Brillouin zone
 perspectives to self-energy calculations from Hamiltonians.</p>
@@ -166,8 +171,7 @@ sparse. There are exceptions, but it is generally advisable to have this in mind
 <li class="toctree-l1"><a class="reference internal" href="physics.electron.html">Electron related functions</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="generated/sisl.physics.electron.DOS.html">DOS</a></li>
 <li class="toctree-l2"><a class="reference internal" href="generated/sisl.physics.electron.PDOS.html">PDOS</a></li>
-<li class="toctree-l2"><a class="reference internal" href="generated/sisl.physics.electron.velocity.html">velocity</a></li>
-<li class="toctree-l2"><a class="reference internal" href="generated/sisl.physics.electron.velocity_matrix.html">velocity_matrix</a></li>
+<li class="toctree-l2"><a class="reference internal" href="generated/sisl.physics.electron.COP.html">COP</a></li>
 <li class="toctree-l2"><a class="reference internal" href="generated/sisl.physics.electron.berry_phase.html">berry_phase</a></li>
 <li class="toctree-l2"><a class="reference internal" href="generated/sisl.physics.electron.berry_curvature.html">berry_curvature</a></li>
 <li class="toctree-l2"><a class="reference internal" href="generated/sisl.physics.electron.conductivity.html">conductivity</a></li>
@@ -180,8 +184,6 @@ sparse. There are exceptions, but it is generally advisable to have this in mind
 <li class="toctree-l1"><a class="reference internal" href="physics.phonon.html">Phonon related functions</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="generated/sisl.physics.phonon.DOS.html">DOS</a></li>
 <li class="toctree-l2"><a class="reference internal" href="generated/sisl.physics.phonon.PDOS.html">PDOS</a></li>
-<li class="toctree-l2"><a class="reference internal" href="generated/sisl.physics.phonon.velocity.html">velocity</a></li>
-<li class="toctree-l2"><a class="reference internal" href="generated/sisl.physics.phonon.displacement.html">displacement</a></li>
 <li class="toctree-l2"><a class="reference internal" href="physics.phonon.html#supporting-classes">Supporting classes</a></li>
 </ul>
 </li>
@@ -199,15 +201,15 @@ sparse. There are exceptions, but it is generally advisable to have this in mind
 </ul>
 </div>
 <section id="low-level-objects">
-<h2>Low level objects<a class="headerlink" href="#low-level-objects" title="Permalink to this headline"></a></h2>
+<h2>Low level objects<a class="headerlink" href="#low-level-objects" title="Permalink to this heading"></a></h2>
 <p>The low level objects are the driving objects for some of the physical
 objects found here. They are rarely (if ever) required to be used, but they
 may be important for developers wishing to extend the functionality of <a class="reference internal" href="index.html#module-sisl" title="sisl"><code class="xref py py-obj docutils literal notranslate"><span class="pre">sisl</span></code></a>
 using generic class-structures. For instance the <a class="reference internal" href="generated/sisl.physics.Hamiltonian.html#sisl.physics.Hamiltonian" title="sisl.physics.Hamiltonian"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Hamiltonian</span></code></a> inherits the
 <a class="reference internal" href="generated/sisl.physics.SparseOrbitalBZSpin.html#sisl.physics.SparseOrbitalBZSpin" title="sisl.physics.SparseOrbitalBZSpin"><code class="xref py py-obj docutils literal notranslate"><span class="pre">SparseOrbitalBZSpin</span></code></a> class and <code class="xref py py-obj docutils literal notranslate"><span class="pre">EigenvalueElectron</span></code> inherits from <a class="reference internal" href="generated/sisl.physics.Coefficient.html#sisl.physics.Coefficient" title="sisl.physics.Coefficient"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Coefficient</span></code></a>.</p>
 <section id="states">
-<h3>States<a class="headerlink" href="#states" title="Permalink to this headline"></a></h3>
-<table class="longtable docutils align-default">
+<h3>States<a class="headerlink" href="#states" title="Permalink to this heading"></a></h3>
+<table class="autosummary longtable docutils align-default">
 <colgroup>
 <col style="width: 10%" />
 <col style="width: 90%" />
@@ -229,8 +231,8 @@ using generic class-structures. For instance the <a class="reference internal" h
 </table>
 </section>
 <section id="sparse-matrices">
-<h3>Sparse matrices<a class="headerlink" href="#sparse-matrices" title="Permalink to this headline"></a></h3>
-<table class="longtable docutils align-default">
+<h3>Sparse matrices<a class="headerlink" href="#sparse-matrices" title="Permalink to this heading"></a></h3>
+<table class="autosummary longtable docutils align-default">
 <colgroup>
 <col style="width: 10%" />
 <col style="width: 90%" />
@@ -259,7 +261,7 @@ using generic class-structures. For instance the <a class="reference internal" h
   <hr/>
 
   <div role="contentinfo">
-    <p>&#169; Copyright 2015-2022, Nick Papior.</p>
+    <p>&#169; Copyright 2015-2023, Nick Papior.</p>
   </div>
 
   Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a

@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>sisl.io.openmx.omxSileOpenMX &mdash; sisl 0.1.dev1+g3fe7e49 documentation</title>
+  <title>sisl.io.openmx.omxSileOpenMX &mdash; sisl 0.1.dev1+g851d78c documentation</title>
       <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="../../../_static/plot_directive.css" type="text/css" />
@@ -17,13 +17,15 @@
         <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
         <script src="../../../_static/jquery.js"></script>
         <script src="../../../_static/underscore.js"></script>
+        <script src="../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../../../_static/doctools.js"></script>
+        <script src="../../../_static/sphinx_highlight.js"></script>
         <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-        <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
+        <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.1/dist/embed-amd.js"></script>
     <script src="../../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
-    <link rel="next" title="ScaleUP" href="../scaleup.html" />
+    <link rel="next" title="ORCA" href="../orca.html" />
     <link rel="prev" title="OpenMX" href="../openmx.html" /> 
 </head>
 
@@ -35,7 +37,7 @@
             <a href="../../../index.html" class="icon icon-home"> sisl
           </a>
               <div class="version">
-                0.1.dev1+g3fe7e49
+                0.1.dev1+g851d78c
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
@@ -47,9 +49,11 @@
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../../introduction.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../changelog/index.html">Release notes</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../contribute.html">Contributing</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../other.html">Other resources</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../cite.html">Citing sisl</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../publications.html">Publications using sisl</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">User Guide</span></p>
 <ul>
@@ -73,21 +77,25 @@
 <li class="toctree-l2"><a class="reference internal" href="../../default_geom.html">Common geometries</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../physics.html">Physical objects</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../mixing.html">Mixing self-consistent quantities</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../viz/index.html">Visualization</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../unit_constant.html">Units and constants</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../utilities.html">Utilities</a></li>
 <li class="toctree-l2 current"><a class="reference internal" href="../index.html">Input/Output</a><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="../basic.html">Basic IO methods/classes</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../generic.html">Generic files</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../bigdft.html">BigDFT</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../fhiaims.html">FHIaims</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../gulp.html">GULP</a></li>
 <li class="toctree-l3 current"><a class="reference internal" href="../openmx.html">OpenMX</a><ul class="current">
 <li class="toctree-l4 current"><a class="current reference internal" href="#">sisl.io.openmx.omxSileOpenMX</a></li>
 </ul>
 </li>
+<li class="toctree-l3"><a class="reference internal" href="../orca.html">ORCA</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../scaleup.html">ScaleUP</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../siesta.html">Siesta</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../siesta.html#transiesta">TranSiesta</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../siesta.html#module-sisl.io.tbtrans">TBtrans</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../tbtrans.html">TBtrans</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../tbtrans.html#phtrans">PHtrans</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../vasp.html">VASP</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../wannier90.html">Wannier90</a></li>
 </ul>
@@ -109,11 +117,11 @@
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="../../../index.html" class="icon icon-home"></a> &raquo;</li>
-          <li><a href="../../index.html">API documentation</a> &raquo;</li>
-          <li><a href="../index.html">Input/Output</a> &raquo;</li>
-          <li><a href="../openmx.html">OpenMX</a> &raquo;</li>
-      <li>sisl.io.openmx.omxSileOpenMX</li>
+      <li><a href="../../../index.html" class="icon icon-home"></a></li>
+          <li class="breadcrumb-item"><a href="../../index.html">API documentation</a></li>
+          <li class="breadcrumb-item"><a href="../index.html">Input/Output</a></li>
+          <li class="breadcrumb-item"><a href="../openmx.html">OpenMX</a></li>
+      <li class="breadcrumb-item active">sisl.io.openmx.omxSileOpenMX</li>
       <li class="wy-breadcrumbs-aside">
             <a href="../../../_sources/api/io/generated/sisl.io.openmx.omxSileOpenMX.rst.txt" rel="nofollow"> View page source</a>
       </li>
@@ -148,20 +156,20 @@
 }
 </style>
 <section id="sisl-io-openmx-omxsileopenmx">
-<h1>sisl.io.openmx.omxSileOpenMX<a class="headerlink" href="#sisl-io-openmx-omxsileopenmx" title="Permalink to this headline"></a></h1>
+<h1>sisl.io.openmx.omxSileOpenMX<a class="headerlink" href="#sisl-io-openmx-omxsileopenmx" title="Permalink to this heading"></a></h1>
 <dl class="py class">
 <dt class="sig sig-object py" id="sisl.io.openmx.omxSileOpenMX">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">sisl.io.openmx.</span></span><span class="sig-name descname"><span class="pre">omxSileOpenMX</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mode</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'r'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">comment</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/sisl/io/openmx/omx.html#omxSileOpenMX"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sisl.io.openmx.omxSileOpenMX" title="Permalink to this definition"></a></dt>
-<dd><p>Bases: <a class="reference internal" href="sisl.io.openmx.SileOpenMX.html#sisl.io.openmx.SileOpenMX" title="sisl.io.openmx.SileOpenMX"><code class="xref py py-class docutils literal notranslate"><span class="pre">sisl.io.openmx.SileOpenMX</span></code></a></p>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">sisl.io.openmx.</span></span><span class="sig-name descname"><span class="pre">omxSileOpenMX</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/sisl/io/openmx/omx.html#omxSileOpenMX"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sisl.io.openmx.omxSileOpenMX" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="sisl.io.openmx.SileOpenMX.html#sisl.io.openmx.SileOpenMX" title="sisl.io.openmx.SileOpenMX"><code class="xref py py-class docutils literal notranslate"><span class="pre">SileOpenMX</span></code></a></p>
 <p>OpenMX-input file</p>
 <p>By supplying base you can reference files in other directories.
 By default the <code class="docutils literal notranslate"><span class="pre">base</span></code> is the directory given in the file name.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>filename</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><em>str</em></a>) – input file</p></li>
-<li><p><strong>mode</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><em>str</em></a><em>, </em><em>optional</em>) – opening mode, default to read-only</p></li>
-<li><p><strong>base</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><em>str</em></a><em>, </em><em>optional</em>) – base-directory to read output files from.</p></li>
+<li><p><strong>filename</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.11)"><em>str</em></a>) – input file</p></li>
+<li><p><strong>mode</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.11)"><em>str</em></a><em>, </em><em>optional</em>) – opening mode, default to read-only</p></li>
+<li><p><strong>base</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.11)"><em>str</em></a><em>, </em><em>optional</em>) – base-directory to read output files from.</p></li>
 </ul>
 </dd>
 </dl>
@@ -172,52 +180,55 @@ By default the <code class="docutils literal notranslate"><span class="pre">base
 </div>
 <p>When using this file in conjunction with the <em class="xref py py-obj">sgeom</em> script while your input data-files are
 named <code class="docutils literal notranslate"><span class="pre">input.dat</span></code>, please do this:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sgeom input.dat<span class="o">{</span>omx<span class="o">}</span> output.xyz
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sgeom<span class="w"> </span>input.dat<span class="o">{</span>omx<span class="o">}</span><span class="w"> </span>output.xyz
 </pre></div>
 </div>
 <p>which forces the use of the omx file.</p>
 <p class="rubric">Methods</p>
-<table class="longtable docutils align-default">
+<table class="autosummary longtable docutils align-default">
 <colgroup>
 <col style="width: 10%" />
 <col style="width: 90%" />
 </colgroup>
 <tbody>
-<tr class="row-odd"><td><p><a class="reference internal" href="#sisl.io.openmx.omxSileOpenMX.dir_file" title="sisl.io.openmx.omxSileOpenMX.dir_file"><code class="xref py py-obj docutils literal notranslate"><span class="pre">dir_file</span></code></a>([filename, filename_base])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#sisl.io.openmx.omxSileOpenMX.close" title="sisl.io.openmx.omxSileOpenMX.close"><code class="xref py py-obj docutils literal notranslate"><span class="pre">close</span></code></a>()</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#sisl.io.openmx.omxSileOpenMX.dir_file" title="sisl.io.openmx.omxSileOpenMX.dir_file"><code class="xref py py-obj docutils literal notranslate"><span class="pre">dir_file</span></code></a>([filename, filename_base])</p></td>
 <td><p>File of the current <em class="xref py py-obj">Sile</em></p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#sisl.io.openmx.omxSileOpenMX.get" title="sisl.io.openmx.omxSileOpenMX.get"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get</span></code></a>(key[, default])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#sisl.io.openmx.omxSileOpenMX.get" title="sisl.io.openmx.omxSileOpenMX.get"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get</span></code></a>(key[, default])</p></td>
 <td><p>Retrieve keyword from the file</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#sisl.io.openmx.omxSileOpenMX.read" title="sisl.io.openmx.omxSileOpenMX.read"><code class="xref py py-obj docutils literal notranslate"><span class="pre">read</span></code></a>(*args, **kwargs)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#sisl.io.openmx.omxSileOpenMX.read" title="sisl.io.openmx.omxSileOpenMX.read"><code class="xref py py-obj docutils literal notranslate"><span class="pre">read</span></code></a>(*args, **kwargs)</p></td>
 <td><p>Generic read method which should be overloaded in child-classes</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#sisl.io.openmx.omxSileOpenMX.read_basis" title="sisl.io.openmx.omxSileOpenMX.read_basis"><code class="xref py py-obj docutils literal notranslate"><span class="pre">read_basis</span></code></a>(*args, **kwargs)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#sisl.io.openmx.omxSileOpenMX.read_basis" title="sisl.io.openmx.omxSileOpenMX.read_basis"><code class="xref py py-obj docutils literal notranslate"><span class="pre">read_basis</span></code></a>(*args, **kwargs)</p></td>
 <td><p>Reads basis</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#sisl.io.openmx.omxSileOpenMX.read_geometry" title="sisl.io.openmx.omxSileOpenMX.read_geometry"><code class="xref py py-obj docutils literal notranslate"><span class="pre">read_geometry</span></code></a>([output])</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#sisl.io.openmx.omxSileOpenMX.read_geometry" title="sisl.io.openmx.omxSileOpenMX.read_geometry"><code class="xref py py-obj docutils literal notranslate"><span class="pre">read_geometry</span></code></a>([output])</p></td>
 <td><p>Returns Geometry object</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#sisl.io.openmx.omxSileOpenMX.read_supercell" title="sisl.io.openmx.omxSileOpenMX.read_supercell"><code class="xref py py-obj docutils literal notranslate"><span class="pre">read_supercell</span></code></a>([output])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#sisl.io.openmx.omxSileOpenMX.read_supercell" title="sisl.io.openmx.omxSileOpenMX.read_supercell"><code class="xref py py-obj docutils literal notranslate"><span class="pre">read_supercell</span></code></a>([output])</p></td>
 <td><p>Reads supercell</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#sisl.io.openmx.omxSileOpenMX.type" title="sisl.io.openmx.omxSileOpenMX.type"><code class="xref py py-obj docutils literal notranslate"><span class="pre">type</span></code></a>(label)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#sisl.io.openmx.omxSileOpenMX.type" title="sisl.io.openmx.omxSileOpenMX.type"><code class="xref py py-obj docutils literal notranslate"><span class="pre">type</span></code></a>(label)</p></td>
 <td><p>Return the type of the fdf-keyword</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#sisl.io.openmx.omxSileOpenMX.write" title="sisl.io.openmx.omxSileOpenMX.write"><code class="xref py py-obj docutils literal notranslate"><span class="pre">write</span></code></a>(*args, **kwargs)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#sisl.io.openmx.omxSileOpenMX.write" title="sisl.io.openmx.omxSileOpenMX.write"><code class="xref py py-obj docutils literal notranslate"><span class="pre">write</span></code></a>(*args, **kwargs)</p></td>
 <td><p>Generic write method which should be overloaded in child-classes</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#sisl.io.openmx.omxSileOpenMX.base_file" title="sisl.io.openmx.omxSileOpenMX.base_file"><code class="xref py py-obj docutils literal notranslate"><span class="pre">base_file</span></code></a></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#sisl.io.openmx.omxSileOpenMX.base_file" title="sisl.io.openmx.omxSileOpenMX.base_file"><code class="xref py py-obj docutils literal notranslate"><span class="pre">base_file</span></code></a></p></td>
 <td><p>File of the current <em class="xref py py-obj">Sile</em></p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#sisl.io.openmx.omxSileOpenMX.file" title="sisl.io.openmx.omxSileOpenMX.file"><code class="xref py py-obj docutils literal notranslate"><span class="pre">file</span></code></a></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#sisl.io.openmx.omxSileOpenMX.file" title="sisl.io.openmx.omxSileOpenMX.file"><code class="xref py py-obj docutils literal notranslate"><span class="pre">file</span></code></a></p></td>
 <td><p>Return the current file name (without the directory prefix)</p></td>
 </tr>
 </tbody>
 </table>
 <dl class="py method">
 <dt class="sig sig-object py" id="sisl.io.openmx.omxSileOpenMX.__init__">
-<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mode</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'r'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">comment</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#sisl.io.openmx.omxSileOpenMX.__init__" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mode</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'r'</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#sisl.io.openmx.omxSileOpenMX.__init__" title="Permalink to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="py property">
@@ -225,6 +236,11 @@ named <code class="docutils literal notranslate"><span class="pre">input.dat</sp
 <em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">base_file</span></span><a class="headerlink" href="#sisl.io.openmx.omxSileOpenMX.base_file" title="Permalink to this definition"></a></dt>
 <dd><p>File of the current <em class="xref py py-obj">Sile</em></p>
 </dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sisl.io.openmx.omxSileOpenMX.close">
+<span class="sig-name descname"><span class="pre">close</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sisl.io.openmx.omxSileOpenMX.close" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sisl.io.openmx.omxSileOpenMX.dir_file">
@@ -245,7 +261,7 @@ named <code class="docutils literal notranslate"><span class="pre">input.dat</sp
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>key</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><em>str</em></a>) – the key to search for</p></li>
+<li><p><strong>key</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.11)"><em>str</em></a>) – the key to search for</p></li>
 <li><p><strong>default</strong> (<em>optional</em>) – if the key is not found, this will be the returned value (default to <code class="docutils literal notranslate"><span class="pre">None</span></code>)</p></li>
 </ul>
 </dd>
@@ -257,6 +273,12 @@ named <code class="docutils literal notranslate"><span class="pre">input.dat</sp
 <dd class="field-odd"><p>the value of the key. If the key is a block, a <em class="xref py py-obj">list</em> is returned, for</p>
 </dd>
 </dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="sisl.io.openmx.omxSileOpenMX.plot">
+<span class="sig-name descname"><span class="pre">plot</span></span><a class="headerlink" href="#sisl.io.openmx.omxSileOpenMX.plot" title="Permalink to this definition"></a></dt>
+<dd><p>Handles all plotting possibilities for a class</p>
 </dd></dl>
 
 <dl class="py method">
@@ -278,7 +300,7 @@ and call it with the remaining <code class="docutils literal notranslate"><span 
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>output</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.10)"><em>bool</em></a><em>, </em><em>optional</em>) – whether to read supercell from output files (default to read from
+<li><p><strong>output</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.11)"><em>bool</em></a><em>, </em><em>optional</em>) – whether to read supercell from output files (default to read from
 the input file).</p></li>
 <li><p><strong>order</strong> (<em>{'dat'</em><em>, </em><em>'omx'}</em>) – the order of which to try and read the supercell.
 If <em class="xref py py-obj">order</em> is present <em class="xref py py-obj">output</em> is disregarded.</p></li>
@@ -296,7 +318,7 @@ only a single file ending.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>output</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.10)"><em>bool</em></a><em>, </em><em>optional</em>) – whether to read geometry from output files (default to read from
+<li><p><strong>output</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.11)"><em>bool</em></a><em>, </em><em>optional</em>) – whether to read geometry from output files (default to read from
 the input file).</p></li>
 <li><p><strong>order</strong> (<em>{'dat'</em><em>, </em><em>'omx'}</em>) – the order of which to try and read the geometry.
 If <em class="xref py py-obj">order</em> is present <em class="xref py py-obj">output</em> is disregarded.</p></li>
@@ -314,7 +336,7 @@ only a single file ending.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>output</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.10)"><em>bool</em></a><em>, </em><em>optional</em>) – whether to read supercell from output files (default to read from
+<li><p><strong>output</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.11)"><em>bool</em></a><em>, </em><em>optional</em>) – whether to read supercell from output files (default to read from
 the input file).</p></li>
 <li><p><strong>order</strong> (<em>{'dat'</em><em>, </em><em>'omx'}</em>) – the order of which to try and read the supercell.
 If <em class="xref py py-obj">order</em> is present <em class="xref py py-obj">output</em> is disregarded.</p></li>
@@ -324,12 +346,17 @@ If <em class="xref py py-obj">order</em> is present <em class="xref py py-obj">o
 </dd></dl>
 
 <dl class="py method">
+<dt class="sig sig-object py" id="sisl.io.openmx.omxSileOpenMX.to_json">
+<span class="sig-name descname"><span class="pre">to_json</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sisl.io.openmx.omxSileOpenMX.to_json" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
 <dt class="sig sig-object py" id="sisl.io.openmx.omxSileOpenMX.type">
 <span class="sig-name descname"><span class="pre">type</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">label</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/sisl/io/openmx/omx.html#omxSileOpenMX.type"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sisl.io.openmx.omxSileOpenMX.type" title="Permalink to this definition"></a></dt>
 <dd><p>Return the type of the fdf-keyword</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>label</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><em>str</em></a>) – the label to look-up</p>
+<dd class="field-odd"><p><strong>label</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.11)"><em>str</em></a>) – the label to look-up</p>
 </dd>
 </dl>
 </dd></dl>
@@ -355,13 +382,13 @@ and call it with the remaining <code class="docutils literal notranslate"><span 
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
         <a href="../openmx.html" class="btn btn-neutral float-left" title="OpenMX" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="../scaleup.html" class="btn btn-neutral float-right" title="ScaleUP" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="../orca.html" class="btn btn-neutral float-right" title="ORCA" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>
 
   <div role="contentinfo">
-    <p>&#169; Copyright 2015-2022, Nick Papior.</p>
+    <p>&#169; Copyright 2015-2023, Nick Papior.</p>
   </div>
 
   Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a

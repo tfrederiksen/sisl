@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Electron related functions &mdash; sisl 0.1.dev1+g3fe7e49 documentation</title>
+  <title>Electron related functions &mdash; sisl 0.1.dev1+g851d78c documentation</title>
       <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="../_static/plot_directive.css" type="text/css" />
@@ -17,9 +17,11 @@
         <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
         <script src="../_static/jquery.js"></script>
         <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../_static/doctools.js"></script>
+        <script src="../_static/sphinx_highlight.js"></script>
         <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-        <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
+        <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.1/dist/embed-amd.js"></script>
         <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
         <script defer="defer" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script src="../_static/js/theme.js"></script>
@@ -37,7 +39,7 @@
             <a href="../index.html" class="icon icon-home"> sisl
           </a>
               <div class="version">
-                0.1.dev1+g3fe7e49
+                0.1.dev1+g851d78c
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
@@ -49,9 +51,11 @@
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <ul>
 <li class="toctree-l1"><a class="reference internal" href="../introduction.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../changelog/index.html">Release notes</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../contribute.html">Contributing</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../other.html">Other resources</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../cite.html">Citing sisl</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../publications.html">Publications using sisl</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">User Guide</span></p>
 <ul>
@@ -79,8 +83,7 @@
 <li class="toctree-l3 current"><a class="current reference internal" href="#">Electron related functions</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="generated/sisl.physics.electron.DOS.html">DOS</a></li>
 <li class="toctree-l4"><a class="reference internal" href="generated/sisl.physics.electron.PDOS.html">PDOS</a></li>
-<li class="toctree-l4"><a class="reference internal" href="generated/sisl.physics.electron.velocity.html">velocity</a></li>
-<li class="toctree-l4"><a class="reference internal" href="generated/sisl.physics.electron.velocity_matrix.html">velocity_matrix</a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/sisl.physics.electron.COP.html">COP</a></li>
 <li class="toctree-l4"><a class="reference internal" href="generated/sisl.physics.electron.berry_phase.html">berry_phase</a></li>
 <li class="toctree-l4"><a class="reference internal" href="generated/sisl.physics.electron.berry_curvature.html">berry_curvature</a></li>
 <li class="toctree-l4"><a class="reference internal" href="generated/sisl.physics.electron.conductivity.html">conductivity</a></li>
@@ -96,6 +99,7 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="mixing.html">Mixing self-consistent quantities</a></li>
+<li class="toctree-l2"><a class="reference internal" href="viz/index.html">Visualization</a></li>
 <li class="toctree-l2"><a class="reference internal" href="unit_constant.html">Units and constants</a></li>
 <li class="toctree-l2"><a class="reference internal" href="utilities.html">Utilities</a></li>
 <li class="toctree-l2"><a class="reference internal" href="io/index.html">Input/Output</a></li>
@@ -116,10 +120,10 @@
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
-          <li><a href="index.html">API documentation</a> &raquo;</li>
-          <li><a href="physics.html">Physical objects</a> &raquo;</li>
-      <li>Electron related functions</li>
+      <li><a href="../index.html" class="icon icon-home"></a></li>
+          <li class="breadcrumb-item"><a href="index.html">API documentation</a></li>
+          <li class="breadcrumb-item"><a href="physics.html">Physical objects</a></li>
+      <li class="breadcrumb-item active">Electron related functions</li>
       <li class="wy-breadcrumbs-aside">
             <a href="../_sources/api/physics.electron.rst.txt" rel="nofollow"> View page source</a>
       </li>
@@ -154,14 +158,14 @@
 }
 </style>
 <section id="module-sisl.physics.electron">
-<span id="electron-related-functions"></span><span id="physics-electron"></span><h1>Electron related functions<a class="headerlink" href="#module-sisl.physics.electron" title="Permalink to this headline"></a></h1>
+<span id="electron-related-functions"></span><span id="physics-electron"></span><h1>Electron related functions<a class="headerlink" href="#module-sisl.physics.electron" title="Permalink to this heading"></a></h1>
 <p>In sisl electronic structure calculations are relying on routines
 specific for electrons. For instance density of states calculations from
 electronic eigenvalues and other quantities.</p>
 <p>This module implements the necessary tools required for calculating
 DOS, PDOS, band-velocities and spin moments of non-colinear calculations.
 One may also plot real-space wavefunctions.</p>
-<table class="longtable docutils align-default">
+<table class="autosummary longtable docutils align-default">
 <colgroup>
 <col style="width: 10%" />
 <col style="width: 90%" />
@@ -173,41 +177,38 @@ One may also plot real-space wavefunctions.</p>
 <tr class="row-even"><td><p><a class="reference internal" href="generated/sisl.physics.electron.PDOS.html#sisl.physics.electron.PDOS" title="sisl.physics.electron.PDOS"><code class="xref py py-obj docutils literal notranslate"><span class="pre">PDOS</span></code></a>(E, eig, state[, S, distribution, spin])</p></td>
 <td><p>Calculate the projected density of states (PDOS) for a set of energies, <em class="xref py py-obj">E</em>, with a distribution function</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="generated/sisl.physics.electron.velocity.html#sisl.physics.electron.velocity" title="sisl.physics.electron.velocity"><code class="xref py py-obj docutils literal notranslate"><span class="pre">velocity</span></code></a>(state, dHk[, energy, dSk, ...])</p></td>
-<td><p>Calculate the velocity of a set of states</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/sisl.physics.electron.COP.html#sisl.physics.electron.COP" title="sisl.physics.electron.COP"><code class="xref py py-obj docutils literal notranslate"><span class="pre">COP</span></code></a>(E, eig, state, M[, distribution, tol])</p></td>
+<td><p>Calculate the Crystal Orbital Population for a set of energies, <em class="xref py py-obj">E</em>, with a distribution function</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="generated/sisl.physics.electron.velocity_matrix.html#sisl.physics.electron.velocity_matrix" title="sisl.physics.electron.velocity_matrix"><code class="xref py py-obj docutils literal notranslate"><span class="pre">velocity_matrix</span></code></a>(state, dHk[, energy, dSk, ...])</p></td>
-<td><p>Calculate the velocity matrix of a set of states</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/sisl.physics.electron.berry_phase.html#sisl.physics.electron.berry_phase" title="sisl.physics.electron.berry_phase"><code class="xref py py-obj docutils literal notranslate"><span class="pre">berry_phase</span></code></a>(contour[, sub, eigvals, closed, ...])</p></td>
+<td><p>Calculate the Berry-phase on a loop path</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="generated/sisl.physics.electron.berry_phase.html#sisl.physics.electron.berry_phase" title="sisl.physics.electron.berry_phase"><code class="xref py py-obj docutils literal notranslate"><span class="pre">berry_phase</span></code></a>(contour[, sub, eigvals, closed, ...])</p></td>
-<td><p>Calculate the Berry-phase on a loop using a predefined path</p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="generated/sisl.physics.electron.berry_curvature.html#sisl.physics.electron.berry_curvature" title="sisl.physics.electron.berry_curvature"><code class="xref py py-obj docutils literal notranslate"><span class="pre">berry_curvature</span></code></a>(state, energy, dHk[, dSk, ...])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/sisl.physics.electron.berry_curvature.html#sisl.physics.electron.berry_curvature" title="sisl.physics.electron.berry_curvature"><code class="xref py py-obj docutils literal notranslate"><span class="pre">berry_curvature</span></code></a>(state, energy, dHk[, dSk, ...])</p></td>
 <td><p>Calculate the Berry curvature matrix for a set of states (using Kubo)</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="generated/sisl.physics.electron.conductivity.html#sisl.physics.electron.conductivity" title="sisl.physics.electron.conductivity"><code class="xref py py-obj docutils literal notranslate"><span class="pre">conductivity</span></code></a>(bz[, distribution, method, ...])</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/sisl.physics.electron.conductivity.html#sisl.physics.electron.conductivity" title="sisl.physics.electron.conductivity"><code class="xref py py-obj docutils literal notranslate"><span class="pre">conductivity</span></code></a>(bz[, distribution, method, ...])</p></td>
 <td><p>Electronic conductivity for a given <em class="xref py py-obj">BrillouinZone</em> integral</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="generated/sisl.physics.electron.wavefunction.html#sisl.physics.electron.wavefunction" title="sisl.physics.electron.wavefunction"><code class="xref py py-obj docutils literal notranslate"><span class="pre">wavefunction</span></code></a>(v, grid[, geometry, k, spinor, ...])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/sisl.physics.electron.wavefunction.html#sisl.physics.electron.wavefunction" title="sisl.physics.electron.wavefunction"><code class="xref py py-obj docutils literal notranslate"><span class="pre">wavefunction</span></code></a>(v, grid[, geometry, k, spinor, ...])</p></td>
 <td><p>Add the wave-function (<em class="xref py py-obj">Orbital.psi</em>) component of each orbital to the grid</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="generated/sisl.physics.electron.spin_moment.html#sisl.physics.electron.spin_moment" title="sisl.physics.electron.spin_moment"><code class="xref py py-obj docutils literal notranslate"><span class="pre">spin_moment</span></code></a>(state[, S, project])</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/sisl.physics.electron.spin_moment.html#sisl.physics.electron.spin_moment" title="sisl.physics.electron.spin_moment"><code class="xref py py-obj docutils literal notranslate"><span class="pre">spin_moment</span></code></a>(state[, S, project])</p></td>
 <td><p>Spin magnetic moment (spin texture) and optionally orbitally resolved moments</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="generated/sisl.physics.electron.spin_squared.html#sisl.physics.electron.spin_squared" title="sisl.physics.electron.spin_squared"><code class="xref py py-obj docutils literal notranslate"><span class="pre">spin_squared</span></code></a>(state_alpha, state_beta[, S])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/sisl.physics.electron.spin_squared.html#sisl.physics.electron.spin_squared" title="sisl.physics.electron.spin_squared"><code class="xref py py-obj docutils literal notranslate"><span class="pre">spin_squared</span></code></a>(state_alpha, state_beta[, S])</p></td>
 <td><p>Calculate the spin squared expectation value between two spin states</p></td>
 </tr>
 </tbody>
 </table>
 <section id="supporting-classes">
-<h2>Supporting classes<a class="headerlink" href="#supporting-classes" title="Permalink to this headline"></a></h2>
+<h2>Supporting classes<a class="headerlink" href="#supporting-classes" title="Permalink to this heading"></a></h2>
 <p>Certain classes aid in the usage of the above methods by implementing them
 using automatic arguments.</p>
 <p>For instance, the PDOS method requires the overlap matrix in non-orthogonal
 basis sets at the <span class="math notranslate nohighlight">\(k\)</span>-point corresponding to the eigenstates. Hence, the
 argument <code class="docutils literal notranslate"><span class="pre">S</span></code> must be <span class="math notranslate nohighlight">\(\mathbf S(\mathbf k)\)</span>. The <a class="reference internal" href="generated/sisl.physics.electron.EigenstateElectron.html#sisl.physics.electron.EigenstateElectron" title="sisl.physics.electron.EigenstateElectron"><code class="xref py py-obj docutils literal notranslate"><span class="pre">EigenstateElectron</span></code></a> class
 automatically passes the correct <code class="docutils literal notranslate"><span class="pre">S</span></code> because it knows the states <span class="math notranslate nohighlight">\(k\)</span>-point.</p>
-<table class="longtable docutils align-default">
+<table class="autosummary longtable docutils align-default">
 <colgroup>
 <col style="width: 10%" />
 <col style="width: 90%" />
@@ -247,7 +248,7 @@ automatically passes the correct <code class="docutils literal notranslate"><spa
   <hr/>
 
   <div role="contentinfo">
-    <p>&#169; Copyright 2015-2022, Nick Papior.</p>
+    <p>&#169; Copyright 2015-2023, Nick Papior.</p>
   </div>
 
   Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a

@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>sisl.Atoms &mdash; sisl 0.1.dev1+g3fe7e49 documentation</title>
+  <title>sisl.Atoms &mdash; sisl 0.1.dev1+g851d78c documentation</title>
       <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="../../_static/plot_directive.css" type="text/css" />
@@ -17,9 +17,11 @@
         <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
         <script src="../../_static/jquery.js"></script>
         <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/sphinx_highlight.js"></script>
         <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-        <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
+        <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.1/dist/embed-amd.js"></script>
     <script src="../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -35,7 +37,7 @@
             <a href="../../index.html" class="icon icon-home"> sisl
           </a>
               <div class="version">
-                0.1.dev1+g3fe7e49
+                0.1.dev1+g851d78c
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
@@ -47,9 +49,11 @@
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../introduction.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../changelog/index.html">Release notes</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../contribute.html">Contributing</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../other.html">Other resources</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../cite.html">Citing sisl</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../publications.html">Publications using sisl</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">User Guide</span></p>
 <ul>
@@ -75,6 +79,9 @@
 <li class="toctree-l4"><a class="reference internal" href="sisl.Orbital.html">sisl.Orbital</a></li>
 <li class="toctree-l4"><a class="reference internal" href="sisl.SphericalOrbital.html">sisl.SphericalOrbital</a></li>
 <li class="toctree-l4"><a class="reference internal" href="sisl.AtomicOrbital.html">sisl.AtomicOrbital</a></li>
+<li class="toctree-l4"><a class="reference internal" href="sisl.HydrogenicOrbital.html">sisl.HydrogenicOrbital</a></li>
+<li class="toctree-l4"><a class="reference internal" href="sisl.GTOrbital.html">sisl.GTOrbital</a></li>
+<li class="toctree-l4"><a class="reference internal" href="sisl.STOrbital.html">sisl.STOrbital</a></li>
 <li class="toctree-l4"><a class="reference internal" href="sisl.Atom.html">sisl.Atom</a></li>
 <li class="toctree-l4 current"><a class="current reference internal" href="#">sisl.Atoms</a></li>
 <li class="toctree-l4"><a class="reference internal" href="sisl.Geometry.html">sisl.Geometry</a></li>
@@ -89,6 +96,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../default_geom.html">Common geometries</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../physics.html">Physical objects</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../mixing.html">Mixing self-consistent quantities</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../viz/index.html">Visualization</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../unit_constant.html">Units and constants</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../utilities.html">Utilities</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../io/index.html">Input/Output</a></li>
@@ -109,10 +117,10 @@
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
-          <li><a href="../index.html">API documentation</a> &raquo;</li>
-          <li><a href="../basic.html">Basic classes</a> &raquo;</li>
-      <li>sisl.Atoms</li>
+      <li><a href="../../index.html" class="icon icon-home"></a></li>
+          <li class="breadcrumb-item"><a href="../index.html">API documentation</a></li>
+          <li class="breadcrumb-item"><a href="../basic.html">Basic classes</a></li>
+      <li class="breadcrumb-item active">sisl.Atoms</li>
       <li class="wy-breadcrumbs-aside">
             <a href="../../_sources/api/generated/sisl.Atoms.rst.txt" rel="nofollow"> View page source</a>
       </li>
@@ -147,11 +155,11 @@
 }
 </style>
 <section id="sisl-atoms">
-<h1>sisl.Atoms<a class="headerlink" href="#sisl-atoms" title="Permalink to this headline"></a></h1>
+<h1>sisl.Atoms<a class="headerlink" href="#sisl-atoms" title="Permalink to this heading"></a></h1>
 <dl class="py class">
 <dt class="sig sig-object py" id="sisl.Atoms">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">sisl.</span></span><span class="sig-name descname"><span class="pre">Atoms</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">atoms</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'H'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">na</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#sisl.Atoms" title="Permalink to this definition"></a></dt>
-<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.10)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.11)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
 <p>A list-like object to contain a list of different atoms with minimum
 data duplication.</p>
 <p>This holds multiple <a class="reference internal" href="sisl.Atom.html#sisl.Atom" title="sisl.Atom"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Atom</span></code></a> objects which are indexed via a species
@@ -161,14 +169,35 @@ because it will not duplicate the <a class="reference internal" href="sisl.Atom.
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>atoms</strong> (<em>list of Atom</em>) – atoms to be contained in this list of atoms</p></li>
-<li><p><strong>na</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.10)"><em>int</em></a><em> or </em><em>None</em>) – total number of atoms, if <code class="docutils literal notranslate"><span class="pre">len(atom)</span></code> is smaller than <em class="xref py py-obj">na</em> it will
+<li><p><strong>atoms</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.11)"><em>str</em></a><em>, </em><a class="reference internal" href="sisl.Atom.html#sisl.Atom" title="sisl.Atom"><em>Atom</em></a><em> or </em><em>list-like</em>) – atoms to be contained in this list of atoms
+If a str, or a single <a class="reference internal" href="sisl.Atom.html#sisl.Atom" title="sisl.Atom"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Atom</span></code></a> it will be the only atom in the resulting
+class repeated <em class="xref py py-obj">na</em> times.
+If a list, it will create all unique atoms and retain these, each item in
+the list may a single argument passed to the <a class="reference internal" href="sisl.Atom.html#sisl.Atom" title="sisl.Atom"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Atom</span></code></a> or a dictionary
+that is passed to <a class="reference internal" href="sisl.Atom.html#sisl.Atom" title="sisl.Atom"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Atom</span></code></a>, see examples.</p></li>
+<li><p><strong>na</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.11)"><em>int</em></a><em> or </em><em>None</em>) – total number of atoms, if <code class="docutils literal notranslate"><span class="pre">len(atom)</span></code> is smaller than <em class="xref py py-obj">na</em> it will
 be repeated to match <em class="xref py py-obj">na</em>.</p></li>
 </ul>
 </dd>
 </dl>
+<p class="rubric">Examples</p>
+<p>Creating an atoms object consisting of 5 atoms, all the same.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">atoms</span> <span class="o">=</span> <span class="n">Atoms</span><span class="p">(</span><span class="s2">&quot;H&quot;</span><span class="p">,</span> <span class="n">na</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Creating a set of 4 atoms, 2 Hydrogen, 2 Helium, in an alternate
+ordere</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">Z</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">atoms</span> <span class="o">=</span> <span class="n">Atoms</span><span class="p">(</span><span class="n">Z</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Creating individual atoms using dictionary entries, two
+Hydrogen atoms, one with a tag H_ghost.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">Atoms</span><span class="p">([</span><span class="nb">dict</span><span class="p">(</span><span class="n">Z</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">tag</span><span class="o">=</span><span class="s2">&quot;H_ghost&quot;</span><span class="p">),</span> <span class="mi">1</span><span class="p">])</span>
+</pre></div>
+</div>
 <p class="rubric">Methods</p>
-<table class="longtable docutils align-default">
+<table class="autosummary longtable docutils align-default">
 <colgroup>
 <col style="width: 10%" />
 <col style="width: 90%" />
@@ -346,7 +375,7 @@ be repeated to match <em class="xref py py-obj">na</em>.</p></li>
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>other</strong> (<a class="reference internal" href="#sisl.Atoms" title="sisl.Atoms"><em>Atoms</em></a>) – the list of atoms to check against</p></li>
-<li><p><strong>R</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.10)"><em>bool</em></a><em>, </em><em>optional</em>) – if True also checks that the orbital radius are the same</p></li>
+<li><p><strong>R</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.11)"><em>bool</em></a><em>, </em><em>optional</em>) – if True also checks that the orbital radius are the same</p></li>
 </ul>
 </dd>
 </dl>
@@ -386,8 +415,8 @@ atom.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>data</strong> (<a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.22)"><em>numpy.ndarray</em></a>) – data to be grouped</p></li>
-<li><p><strong>axis</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.10)"><em>int</em></a><em>, </em><em>optional</em>) – along which axis one should split the data</p></li>
+<li><p><strong>data</strong> (<a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.24)"><em>numpy.ndarray</em></a>) – data to be grouped</p></li>
+<li><p><strong>axis</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.11)"><em>int</em></a><em>, </em><em>optional</em>) – along which axis one should split the data</p></li>
 </ul>
 </dd>
 </dl>
@@ -404,7 +433,7 @@ are the same.</p>
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>other</strong> (<a class="reference internal" href="#sisl.Atoms" title="sisl.Atoms"><em>Atoms</em></a>) – the list of atoms to check against</p></li>
-<li><p><strong>R</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.10)"><em>bool</em></a><em>, </em><em>optional</em>) – if True also checks that the orbital radius are the same</p></li>
+<li><p><strong>R</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.11)"><em>bool</em></a><em>, </em><em>optional</em>) – if True also checks that the orbital radius are the same</p></li>
 </ul>
 </dd>
 </dl>
@@ -443,7 +472,7 @@ This is much faster than the first option.</p></li>
 </ol>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>species</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.10)"><em>bool</em></a><em>, </em><em>optional</em>) – If <code class="docutils literal notranslate"><span class="pre">True</span></code> loops only on different species and yields a tuple of (Atom, list)
+<dd class="field-odd"><p><strong>species</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.11)"><em>bool</em></a><em>, </em><em>optional</em>) – If <code class="docutils literal notranslate"><span class="pre">True</span></code> loops only on different species and yields a tuple of (Atom, list)
 Else yields the atom for the equivalent index.</p>
 </dd>
 </dl>
@@ -467,7 +496,7 @@ Else yields the atom for the equivalent index.</p>
 <dd><p>The maximum radius of the atoms</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>all</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.10)"><em>bool</em></a>) – determine the returned maximum radii.
+<dd class="field-odd"><p><strong>all</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.11)"><em>bool</em></a>) – determine the returned maximum radii.
 If <em class="xref py py-obj">True</em> is passed an array of all atoms maximum radii is returned (array).
 Else, if <em class="xref py py-obj">False</em> the maximum of all atoms maximum radii is returned (scalar).</p>
 </dd>
@@ -527,7 +556,7 @@ Else, if <em class="xref py py-obj">False</em> the maximum of all atoms maximum 
 <dd><p>Reorders the atoms and species index so that they are ascending (starting with a specie that exists)</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>in_place</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.10)"><em>bool</em></a><em>, </em><em>optional</em>) – whether the re-order is done <em>in-place</em></p>
+<dd class="field-odd"><p><strong>in_place</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.11)"><em>bool</em></a><em>, </em><em>optional</em>) – whether the re-order is done <em>in-place</em></p>
 </dd>
 </dl>
 </dd></dl>
@@ -546,7 +575,7 @@ Else, if <em class="xref py py-obj">False</em> the maximum of all atoms maximum 
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>index</strong> (<em>list of int</em><em> or </em><a class="reference internal" href="sisl.Atom.html#sisl.Atom" title="sisl.Atom"><em>Atom</em></a>) – the indices of the atoms that should be replaced by the new atom.
+<li><p><strong>index</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.11)"><em>list</em></a><em> of </em><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.11)"><em>int</em></a><em> or </em><a class="reference internal" href="sisl.Atom.html#sisl.Atom" title="sisl.Atom"><em>Atom</em></a>) – the indices of the atoms that should be replaced by the new atom.
 If an <a class="reference internal" href="sisl.Atom.html#sisl.Atom" title="sisl.Atom"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Atom</span></code></a> is passed, this routine defers its call to <a class="reference internal" href="#sisl.Atoms.replace_atom" title="sisl.Atoms.replace_atom"><code class="xref py py-obj docutils literal notranslate"><span class="pre">replace_atom</span></code></a>.</p></li>
 <li><p><strong>atom</strong> (<a class="reference internal" href="sisl.Atom.html#sisl.Atom" title="sisl.Atom"><em>Atom</em></a>) – the replacement atom.</p></li>
 </ul>
@@ -572,8 +601,8 @@ of atoms, nothing will happen.</p></li>
 </dd>
 <dt class="field-even">Raises</dt>
 <dd class="field-even"><ul class="simple">
-<li><p><a class="reference external" href="https://docs.python.org/3/library/exceptions.html#KeyError" title="(in Python v3.10)"><strong>KeyError</strong></a> – if <em class="xref py py-obj">atom_from</em> does not exist in the list of atoms</p></li>
-<li><p><a class="reference external" href="https://docs.python.org/3/library/exceptions.html#UserWarning" title="(in Python v3.10)"><strong>UserWarning</strong></a> – if the atoms does not have the same number of orbitals.</p></li>
+<li><p><a class="reference external" href="https://docs.python.org/3/library/exceptions.html#KeyError" title="(in Python v3.11)"><strong>KeyError</strong></a> – if <em class="xref py py-obj">atom_from</em> does not exist in the list of atoms</p></li>
+<li><p><a class="reference external" href="https://docs.python.org/3/library/exceptions.html#UserWarning" title="(in Python v3.11)"><strong>UserWarning</strong></a> – if the atoms does not have the same number of orbitals.</p></li>
 </ul>
 </dd>
 </dl>
@@ -592,7 +621,7 @@ of atoms, nothing will happen.</p></li>
 <dd><p>Scale the atomic radii and return an equivalent atom.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>scale</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.10)"><em>float</em></a>) – the scale factor for the atomic radii</p>
+<dd class="field-odd"><p><strong>scale</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.11)"><em>float</em></a>) – the scale factor for the atomic radii</p>
 </dd>
 </dl>
 </dd></dl>
@@ -648,7 +677,7 @@ of atoms, nothing will happen.</p></li>
   <hr/>
 
   <div role="contentinfo">
-    <p>&#169; Copyright 2015-2022, Nick Papior.</p>
+    <p>&#169; Copyright 2015-2023, Nick Papior.</p>
   </div>
 
   Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
