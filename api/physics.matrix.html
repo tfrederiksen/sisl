@@ -1,27 +1,33 @@
 <!DOCTYPE html>
-<html class="writer-html5" lang="en" >
+<html class="writer-html5" lang="en" data-content_root="../">
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Physical quantites &mdash; sisl 0.1.dev1+g851d78c documentation</title>
-      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/plot_directive.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/graphviz.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/sg_gallery.css" type="text/css" />
+  <title>Physical quantites &mdash; sisl 0.1-73e3f9d</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=19f00094" />
+      <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+      <link rel="stylesheet" type="text/css" href="../_static/tabs.css?v=4c969af8" />
+      <link rel="stylesheet" type="text/css" href="../_static/plot_directive.css" />
+      <link rel="stylesheet" type="text/css" href="../_static/graphviz.css?v=eafc0fe6" />
+      <link rel="stylesheet" type="text/css" href="../_static/sg_gallery.css?v=61a4c737" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/custom_styles.css?v=cafe85c1" />
+
+  
   <!--[if lt IE 9]>
     <script src="../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-        <script src="../_static/jquery.js"></script>
-        <script src="../_static/underscore.js"></script>
-        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
-        <script src="../_static/doctools.js"></script>
-        <script src="../_static/sphinx_highlight.js"></script>
+        <script src="../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../_static/documentation_options.js?v=b3500e62"></script>
+        <script src="../_static/doctools.js?v=888ff710"></script>
+        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+        <script src="../_static/copybutton.js?v=f281be69"></script>
+        <script src="../_static/tabs.js?v=3ee01567"></script>
         <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-        <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.1/dist/embed-amd.js"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -34,14 +40,18 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-            <a href="../index.html" class="icon icon-home"> sisl
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            sisl
           </a>
               <div class="version">
-                0.1.dev1+g851d78c
+                0.1-73e3f9d
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
@@ -54,12 +64,15 @@
 <li class="toctree-l1"><a class="reference internal" href="../other.html">Other resources</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../cite.html">Citing sisl</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../publications.html">Publications using sisl</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../references.html">References</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">User Guide</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../installation.html">Installation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../tutorials.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../environment.html">Environment variables</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../scripts/scripts.html">Command line scripts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../nodes/nodes_intro.html">Nodes and workflows</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Toolboxes</span></p>
 <ul>
@@ -94,7 +107,10 @@
 <li class="toctree-l2"><a class="reference internal" href="viz/index.html">Visualization</a></li>
 <li class="toctree-l2"><a class="reference internal" href="unit_constant.html">Units and constants</a></li>
 <li class="toctree-l2"><a class="reference internal" href="utilities.html">Utilities</a></li>
+<li class="toctree-l2"><a class="reference internal" href="core.html">Functional</a></li>
 <li class="toctree-l2"><a class="reference internal" href="io/index.html">Input/Output</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nodes.html">Nodes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="typing.html">Typing</a></li>
 </ul>
 </li>
 </ul>
@@ -112,7 +128,7 @@
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="../index.html" class="icon icon-home"></a></li>
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
           <li class="breadcrumb-item"><a href="index.html">API documentation</a></li>
           <li class="breadcrumb-item"><a href="physics.html">Physical objects</a></li>
       <li class="breadcrumb-item active">Physical quantites</li>
@@ -125,41 +141,13 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  
-<style>
-/* CSS overrides for sphinx_rtd_theme */
-
-/* 24px margin */
-.nbinput.nblast.container,
-.nboutput.nblast.container {
-    margin-bottom: 19px;  /* padding has already 5px */
-}
-
-/* ... except between code cells! */
-.nblast.container + .nbinput.container {
-    margin-top: -19px;
-}
-
-.admonition > p:before {
-    margin-right: 4px;  /* make room for the exclamation icon */
-}
-
-/* Fix math alignment, see https://github.com/rtfd/sphinx_rtd_theme/pull/686 */
-.math {
-    text-align: unset;
-}
-</style>
-<section id="physical-quantites">
-<span id="physics-matrix"></span><h1>Physical quantites<a class="headerlink" href="#physical-quantites" title="Permalink to this heading"></a></h1>
+  <section id="physical-quantites">
+<span id="physics-matrix"></span><h1>Physical quantites<a class="headerlink" href="#physical-quantites" title="Link to this heading"></a></h1>
 <p>Physical quantities such as Hamiltonian and density matrices are representated
 through specific classes enabling various handlings.</p>
 <section id="spin">
-<h2>Spin<a class="headerlink" href="#spin" title="Permalink to this heading"></a></h2>
+<h2>Spin<a class="headerlink" href="#spin" title="Link to this heading"></a></h2>
 <table class="autosummary longtable docutils align-default">
-<colgroup>
-<col style="width: 10%" />
-<col style="width: 90%" />
-</colgroup>
 <tbody>
 <tr class="row-odd"><td><p><a class="reference internal" href="generated/sisl.physics.Spin.html#sisl.physics.Spin" title="sisl.physics.Spin"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Spin</span></code></a>([kind, dtype])</p></td>
 <td><p>Spin class to determine configurations and spin components.</p></td>
@@ -168,12 +156,8 @@ through specific classes enabling various handlings.</p>
 </table>
 </section>
 <section id="matrices">
-<h2>Matrices<a class="headerlink" href="#matrices" title="Permalink to this heading"></a></h2>
+<h2>Matrices<a class="headerlink" href="#matrices" title="Link to this heading"></a></h2>
 <table class="autosummary longtable docutils align-default">
-<colgroup>
-<col style="width: 10%" />
-<col style="width: 90%" />
-</colgroup>
 <tbody>
 <tr class="row-odd"><td><p><a class="reference internal" href="generated/sisl.physics.EnergyDensityMatrix.html#sisl.physics.EnergyDensityMatrix" title="sisl.physics.EnergyDensityMatrix"><code class="xref py py-obj docutils literal notranslate"><span class="pre">EnergyDensityMatrix</span></code></a>(geometry[, dim, dtype, ...])</p></td>
 <td><p>Sparse energy density matrix object</p></td>
@@ -194,14 +178,10 @@ through specific classes enabling various handlings.</p>
 </table>
 </section>
 <section id="self-energies">
-<h2>Self energies<a class="headerlink" href="#self-energies" title="Permalink to this heading"></a></h2>
+<h2>Self energies<a class="headerlink" href="#self-energies" title="Link to this heading"></a></h2>
 <p>Self-energies are specific physical quantities that enables integrating
 out semi-infinite regions.</p>
 <table class="autosummary longtable docutils align-default">
-<colgroup>
-<col style="width: 10%" />
-<col style="width: 90%" />
-</colgroup>
 <tbody>
 <tr class="row-odd"><td><p><a class="reference internal" href="generated/sisl.physics.SelfEnergy.html#sisl.physics.SelfEnergy" title="sisl.physics.SelfEnergy"><code class="xref py py-obj docutils literal notranslate"><span class="pre">SelfEnergy</span></code></a>(*args, **kwargs)</p></td>
 <td><p>Self-energy object able to calculate the dense self-energy for a given sparse matrix</p></td>
@@ -225,14 +205,10 @@ out semi-infinite regions.</p>
 </table>
 </section>
 <section id="bloch-s-theorem">
-<h2>Bloch’s theorem<a class="headerlink" href="#bloch-s-theorem" title="Permalink to this heading"></a></h2>
+<h2>Bloch’s theorem<a class="headerlink" href="#bloch-s-theorem" title="Link to this heading"></a></h2>
 <p>Bloch’s theorem is a very powerful proceduce that enables one to utilize
 the periodicity of a given direction to describe the complete system.</p>
 <table class="autosummary longtable docutils align-default">
-<colgroup>
-<col style="width: 10%" />
-<col style="width: 90%" />
-</colgroup>
 <tbody>
 <tr class="row-odd"><td><p><a class="reference internal" href="generated/sisl.physics.Bloch.html#sisl.physics.Bloch" title="sisl.physics.Bloch"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Bloch</span></code></a>(*bloch)</p></td>
 <td><p>Bloch's theorem object containing unfolding factors and unfolding algorithms</p></td>
@@ -253,7 +229,7 @@ the periodicity of a given direction to describe the complete system.</p>
   <hr/>
 
   <div role="contentinfo">
-    <p>&#169; Copyright 2015-2023, Nick Papior.</p>
+    <p>&#169; Copyright 2015-2024, Nick Papior.</p>
   </div>
 
   Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a

@@ -1,29 +1,35 @@
 <!DOCTYPE html>
-<html class="writer-html5" lang="en" >
+<html class="writer-html5" lang="en" data-content_root="../../">
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>sisl.physics.SelfEnergy &mdash; sisl 0.1.dev1+g851d78c documentation</title>
-      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
-      <link rel="stylesheet" href="../../_static/plot_directive.css" type="text/css" />
-      <link rel="stylesheet" href="../../_static/graphviz.css" type="text/css" />
-      <link rel="stylesheet" href="../../_static/sg_gallery.css" type="text/css" />
+  <title>sisl.physics.SelfEnergy &mdash; sisl 0.1-73e3f9d</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=19f00094" />
+      <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+      <link rel="stylesheet" type="text/css" href="../../_static/tabs.css?v=4c969af8" />
+      <link rel="stylesheet" type="text/css" href="../../_static/plot_directive.css" />
+      <link rel="stylesheet" type="text/css" href="../../_static/graphviz.css?v=eafc0fe6" />
+      <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery.css?v=61a4c737" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/custom_styles.css?v=cafe85c1" />
+
+  
   <!--[if lt IE 9]>
     <script src="../../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
-        <script src="../../_static/jquery.js"></script>
-        <script src="../../_static/underscore.js"></script>
-        <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
-        <script src="../../_static/doctools.js"></script>
-        <script src="../../_static/sphinx_highlight.js"></script>
+        <script src="../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../../_static/documentation_options.js?v=b3500e62"></script>
+        <script src="../../_static/doctools.js?v=888ff710"></script>
+        <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+        <script src="../../_static/copybutton.js?v=f281be69"></script>
+        <script src="../../_static/tabs.js?v=3ee01567"></script>
         <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-        <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.1/dist/embed-amd.js"></script>
         <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
-        <script defer="defer" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script src="../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -36,14 +42,18 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-            <a href="../../index.html" class="icon icon-home"> sisl
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            sisl
           </a>
               <div class="version">
-                0.1.dev1+g851d78c
+                0.1-73e3f9d
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
@@ -56,12 +66,15 @@
 <li class="toctree-l1"><a class="reference internal" href="../../other.html">Other resources</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../cite.html">Citing sisl</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../publications.html">Publications using sisl</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../references.html">References</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">User Guide</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../installation.html">Installation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../tutorials.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../environment.html">Environment variables</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../scripts/scripts.html">Command line scripts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../nodes/nodes_intro.html">Nodes and workflows</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Toolboxes</span></p>
 <ul>
@@ -96,7 +109,10 @@
 <li class="toctree-l2"><a class="reference internal" href="../viz/index.html">Visualization</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../unit_constant.html">Units and constants</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../utilities.html">Utilities</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../core.html">Functional</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../io/index.html">Input/Output</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../nodes.html">Nodes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../typing.html">Typing</a></li>
 </ul>
 </li>
 </ul>
@@ -114,7 +130,7 @@
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="../../index.html" class="icon icon-home"></a></li>
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
           <li class="breadcrumb-item"><a href="../index.html">API documentation</a></li>
           <li class="breadcrumb-item"><a href="../physics.html">Physical objects</a></li>
           <li class="breadcrumb-item"><a href="../physics.matrix.html">Physical quantites</a></li>
@@ -128,52 +144,24 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  
-<style>
-/* CSS overrides for sphinx_rtd_theme */
-
-/* 24px margin */
-.nbinput.nblast.container,
-.nboutput.nblast.container {
-    margin-bottom: 19px;  /* padding has already 5px */
-}
-
-/* ... except between code cells! */
-.nblast.container + .nbinput.container {
-    margin-top: -19px;
-}
-
-.admonition > p:before {
-    margin-right: 4px;  /* make room for the exclamation icon */
-}
-
-/* Fix math alignment, see https://github.com/rtfd/sphinx_rtd_theme/pull/686 */
-.math {
-    text-align: unset;
-}
-</style>
-<section id="sisl-physics-selfenergy">
-<h1>sisl.physics.SelfEnergy<a class="headerlink" href="#sisl-physics-selfenergy" title="Permalink to this heading"></a></h1>
+  <section id="sisl-physics-selfenergy">
+<h1>sisl.physics.SelfEnergy<a class="headerlink" href="#sisl-physics-selfenergy" title="Link to this heading"></a></h1>
 <dl class="py class">
 <dt class="sig sig-object py" id="sisl.physics.SelfEnergy">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">sisl.physics.</span></span><span class="sig-name descname"><span class="pre">SelfEnergy</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#sisl.physics.SelfEnergy" title="Permalink to this definition"></a></dt>
-<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.11)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">sisl.physics.</span></span><span class="sig-name descname"><span class="pre">SelfEnergy</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#sisl.physics.SelfEnergy" title="Link to this definition"></a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.12)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
 <p>Self-energy object able to calculate the dense self-energy for a given sparse matrix</p>
 <p>The self-energy object contains a <em class="xref py py-obj">SparseGeometry</em> object which, in it-self
 contains the geometry.</p>
 <p>This is the base class for self-energies.</p>
 <p class="rubric">Methods</p>
 <table class="autosummary longtable docutils align-default">
-<colgroup>
-<col style="width: 10%" />
-<col style="width: 90%" />
-</colgroup>
 <tbody>
-<tr class="row-odd"><td><p><a class="reference internal" href="#sisl.physics.SelfEnergy.scattering_matrix" title="sisl.physics.SelfEnergy.scattering_matrix"><code class="xref py py-obj docutils literal notranslate"><span class="pre">scattering_matrix</span></code></a>(*args, **kwargs)</p></td>
-<td><p>Calculate the scattering matrix by first calculating the self-energy</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#sisl.physics.SelfEnergy.broadening_matrix" title="sisl.physics.SelfEnergy.broadening_matrix"><code class="xref py py-obj docutils literal notranslate"><span class="pre">broadening_matrix</span></code></a>(*args, **kwargs)</p></td>
+<td><p>Calculate the broadening matrix by first calculating the self-energy</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#sisl.physics.SelfEnergy.se2scat" title="sisl.physics.SelfEnergy.se2scat"><code class="xref py py-obj docutils literal notranslate"><span class="pre">se2scat</span></code></a>(SE)</p></td>
-<td><p>Calculate the scattering matrix from the self-energy</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#sisl.physics.SelfEnergy.se2broadening" title="sisl.physics.SelfEnergy.se2broadening"><code class="xref py py-obj docutils literal notranslate"><span class="pre">se2broadening</span></code></a>(SE)</p></td>
+<td><p>Calculate the broadening matrix from the self-energy</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="#sisl.physics.SelfEnergy.self_energy" title="sisl.physics.SelfEnergy.self_energy"><code class="xref py py-obj docutils literal notranslate"><span class="pre">self_energy</span></code></a>(*args, **kwargs)</p></td>
 <td><p></p></td>
@@ -182,54 +170,54 @@ contains the geometry.</p>
 </table>
 <dl class="py method">
 <dt class="sig sig-object py" id="sisl.physics.SelfEnergy.__init__">
-<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/sisl/physics/self_energy.html#SelfEnergy.__init__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sisl.physics.SelfEnergy.__init__" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/sisl/physics/self_energy.html#SelfEnergy.__init__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sisl.physics.SelfEnergy.__init__" title="Link to this definition"></a></dt>
 <dd><p>Self-energy class for constructing a self-energy.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="sisl.physics.SelfEnergy.scattering_matrix">
-<span class="sig-name descname"><span class="pre">scattering_matrix</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/sisl/physics/self_energy.html#SelfEnergy.scattering_matrix"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sisl.physics.SelfEnergy.scattering_matrix" title="Permalink to this definition"></a></dt>
-<dd><p>Calculate the scattering matrix by first calculating the self-energy</p>
+<dt class="sig sig-object py" id="sisl.physics.SelfEnergy.broadening_matrix">
+<span class="sig-name descname"><span class="pre">broadening_matrix</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/sisl/physics/self_energy.html#SelfEnergy.broadening_matrix"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sisl.physics.SelfEnergy.broadening_matrix" title="Link to this definition"></a></dt>
+<dd><p>Calculate the broadening matrix by first calculating the self-energy</p>
 <p>Any arguments that is passed to this method is directly passed to <a class="reference internal" href="#sisl.physics.SelfEnergy.self_energy" title="sisl.physics.SelfEnergy.self_energy"><code class="xref py py-obj docutils literal notranslate"><span class="pre">self_energy</span></code></a>.</p>
 <p>See <a class="reference internal" href="#sisl.physics.SelfEnergy.self_energy" title="sisl.physics.SelfEnergy.self_energy"><code class="xref py py-obj docutils literal notranslate"><span class="pre">self_energy</span></code></a> for details.</p>
 <p>This corresponds to:</p>
 <div class="math notranslate nohighlight">
 \[\boldsymbol\Gamma = i(\boldsymbol\Sigma - \boldsymbol \Sigma ^\dagger)\]</div>
 <p class="rubric">Examples</p>
-<p>Calculating both the self-energy and the scattering matrix.</p>
+<p>Calculating both the self-energy and the broadening matrix.</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">SE</span> <span class="o">=</span> <span class="n">SelfEnergy</span><span class="p">(</span><span class="o">...</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">self_energy</span> <span class="o">=</span> <span class="n">SE</span><span class="o">.</span><span class="n">self_energy</span><span class="p">(</span><span class="mf">0.1</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">gamma</span> <span class="o">=</span> <span class="n">SE</span><span class="o">.</span><span class="n">scattering_matrix</span><span class="p">(</span><span class="mf">0.1</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">gamma</span> <span class="o">=</span> <span class="n">SE</span><span class="o">.</span><span class="n">broadening_matrix</span><span class="p">(</span><span class="mf">0.1</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>For a huge performance boost, please do:</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">SE</span> <span class="o">=</span> <span class="n">SelfEnergy</span><span class="p">(</span><span class="o">...</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">self_energy</span> <span class="o">=</span> <span class="n">SE</span><span class="o">.</span><span class="n">self_energy</span><span class="p">(</span><span class="mf">0.1</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">gamma</span> <span class="o">=</span> <span class="n">SE</span><span class="o">.</span><span class="n">se2scat</span><span class="p">(</span><span class="n">self_energy</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">gamma</span> <span class="o">=</span> <span class="n">SE</span><span class="o">.</span><span class="n">se2broadening</span><span class="p">(</span><span class="n">self_energy</span><span class="p">)</span>
 </pre></div>
 </div>
 <p class="rubric">Notes</p>
-<p>When using <em>both</em> the self-energy <em>and</em> the scattering matrix please use <a class="reference internal" href="#sisl.physics.SelfEnergy.se2scat" title="sisl.physics.SelfEnergy.se2scat"><code class="xref py py-obj docutils literal notranslate"><span class="pre">se2scat</span></code></a> after having
+<p>When using <em>both</em> the self-energy <em>and</em> the broadening matrix please use <a class="reference internal" href="#sisl.physics.SelfEnergy.se2broadening" title="sisl.physics.SelfEnergy.se2broadening"><code class="xref py py-obj docutils literal notranslate"><span class="pre">se2broadening</span></code></a> after having
 calculated the self-energy, this will be <em>much</em>, <em>MUCH</em> faster!</p>
 <div class="admonition seealso">
 <p class="admonition-title">See also</p>
 <dl class="simple">
-<dt><a class="reference internal" href="#sisl.physics.SelfEnergy.se2scat" title="sisl.physics.SelfEnergy.se2scat"><code class="xref py py-obj docutils literal notranslate"><span class="pre">se2scat</span></code></a></dt><dd><p>converting the self-energy to the scattering matrix</p>
+<dt><a class="reference internal" href="#sisl.physics.SelfEnergy.se2broadening" title="sisl.physics.SelfEnergy.se2broadening"><code class="xref py py-obj docutils literal notranslate"><span class="pre">se2broadening</span></code></a></dt><dd><p>converting the self-energy to the broadening matrix</p>
 </dd>
-<dt><a class="reference internal" href="#sisl.physics.SelfEnergy.self_energy" title="sisl.physics.SelfEnergy.self_energy"><code class="xref py py-obj docutils literal notranslate"><span class="pre">self_energy</span></code></a></dt><dd><p>the used routine to calculate the self-energy before calculating the scattering matrix</p>
+<dt><a class="reference internal" href="#sisl.physics.SelfEnergy.self_energy" title="sisl.physics.SelfEnergy.self_energy"><code class="xref py py-obj docutils literal notranslate"><span class="pre">self_energy</span></code></a></dt><dd><p>the used routine to calculate the self-energy before calculating the broadening matrix</p>
 </dd>
 </dl>
 </div>
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="sisl.physics.SelfEnergy.se2scat">
-<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">se2scat</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">SE</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/sisl/physics/self_energy.html#SelfEnergy.se2scat"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sisl.physics.SelfEnergy.se2scat" title="Permalink to this definition"></a></dt>
-<dd><p>Calculate the scattering matrix from the self-energy</p>
+<dt class="sig sig-object py" id="sisl.physics.SelfEnergy.se2broadening">
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">se2broadening</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">SE</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/sisl/physics/self_energy.html#SelfEnergy.se2broadening"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sisl.physics.SelfEnergy.se2broadening" title="Link to this definition"></a></dt>
+<dd><p>Calculate the broadening matrix from the self-energy</p>
 <div class="math notranslate nohighlight">
 \[\boldsymbol\Gamma = i(\boldsymbol\Sigma - \boldsymbol \Sigma ^\dagger)\]</div>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>SE</strong> (<em>matrix</em>) – self-energy matrix</p>
 </dd>
 </dl>
@@ -237,7 +225,7 @@ calculated the self-energy, this will be <em>much</em>, <em>MUCH</em> faster!</p
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sisl.physics.SelfEnergy.self_energy">
-<span class="sig-name descname"><span class="pre">self_energy</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/sisl/physics/self_energy.html#SelfEnergy.self_energy"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sisl.physics.SelfEnergy.self_energy" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">self_energy</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/sisl/physics/self_energy.html#SelfEnergy.self_energy"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sisl.physics.SelfEnergy.self_energy" title="Link to this definition"></a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -255,7 +243,7 @@ calculated the self-energy, this will be <em>much</em>, <em>MUCH</em> faster!</p
   <hr/>
 
   <div role="contentinfo">
-    <p>&#169; Copyright 2015-2023, Nick Papior.</p>
+    <p>&#169; Copyright 2015-2024, Nick Papior.</p>
   </div>
 
   Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a

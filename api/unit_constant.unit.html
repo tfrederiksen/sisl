@@ -1,27 +1,33 @@
 <!DOCTYPE html>
-<html class="writer-html5" lang="en" >
+<html class="writer-html5" lang="en" data-content_root="../">
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Unit conversion &mdash; sisl 0.1.dev1+g851d78c documentation</title>
-      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/plot_directive.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/graphviz.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/sg_gallery.css" type="text/css" />
+  <title>Unit conversion &mdash; sisl 0.1-73e3f9d</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=19f00094" />
+      <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+      <link rel="stylesheet" type="text/css" href="../_static/tabs.css?v=4c969af8" />
+      <link rel="stylesheet" type="text/css" href="../_static/plot_directive.css" />
+      <link rel="stylesheet" type="text/css" href="../_static/graphviz.css?v=eafc0fe6" />
+      <link rel="stylesheet" type="text/css" href="../_static/sg_gallery.css?v=61a4c737" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/custom_styles.css?v=cafe85c1" />
+
+  
   <!--[if lt IE 9]>
     <script src="../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-        <script src="../_static/jquery.js"></script>
-        <script src="../_static/underscore.js"></script>
-        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
-        <script src="../_static/doctools.js"></script>
-        <script src="../_static/sphinx_highlight.js"></script>
+        <script src="../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../_static/documentation_options.js?v=b3500e62"></script>
+        <script src="../_static/doctools.js?v=888ff710"></script>
+        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+        <script src="../_static/copybutton.js?v=f281be69"></script>
+        <script src="../_static/tabs.js?v=3ee01567"></script>
         <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-        <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.1/dist/embed-amd.js"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -34,14 +40,18 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-            <a href="../index.html" class="icon icon-home"> sisl
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            sisl
           </a>
               <div class="version">
-                0.1.dev1+g851d78c
+                0.1-73e3f9d
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
@@ -54,12 +64,15 @@
 <li class="toctree-l1"><a class="reference internal" href="../other.html">Other resources</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../cite.html">Citing sisl</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../publications.html">Publications using sisl</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../references.html">References</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">User Guide</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../installation.html">Installation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../tutorials.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../environment.html">Environment variables</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../scripts/scripts.html">Command line scripts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../nodes/nodes_intro.html">Nodes and workflows</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Toolboxes</span></p>
 <ul>
@@ -91,7 +104,10 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="utilities.html">Utilities</a></li>
+<li class="toctree-l2"><a class="reference internal" href="core.html">Functional</a></li>
 <li class="toctree-l2"><a class="reference internal" href="io/index.html">Input/Output</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nodes.html">Nodes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="typing.html">Typing</a></li>
 </ul>
 </li>
 </ul>
@@ -109,7 +125,7 @@
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="../index.html" class="icon icon-home"></a></li>
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
           <li class="breadcrumb-item"><a href="index.html">API documentation</a></li>
           <li class="breadcrumb-item"><a href="unit_constant.html">Units and constants</a></li>
       <li class="breadcrumb-item active">Unit conversion</li>
@@ -122,32 +138,8 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  
-<style>
-/* CSS overrides for sphinx_rtd_theme */
-
-/* 24px margin */
-.nbinput.nblast.container,
-.nboutput.nblast.container {
-    margin-bottom: 19px;  /* padding has already 5px */
-}
-
-/* ... except between code cells! */
-.nblast.container + .nbinput.container {
-    margin-top: -19px;
-}
-
-.admonition > p:before {
-    margin-right: 4px;  /* make room for the exclamation icon */
-}
-
-/* Fix math alignment, see https://github.com/rtfd/sphinx_rtd_theme/pull/686 */
-.math {
-    text-align: unset;
-}
-</style>
-<section id="module-sisl.unit">
-<span id="unit-conversion"></span><span id="unit"></span><h1>Unit conversion<a class="headerlink" href="#module-sisl.unit" title="Permalink to this heading"></a></h1>
+  <section id="module-sisl.unit">
+<span id="unit-conversion"></span><span id="unit"></span><h1>Unit conversion<a class="headerlink" href="#module-sisl.unit" title="Link to this heading"></a></h1>
 <p>Generic conversion utility between different units.</p>
 <p>All different codes unit conversion routines
 should adhere to the same routine names for consistency and
@@ -155,10 +147,6 @@ readability. This package should supply a subpackage for each
 code where specific unit conversions are required. I.e. if
 the codes unit conversion are not the same as the sisl defaults.</p>
 <table class="autosummary longtable docutils align-default">
-<colgroup>
-<col style="width: 10%" />
-<col style="width: 90%" />
-</colgroup>
 <tbody>
 <tr class="row-odd"><td><p><a class="reference internal" href="generated/sisl.unit.unit_group.html#sisl.unit.unit_group" title="sisl.unit.unit_group"><code class="xref py py-obj docutils literal notranslate"><span class="pre">unit_group</span></code></a>(unit[, tbl])</p></td>
 <td><p>The group of units that <em class="xref py py-obj">unit</em> belong to</p></td>
@@ -181,7 +169,7 @@ the units defined in the respective code.</p>
 complex units (Ry/kg/Bohr N) while <a class="reference internal" href="generated/sisl.unit.unit_convert.html#sisl.unit.unit_convert" title="sisl.unit.unit_convert"><code class="xref py py-obj docutils literal notranslate"><span class="pre">unit_convert</span></code></a> is the basic unit-conversion
 table that only converts simple units. E.g. Ry to eV etc.</p>
 <section id="module-sisl.unit.siesta">
-<span id="siesta-units"></span><h2>Siesta units<a class="headerlink" href="#module-sisl.unit.siesta" title="Permalink to this heading"></a></h2>
+<span id="siesta-units"></span><h2>Siesta units<a class="headerlink" href="#module-sisl.unit.siesta" title="Link to this heading"></a></h2>
 <p>This subpackage implements the unit conversions used in <a class="reference external" href="https://siesta-project.org">Siesta</a>.</p>
 <p>To use the unit conversion from <a class="reference external" href="https://siesta-project.org">Siesta</a>, simply import <code class="xref py py-obj docutils literal notranslate"><span class="pre">units</span></code> as:</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sisl.unit</span> <span class="kn">import</span> <span class="n">units</span>
@@ -204,7 +192,7 @@ will use the unit definitions in <a class="reference external" href="https://sie
   <hr/>
 
   <div role="contentinfo">
-    <p>&#169; Copyright 2015-2023, Nick Papior.</p>
+    <p>&#169; Copyright 2015-2024, Nick Papior.</p>
   </div>
 
   Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a

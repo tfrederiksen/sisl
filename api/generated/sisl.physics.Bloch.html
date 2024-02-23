@@ -1,29 +1,35 @@
 <!DOCTYPE html>
-<html class="writer-html5" lang="en" >
+<html class="writer-html5" lang="en" data-content_root="../../">
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>sisl.physics.Bloch &mdash; sisl 0.1.dev1+g851d78c documentation</title>
-      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
-      <link rel="stylesheet" href="../../_static/plot_directive.css" type="text/css" />
-      <link rel="stylesheet" href="../../_static/graphviz.css" type="text/css" />
-      <link rel="stylesheet" href="../../_static/sg_gallery.css" type="text/css" />
+  <title>sisl.physics.Bloch &mdash; sisl 0.1-73e3f9d</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=19f00094" />
+      <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+      <link rel="stylesheet" type="text/css" href="../../_static/tabs.css?v=4c969af8" />
+      <link rel="stylesheet" type="text/css" href="../../_static/plot_directive.css" />
+      <link rel="stylesheet" type="text/css" href="../../_static/graphviz.css?v=eafc0fe6" />
+      <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery.css?v=61a4c737" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/custom_styles.css?v=cafe85c1" />
+
+  
   <!--[if lt IE 9]>
     <script src="../../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
-        <script src="../../_static/jquery.js"></script>
-        <script src="../../_static/underscore.js"></script>
-        <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
-        <script src="../../_static/doctools.js"></script>
-        <script src="../../_static/sphinx_highlight.js"></script>
+        <script src="../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../../_static/documentation_options.js?v=b3500e62"></script>
+        <script src="../../_static/doctools.js?v=888ff710"></script>
+        <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+        <script src="../../_static/copybutton.js?v=f281be69"></script>
+        <script src="../../_static/tabs.js?v=3ee01567"></script>
         <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-        <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.1/dist/embed-amd.js"></script>
         <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
-        <script defer="defer" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script src="../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -36,14 +42,18 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-            <a href="../../index.html" class="icon icon-home"> sisl
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            sisl
           </a>
               <div class="version">
-                0.1.dev1+g851d78c
+                0.1-73e3f9d
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
@@ -56,12 +66,15 @@
 <li class="toctree-l1"><a class="reference internal" href="../../other.html">Other resources</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../cite.html">Citing sisl</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../publications.html">Publications using sisl</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../references.html">References</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">User Guide</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../installation.html">Installation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../tutorials.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../environment.html">Environment variables</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../scripts/scripts.html">Command line scripts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../nodes/nodes_intro.html">Nodes and workflows</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Toolboxes</span></p>
 <ul>
@@ -96,7 +109,10 @@
 <li class="toctree-l2"><a class="reference internal" href="../viz/index.html">Visualization</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../unit_constant.html">Units and constants</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../utilities.html">Utilities</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../core.html">Functional</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../io/index.html">Input/Output</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../nodes.html">Nodes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../typing.html">Typing</a></li>
 </ul>
 </li>
 </ul>
@@ -114,7 +130,7 @@
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="../../index.html" class="icon icon-home"></a></li>
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
           <li class="breadcrumb-item"><a href="../index.html">API documentation</a></li>
           <li class="breadcrumb-item"><a href="../physics.html">Physical objects</a></li>
           <li class="breadcrumb-item"><a href="../physics.matrix.html">Physical quantites</a></li>
@@ -128,36 +144,12 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  
-<style>
-/* CSS overrides for sphinx_rtd_theme */
-
-/* 24px margin */
-.nbinput.nblast.container,
-.nboutput.nblast.container {
-    margin-bottom: 19px;  /* padding has already 5px */
-}
-
-/* ... except between code cells! */
-.nblast.container + .nbinput.container {
-    margin-top: -19px;
-}
-
-.admonition > p:before {
-    margin-right: 4px;  /* make room for the exclamation icon */
-}
-
-/* Fix math alignment, see https://github.com/rtfd/sphinx_rtd_theme/pull/686 */
-.math {
-    text-align: unset;
-}
-</style>
-<section id="sisl-physics-bloch">
-<h1>sisl.physics.Bloch<a class="headerlink" href="#sisl-physics-bloch" title="Permalink to this heading"></a></h1>
+  <section id="sisl-physics-bloch">
+<h1>sisl.physics.Bloch<a class="headerlink" href="#sisl-physics-bloch" title="Link to this heading"></a></h1>
 <dl class="py class">
 <dt class="sig sig-object py" id="sisl.physics.Bloch">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">sisl.physics.</span></span><span class="sig-name descname"><span class="pre">Bloch</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">bloch</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#sisl.physics.Bloch" title="Permalink to this definition"></a></dt>
-<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.11)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">sisl.physics.</span></span><span class="sig-name descname"><span class="pre">Bloch</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">bloch</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#sisl.physics.Bloch" title="Link to this definition"></a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.12)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
 <p>Bloch’s theorem object containing unfolding factors and unfolding algorithms</p>
 <p>This class is a wrapper for expanding <em>any</em> matrix from a smaller matrix cell into
 a larger, using Bloch’s theorem.
@@ -183,8 +175,8 @@ The general idea may be summarized in the following equation:</p>
 \otimes
 \mathbf M_{k_j}^1.\end{split}\]</div>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>bloch</strong> (<em>(</em><em>3</em><em>,</em><em>) </em><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.11)"><em>int</em></a>) – Bloch repetitions along each direction</p>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>bloch</strong> (<em>(</em><em>3</em><em>,</em><em>) </em><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.12)"><em>int</em></a>) – Bloch repetitions along each direction</p>
 </dd>
 </dl>
 <p class="rubric">Examples</p>
@@ -196,10 +188,6 @@ The general idea may be summarized in the following equation:</p>
 </div>
 <p class="rubric">Methods</p>
 <table class="autosummary longtable docutils align-default">
-<colgroup>
-<col style="width: 10%" />
-<col style="width: 90%" />
-</colgroup>
 <tbody>
 <tr class="row-odd"><td><p><a class="reference internal" href="#sisl.physics.Bloch.unfold" title="sisl.physics.Bloch.unfold"><code class="xref py py-obj docutils literal notranslate"><span class="pre">unfold</span></code></a>(M, k_unfold)</p></td>
 <td><p>Unfold the matrix list of matrices <em class="xref py py-obj">M</em> into a corresponding k-point (unfolding k-points are <em class="xref py py-obj">k_unfold</em>)</p></td>
@@ -214,7 +202,7 @@ The general idea may be summarized in the following equation:</p>
 </table>
 <dl class="py method">
 <dt class="sig sig-object py" id="sisl.physics.Bloch.__call__">
-<span class="sig-name descname"><span class="pre">__call__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">func</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">k</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/sisl/physics/bloch.html#Bloch.__call__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sisl.physics.Bloch.__call__" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">__call__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">func</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">k</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/sisl/physics/bloch.html#Bloch.__call__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sisl.physics.Bloch.__call__" title="Link to this definition"></a></dt>
 <dd><p>Return a functions return values as the Bloch unfolded equivalent according to this object</p>
 <p>Calling the <a class="reference internal" href="#sisl.physics.Bloch" title="sisl.physics.Bloch"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Bloch</span></code></a> object is a shorthand for the manual use of the <a class="reference internal" href="#sisl.physics.Bloch.unfold_points" title="sisl.physics.Bloch.unfold_points"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Bloch.unfold_points</span></code></a> and <a class="reference internal" href="#sisl.physics.Bloch.unfold" title="sisl.physics.Bloch.unfold"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Bloch.unfold</span></code></a>
 methods.</p>
@@ -228,71 +216,71 @@ methods.</p>
 <p class="rubric">Notes</p>
 <p>The function passed <em>must</em> have a keyword argument <code class="docutils literal notranslate"><span class="pre">k</span></code>.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>func</strong> (<em>callable</em>) – method called which returns a matrix.</p></li>
-<li><p><strong>k</strong> (<em>(</em><em>3</em><em>, </em><em>) of </em><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.11)"><em>float</em></a>) – k-point to be unfolded</p></li>
-<li><p><strong>*args</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.11)"><em>list</em></a>) – arguments passed directly to <em class="xref py py-obj">func</em></p></li>
-<li><p><strong>**kwargs</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.11)"><em>dict</em></a>) – keyword arguments passed directly to <em class="xref py py-obj">func</em></p></li>
+<li><p><strong>k</strong> (<em>(</em><em>3</em><em>, </em><em>) of </em><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.12)"><em>float</em></a>) – k-point to be unfolded</p></li>
+<li><p><strong>*args</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.12)"><em>list</em></a>) – arguments passed directly to <em class="xref py py-obj">func</em></p></li>
+<li><p><strong>**kwargs</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.12)"><em>dict</em></a>) – keyword arguments passed directly to <em class="xref py py-obj">func</em></p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>unfolded Bloch matrix</p>
 </dd>
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p><a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.24)">numpy.ndarray</a></p>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.26)">numpy.ndarray</a></p>
 </dd>
 </dl>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sisl.physics.Bloch.__init__">
-<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">bloch</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/sisl/physics/bloch.html#Bloch.__init__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sisl.physics.Bloch.__init__" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">bloch</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/sisl/physics/bloch.html#Bloch.__init__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sisl.physics.Bloch.__init__" title="Link to this definition"></a></dt>
 <dd><p>Create <a class="reference internal" href="#sisl.physics.Bloch" title="sisl.physics.Bloch"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Bloch</span></code></a> object</p>
 </dd></dl>
 
 <dl class="py property">
 <dt class="sig sig-object py" id="sisl.physics.Bloch.bloch">
-<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">bloch</span></span><a class="headerlink" href="#sisl.physics.Bloch.bloch" title="Permalink to this definition"></a></dt>
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">bloch</span></span><a class="headerlink" href="#sisl.physics.Bloch.bloch" title="Link to this definition"></a></dt>
 <dd><p>Number of Bloch expansions along each lattice vector</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sisl.physics.Bloch.unfold">
-<span class="sig-name descname"><span class="pre">unfold</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">M</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">k_unfold</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/sisl/physics/bloch.html#Bloch.unfold"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sisl.physics.Bloch.unfold" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">unfold</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">M</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">k_unfold</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/sisl/physics/bloch.html#Bloch.unfold"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sisl.physics.Bloch.unfold" title="Link to this definition"></a></dt>
 <dd><p>Unfold the matrix list of matrices <em class="xref py py-obj">M</em> into a corresponding k-point (unfolding k-points are <em class="xref py py-obj">k_unfold</em>)</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>M</strong> (<em>(</em><em>:</em><em>, </em><em>:</em><em>, </em><em>:</em><em>)</em>) – an <code class="docutils literal notranslate"><span class="pre">*</span></code>-N-M matrix used for unfolding</p></li>
-<li><p><strong>k_unfold</strong> (<em>(</em><em>:</em><em>, </em><em>3</em><em>) of </em><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.11)"><em>float</em></a>) – unfolding k-points as returned by <a class="reference internal" href="#sisl.physics.Bloch.unfold_points" title="sisl.physics.Bloch.unfold_points"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Bloch.unfold_points</span></code></a></p></li>
+<li><p><strong>k_unfold</strong> (<em>(</em><em>:</em><em>, </em><em>3</em><em>) of </em><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.12)"><em>float</em></a>) – unfolding k-points as returned by <a class="reference internal" href="#sisl.physics.Bloch.unfold_points" title="sisl.physics.Bloch.unfold_points"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Bloch.unfold_points</span></code></a></p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>unfolded matrix of size <code class="docutils literal notranslate"><span class="pre">M[0].shape</span> <span class="pre">*</span> <span class="pre">k_unfold.shape[0]</span> <span class="pre">**</span> <span class="pre">2</span></code></p>
 </dd>
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p><a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.24)">numpy.ndarray</a></p>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.26)">numpy.ndarray</a></p>
 </dd>
 </dl>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sisl.physics.Bloch.unfold_points">
-<span class="sig-name descname"><span class="pre">unfold_points</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">k</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/sisl/physics/bloch.html#Bloch.unfold_points"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sisl.physics.Bloch.unfold_points" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">unfold_points</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">k</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/sisl/physics/bloch.html#Bloch.unfold_points"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sisl.physics.Bloch.unfold_points" title="Link to this definition"></a></dt>
 <dd><p>Return a list of k-points to be evaluated for this objects unfolding</p>
 <p>The k-point <em class="xref py py-obj">k</em> is with respect to the unfolded geometry.
 The return list of <em class="xref py py-obj">k</em> points are the k-points required to be sampled in the
 folded geometry.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>k</strong> (<em>(</em><em>3</em><em>,</em><em>) of </em><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.11)"><em>float</em></a>) – k-point evaluation corresponding to the unfolded unit-cell</p>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>k</strong> (<em>(</em><em>3</em><em>,</em><em>) of </em><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.12)"><em>float</em></a>) – k-point evaluation corresponding to the unfolded unit-cell</p>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>a list of <code class="docutils literal notranslate"><span class="pre">np.prod(self.bloch)</span></code> k-points used for the unfolding</p>
 </dd>
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p><a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.24)">numpy.ndarray</a></p>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.26)">numpy.ndarray</a></p>
 </dd>
 </dl>
 </dd></dl>
@@ -312,7 +300,7 @@ folded geometry.</p>
   <hr/>
 
   <div role="contentinfo">
-    <p>&#169; Copyright 2015-2023, Nick Papior.</p>
+    <p>&#169; Copyright 2015-2024, Nick Papior.</p>
   </div>
 
   Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a

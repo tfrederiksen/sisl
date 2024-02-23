@@ -1,29 +1,35 @@
 <!DOCTYPE html>
-<html class="writer-html5" lang="en" >
+<html class="writer-html5" lang="en" data-content_root="../">
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>sgrid &mdash; sisl 0.1.dev1+g851d78c documentation</title>
-      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/plot_directive.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/graphviz.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/sg_gallery.css" type="text/css" />
+  <title>sgrid &mdash; sisl 0.1-73e3f9d</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=19f00094" />
+      <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+      <link rel="stylesheet" type="text/css" href="../_static/tabs.css?v=4c969af8" />
+      <link rel="stylesheet" type="text/css" href="../_static/plot_directive.css" />
+      <link rel="stylesheet" type="text/css" href="../_static/graphviz.css?v=eafc0fe6" />
+      <link rel="stylesheet" type="text/css" href="../_static/sg_gallery.css?v=61a4c737" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/custom_styles.css?v=cafe85c1" />
+
+  
   <!--[if lt IE 9]>
     <script src="../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-        <script src="../_static/jquery.js"></script>
-        <script src="../_static/underscore.js"></script>
-        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
-        <script src="../_static/doctools.js"></script>
-        <script src="../_static/sphinx_highlight.js"></script>
+        <script src="../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../_static/documentation_options.js?v=b3500e62"></script>
+        <script src="../_static/doctools.js?v=888ff710"></script>
+        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+        <script src="../_static/copybutton.js?v=f281be69"></script>
+        <script src="../_static/tabs.js?v=3ee01567"></script>
         <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-        <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.1/dist/embed-amd.js"></script>
         <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
-        <script defer="defer" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -36,14 +42,18 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-            <a href="../index.html" class="icon icon-home"> sisl
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            sisl
           </a>
               <div class="version">
-                0.1.dev1+g851d78c
+                0.1-73e3f9d
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
@@ -56,11 +66,13 @@
 <li class="toctree-l1"><a class="reference internal" href="../other.html">Other resources</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../cite.html">Citing sisl</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../publications.html">Publications using sisl</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../references.html">References</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">User Guide</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../installation.html">Installation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../tutorials.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../environment.html">Environment variables</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="scripts.html">Command line scripts</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="sdata.html"><em class="xref py py-obj">sdata</em></a></li>
 <li class="toctree-l2"><a class="reference internal" href="sgeom.html"><em class="xref py py-obj">sgeom</em></a></li>
@@ -75,6 +87,7 @@
 <li class="toctree-l2"><a class="reference internal" href="stoolbox.html"><em class="xref py py-obj">stoolbox</em></a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="../nodes/nodes_intro.html">Nodes and workflows</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Toolboxes</span></p>
 <ul>
@@ -103,7 +116,7 @@
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="../index.html" class="icon icon-home"></a></li>
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
           <li class="breadcrumb-item"><a href="scripts.html">Command line scripts</a></li>
       <li class="breadcrumb-item active"><em class="xref py py-obj">sgrid</em></li>
       <li class="wy-breadcrumbs-aside">
@@ -115,32 +128,8 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  
-<style>
-/* CSS overrides for sphinx_rtd_theme */
-
-/* 24px margin */
-.nbinput.nblast.container,
-.nboutput.nblast.container {
-    margin-bottom: 19px;  /* padding has already 5px */
-}
-
-/* ... except between code cells! */
-.nblast.container + .nbinput.container {
-    margin-top: -19px;
-}
-
-.admonition > p:before {
-    margin-right: 4px;  /* make room for the exclamation icon */
-}
-
-/* Fix math alignment, see https://github.com/rtfd/sphinx_rtd_theme/pull/686 */
-.math {
-    text-align: unset;
-}
-</style>
-<section id="sgrid">
-<span id="script-sgrid"></span><h1><em class="xref py py-obj">sgrid</em><a class="headerlink" href="#sgrid" title="Permalink to this heading"></a></h1>
+  <section id="sgrid">
+<span id="script-sgrid"></span><h1><em class="xref py py-obj">sgrid</em><a class="headerlink" href="#sgrid" title="Link to this heading"></a></h1>
 <p>The <em class="xref py py-obj">sgrid</em> executable is a tool for manipulating a simulation grid and transforming
 it into CUBE format for plotting 3D data in, <em>e.g.</em> VMD or XCrySDen.</p>
 <p>Any <em class="xref py py-obj">Sile</em> which implements a <code class="docutils literal notranslate"><span class="pre">read_grid</span></code> method can be used to post-process data.</p>
@@ -151,7 +140,7 @@ it into CUBE format for plotting 3D data in, <em>e.g.</em> VMD or XCrySDen.</p>
 <p>Here we list a few of the most frequent used commands.
 Note that all commands are available via Python scripts and the <em class="xref py py-obj">Grid</em> class.</p>
 <section id="creating-cube-files">
-<h2>Creating CUBE files<a class="headerlink" href="#creating-cube-files" title="Permalink to this heading"></a></h2>
+<h2>Creating CUBE files<a class="headerlink" href="#creating-cube-files" title="Link to this heading"></a></h2>
 <p>The simplest usage is converting a grid file to CUBE file using</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sgrid<span class="w"> </span>Rho.grid.nc<span class="w"> </span>Rho.cube
 </pre></div>
@@ -167,7 +156,7 @@ implemented in <a class="reference internal" href="../api/index.html#module-sisl
 <p>the shorthand flag for <code class="docutils literal notranslate"><span class="pre">-geometry</span></code> is <code class="docutils literal notranslate"><span class="pre">-G</span></code>.</p>
 </section>
 <section id="grid-differences">
-<h2>Grid differences<a class="headerlink" href="#grid-differences" title="Permalink to this heading"></a></h2>
+<h2>Grid differences<a class="headerlink" href="#grid-differences" title="Link to this heading"></a></h2>
 <p>To easily obtain differences between two grids one may use the <code class="docutils literal notranslate"><span class="pre">--diff</span></code> flag which
 takes one additional grid file for the difference. I.e.</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sgrid<span class="w"> </span>Rho.grid.nc<span class="o">{</span><span class="m">0</span><span class="o">}</span><span class="w"> </span>-G<span class="w"> </span>RUN.fdf<span class="w"> </span>--diff<span class="w"> </span>Rho.grid.nc<span class="o">{</span><span class="m">1</span><span class="o">}</span><span class="w"> </span>diff_up-down.cube
@@ -181,7 +170,7 @@ seen in the below and shorter equivalent syntax:</p>
 </div>
 <p>The bracketed specification is an array of the fractions for each spin-component, so here we take the
 first spin-component and subtract the second spin-component.
-The quotation marks are typically required due to Python’s <a class="reference external" href="https://docs.python.org/3/library/argparse.html#module-argparse" title="(in Python v3.11)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">argparse</span></code></a> module.</p>
+The quotation marks are typically required due to Python’s <a class="reference external" href="https://docs.python.org/3/library/argparse.html#module-argparse" title="(in Python v3.12)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">argparse</span></code></a> module.</p>
 <p>Note that these spin specifications <em>only</em> work for files that contain <strong>all</strong> spin relevant quantities.</p>
 <p>The above is largely equivalent to this small snippet:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nv">geom</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>sisl.get_sile<span class="o">(</span><span class="s1">&#39;RUN.fdf&#39;</span><span class="o">)</span>.read_geometry<span class="o">()</span>
@@ -192,7 +181,7 @@ diff.write<span class="o">(</span><span class="s1">&#39;diff_up-down.cube&#39;</
 </div>
 </section>
 <section id="reducing-grid-sizes">
-<h2>Reducing grid sizes<a class="headerlink" href="#reducing-grid-sizes" title="Permalink to this heading"></a></h2>
+<h2>Reducing grid sizes<a class="headerlink" href="#reducing-grid-sizes" title="Link to this heading"></a></h2>
 <p>Often grids are far too large in that only a small part of the full cell is needed to be studied.
 One can remove certain parts of the grid after reading, before writing. This will greatly decrease
 the output file <em>and</em> greatly speed-up the process as writing huge ASCII files is <em>extremely</em> time
@@ -230,7 +219,7 @@ been reduced to 5 Ång along the <span class="math notranslate nohighlight">\(x\
 shape, then the reduction will be performed on the grid difference.</p>
 </section>
 <section id="averaging-and-summing">
-<h2>Averaging and summing<a class="headerlink" href="#averaging-and-summing" title="Permalink to this heading"></a></h2>
+<h2>Averaging and summing<a class="headerlink" href="#averaging-and-summing" title="Link to this heading"></a></h2>
 <p>Sometimes it is convenient to average or sum grids along cell directions:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sgrid<span class="w"> </span>Rho.grid.nc<span class="w"> </span>--average<span class="w"> </span>x<span class="w"> </span>meanx.cube
 sgrid<span class="w"> </span>Rho.grid.nc<span class="w"> </span>--sum<span class="w"> </span>x<span class="w"> </span>sumx.cube
@@ -247,7 +236,7 @@ with the first column being the remaining dimensions position (in Ång).</p>
 <p>will create a two-column data file with <span class="math notranslate nohighlight">\(z\)</span> coordinate and the plane-averaged charge-density.</p>
 </section>
 <section id="advanced-features">
-<h2>Advanced features<a class="headerlink" href="#advanced-features" title="Permalink to this heading"></a></h2>
+<h2>Advanced features<a class="headerlink" href="#advanced-features" title="Link to this heading"></a></h2>
 <p>The above operations are not the limited use of the <a class="reference internal" href="../api/index.html#module-sisl" title="sisl"><code class="xref py py-obj docutils literal notranslate"><span class="pre">sisl</span></code></a> library. However, to accomblish more complex
 things you need to manually script the actions using the <em class="xref py py-obj">Grid</em> class and the methods available for that method.
 For inspiration you can check the <em class="xref py py-obj">sgrid</em> executable to see how the commands are used in the script.</p>
@@ -265,7 +254,7 @@ For inspiration you can check the <em class="xref py py-obj">sgrid</em> executab
   <hr/>
 
   <div role="contentinfo">
-    <p>&#169; Copyright 2015-2023, Nick Papior.</p>
+    <p>&#169; Copyright 2015-2024, Nick Papior.</p>
   </div>
 
   Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a

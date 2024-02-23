@@ -1,27 +1,34 @@
 <!DOCTYPE html>
-<html class="writer-html5" lang="en" >
+<html class="writer-html5" lang="en" data-content_root="../../">
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>The sisl.viz module &mdash; sisl 0.1.dev1+g851d78c documentation</title>
-      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
-      <link rel="stylesheet" href="../../_static/plot_directive.css" type="text/css" />
-      <link rel="stylesheet" href="../../_static/graphviz.css" type="text/css" />
-      <link rel="stylesheet" href="../../_static/sg_gallery.css" type="text/css" />
+  <title>The sisl.viz module &mdash; sisl 0.1-73e3f9d</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=19f00094" />
+      <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+      <link rel="stylesheet" type="text/css" href="../../_static/tabs.css?v=4c969af8" />
+      <link rel="stylesheet" type="text/css" href="../../_static/plot_directive.css" />
+      <link rel="stylesheet" type="text/css" href="../../_static/graphviz.css?v=eafc0fe6" />
+      <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery.css?v=61a4c737" />
+      <link rel="stylesheet" type="text/css" href="../../_static/nbsphinx-gallery.css" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/custom_styles.css?v=cafe85c1" />
+
+  
   <!--[if lt IE 9]>
     <script src="../../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
-        <script src="../../_static/jquery.js"></script>
-        <script src="../../_static/underscore.js"></script>
-        <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
-        <script src="../../_static/doctools.js"></script>
-        <script src="../../_static/sphinx_highlight.js"></script>
+        <script src="../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../../_static/documentation_options.js?v=b3500e62"></script>
+        <script src="../../_static/doctools.js?v=888ff710"></script>
+        <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+        <script src="../../_static/copybutton.js?v=f281be69"></script>
+        <script src="../../_static/tabs.js?v=3ee01567"></script>
         <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-        <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.1/dist/embed-amd.js"></script>
     <script src="../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -34,14 +41,18 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-            <a href="../../index.html" class="icon icon-home"> sisl
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            sisl
           </a>
               <div class="version">
-                0.1.dev1+g851d78c
+                0.1-73e3f9d
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
@@ -54,12 +65,15 @@
 <li class="toctree-l1"><a class="reference internal" href="../../other.html">Other resources</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../cite.html">Citing sisl</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../publications.html">Publications using sisl</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../references.html">References</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">User Guide</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../installation.html">Installation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../tutorials.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../environment.html">Environment variables</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../scripts/scripts.html">Command line scripts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../nodes/nodes_intro.html">Nodes and workflows</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Toolboxes</span></p>
 <ul>
@@ -75,6 +89,7 @@
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#showcase-of-plot-classes">Showcase of plot classes</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="showcase/GeometryPlot.html">GeometryPlot</a></li>
+<li class="toctree-l3"><a class="reference internal" href="showcase/SitesPlot.html">SitesPlot</a></li>
 <li class="toctree-l3"><a class="reference internal" href="showcase/GridPlot.html">GridPlot</a></li>
 <li class="toctree-l3"><a class="reference internal" href="showcase/BandsPlot.html">BandsPlot</a></li>
 <li class="toctree-l3"><a class="reference internal" href="showcase/FatbandsPlot.html">FatbandsPlot</a></li>
@@ -84,13 +99,20 @@
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#using-it-with-blender">Using it with blender</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="blender/Getting%20started.html">Getting started</a></li>
+<li class="toctree-l3"><a class="reference internal" href="blender/First%20animation.html">First animation</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#combining-plots">Combining plots</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="combining-plots/Intro%20to%20multiple%20plots.html">Intro to multiple plots</a></li>
+<li class="toctree-l3"><a class="reference internal" href="combining-plots/Intro%20to%20combining%20plots.html">Intro to combining plots</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#do-it-yourself">Do it yourself</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="diy/Building%20a%20new%20plot.html">Building a new plot</a></li>
+<li class="toctree-l3"><a class="reference internal" href="diy/Building%20a%20new%20plot.html#The-tools">The tools</a></li>
+<li class="toctree-l3"><a class="reference internal" href="diy/Building%20a%20new%20plot.html#A-plot-function">A plot function</a></li>
+<li class="toctree-l3"><a class="reference internal" href="diy/Building%20a%20new%20plot.html#From-function-to-Plot">From function to <code class="docutils literal notranslate"><span class="pre">Plot</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="diy/Building%20a%20new%20plot.html#Additional-methods">Additional methods</a></li>
+<li class="toctree-l3"><a class="reference internal" href="diy/Building%20a%20new%20plot.html#Complex-plots">Complex plots</a></li>
 <li class="toctree-l3"><a class="reference internal" href="diy/Adding%20new%20backends.html">Adding new backends</a></li>
 </ul>
 </li>
@@ -115,7 +137,7 @@
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="../../index.html" class="icon icon-home"></a></li>
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
       <li class="breadcrumb-item active">The <code class="docutils literal notranslate"><span class="pre">sisl.viz</span></code> module</li>
       <li class="wy-breadcrumbs-aside">
             <a href="../../_sources/visualization/viz_module/index.rst.txt" rel="nofollow"> View page source</a>
@@ -126,32 +148,8 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  
-<style>
-/* CSS overrides for sphinx_rtd_theme */
-
-/* 24px margin */
-.nbinput.nblast.container,
-.nboutput.nblast.container {
-    margin-bottom: 19px;  /* padding has already 5px */
-}
-
-/* ... except between code cells! */
-.nblast.container + .nbinput.container {
-    margin-top: -19px;
-}
-
-.admonition > p:before {
-    margin-right: 4px;  /* make room for the exclamation icon */
-}
-
-/* Fix math alignment, see https://github.com/rtfd/sphinx_rtd_theme/pull/686 */
-.math {
-    text-align: unset;
-}
-</style>
-<section id="the-sisl-viz-module">
-<h1>The <code class="docutils literal notranslate"><span class="pre">sisl.viz</span></code> module<a class="headerlink" href="#the-sisl-viz-module" title="Permalink to this heading"></a></h1>
+  <section id="the-sisl-viz-module">
+<h1>The <code class="docutils literal notranslate"><span class="pre">sisl.viz</span></code> module<a class="headerlink" href="#the-sisl-viz-module" title="Link to this heading"></a></h1>
 <p>This is a full visualization framework developed specifically for <code class="docutils literal notranslate"><span class="pre">sisl</span></code> to visualize
 all the processing that you can do with the package. The aim is to provide a <strong>high-level API</strong>
 to generate plots through sisl, so that you can avoid <strong>boilerplate code</strong> and the iteration loop
@@ -164,158 +162,100 @@ allows for the user to <strong>extend the visualizing options</strong> quite sim
 it can serve as a very robust (highly tested) and featureful <strong>backend to integrate visualizations into graphical interfaces</strong>.
 An example of this is <a class="reference external" href="https://pypi.org/project/sisl-gui/">the sisl-gui package</a>.</p>
 <section id="basic-tutorials">
-<h2>Basic Tutorials<a class="headerlink" href="#basic-tutorials" title="Permalink to this heading"></a></h2>
+<h2>Basic Tutorials<a class="headerlink" href="#basic-tutorials" title="Link to this heading"></a></h2>
 <p>Following, you will find some tutorials that will introduce you to the framework.</p>
 <div class="toctree-wrapper compound" id="viz-tutorials-gallery">
+<div class="nbsphinx-gallery">
+<a class="reference internal" href="basic-tutorials/Demo.html">
+  <div><img alt="" src="../../_images/visualization_viz_module_basic-tutorials_Demo_31_0.png"></div>
+  <div>First steps</div>
+</a>
 </div>
-<div class="sphx-glr-thumbcontainer">
-  <div class="figure align-center">
-    <img alt="thumbnail" src="../../_images/visualization_viz_module_basic-tutorials_Demo_47_0.png" />
-    <p class="caption">
-      <span class="caption-text">
-        <a class="reference internal" href="basic-tutorials/Demo.html">
-          <span class="std std-ref">First steps</span>
-        </a>
-      </span>
-    </p>
-  </div>
 </div>
-<div class="sphx-glr-clear"></div></section>
+</section>
 <section id="showcase-of-plot-classes">
-<h2>Showcase of plot classes<a class="headerlink" href="#showcase-of-plot-classes" title="Permalink to this heading"></a></h2>
+<h2>Showcase of plot classes<a class="headerlink" href="#showcase-of-plot-classes" title="Link to this heading"></a></h2>
 <p>The following notebooks will help you develop a deeper understanding of what each plot class is capable of.</p>
 <div class="toctree-wrapper compound" id="viz-plotly-showcase-gallery">
+<div class="nbsphinx-gallery">
+<a class="reference internal" href="showcase/GeometryPlot.html">
+  <div><img alt="" src="../../_images/visualization_viz_module_showcase_GeometryPlot_93_0.png"></div>
+  <div>GeometryPlot</div>
+</a>
+<a class="reference internal" href="showcase/SitesPlot.html">
+  <div><img alt="" src="../../_images/visualization_viz_module_showcase_SitesPlot_10_0.png"></div>
+  <div>SitesPlot</div>
+</a>
+<a class="reference internal" href="showcase/GridPlot.html">
+  <div><img alt="" src="../../_images/visualization_viz_module_showcase_GridPlot_50_0.png"></div>
+  <div>GridPlot</div>
+</a>
+<a class="reference internal" href="showcase/BandsPlot.html">
+  <div><img alt="" src="../../_images/visualization_viz_module_showcase_BandsPlot_57_0.png"></div>
+  <div>BandsPlot</div>
+</a>
+<a class="reference internal" href="showcase/FatbandsPlot.html">
+  <div><img alt="" src="../../_images/visualization_viz_module_showcase_FatbandsPlot_19_0.png"></div>
+  <div>FatbandsPlot</div>
+</a>
+<a class="reference internal" href="showcase/PdosPlot.html">
+  <div><img alt="" src="../../_images/visualization_viz_module_showcase_PdosPlot_37_0.png"></div>
+  <div>PdosPlot</div>
+</a>
+<a class="reference internal" href="showcase/WavefunctionPlot.html">
+  <div><img alt="" src="../../_images/visualization_viz_module_showcase_WavefunctionPlot_21_0.png"></div>
+  <div>WavefunctionPlot</div>
+</a>
 </div>
-<div class="sphx-glr-thumbcontainer">
-  <div class="figure align-center">
-    <img alt="thumbnail" src="../../_images/visualization_viz_module_showcase_GeometryPlot_86_0.png" />
-    <p class="caption">
-      <span class="caption-text">
-        <a class="reference internal" href="showcase/GeometryPlot.html">
-          <span class="std std-ref">GeometryPlot</span>
-        </a>
-      </span>
-    </p>
-  </div>
 </div>
-<div class="sphx-glr-thumbcontainer">
-  <div class="figure align-center">
-    <img alt="thumbnail" src="../../_images/visualization_viz_module_showcase_GridPlot_64_0.png" />
-    <p class="caption">
-      <span class="caption-text">
-        <a class="reference internal" href="showcase/GridPlot.html">
-          <span class="std std-ref">GridPlot</span>
-        </a>
-      </span>
-    </p>
-  </div>
-</div>
-<div class="sphx-glr-thumbcontainer">
-  <div class="figure align-center">
-    <img alt="thumbnail" src="../../_images/visualization_viz_module_showcase_BandsPlot_58_0.png" />
-    <p class="caption">
-      <span class="caption-text">
-        <a class="reference internal" href="showcase/BandsPlot.html">
-          <span class="std std-ref">BandsPlot</span>
-        </a>
-      </span>
-    </p>
-  </div>
-</div>
-<div class="sphx-glr-thumbcontainer">
-  <div class="figure align-center">
-    <img alt="thumbnail" src="../../_images/visualization_viz_module_showcase_FatbandsPlot_23_0.png" />
-    <p class="caption">
-      <span class="caption-text">
-        <a class="reference internal" href="showcase/FatbandsPlot.html">
-          <span class="std std-ref">FatbandsPlot</span>
-        </a>
-      </span>
-    </p>
-  </div>
-</div>
-<div class="sphx-glr-thumbcontainer">
-  <div class="figure align-center">
-    <img alt="thumbnail" src="../../_images/visualization_viz_module_showcase_PdosPlot_37_0.png" />
-    <p class="caption">
-      <span class="caption-text">
-        <a class="reference internal" href="showcase/PdosPlot.html">
-          <span class="std std-ref">PdosPlot</span>
-        </a>
-      </span>
-    </p>
-  </div>
-</div>
-<div class="sphx-glr-thumbcontainer">
-  <div class="figure align-center">
-    <img alt="thumbnail" src="../../_images/visualization_viz_module_showcase_WavefunctionPlot_21_0.png" />
-    <p class="caption">
-      <span class="caption-text">
-        <a class="reference internal" href="showcase/WavefunctionPlot.html">
-          <span class="std std-ref">WavefunctionPlot</span>
-        </a>
-      </span>
-    </p>
-  </div>
-</div>
-<div class="sphx-glr-clear"></div></section>
+</section>
 <section id="using-it-with-blender">
-<h2>Using it with blender<a class="headerlink" href="#using-it-with-blender" title="Permalink to this heading"></a></h2>
+<h2>Using it with blender<a class="headerlink" href="#using-it-with-blender" title="Link to this heading"></a></h2>
 <p>The sisl visualization framework is independent of the plotting backend used, but <a class="reference external" href="https://www.blender.org/">blender</a> is a special one. Therefore
 we dedicate this section to it with the hope of making the usage of it less confusing.</p>
 <div class="toctree-wrapper compound" id="viz-plotly-blender">
+<div class="nbsphinx-gallery">
+<a class="reference internal" href="blender/Getting%20started.html">
+  <div><img alt="" src="../../_static/nbsphinx-no-thumbnail.svg"></div>
+  <div>Getting started</div>
+</a>
+<a class="reference internal" href="blender/First%20animation.html">
+  <div><img alt="" src="../../_static/nbsphinx-no-thumbnail.svg"></div>
+  <div>First animation</div>
+</a>
 </div>
-<div class="sphx-glr-thumbcontainer">
-  <div class="figure align-center">
-    <img alt="thumbnail" src="../../_static/no_image.png" />
-    <p class="caption">
-      <span class="caption-text">
-        <a class="reference internal" href="blender/Getting%20started.html">
-          <span class="std std-ref">Getting started</span>
-        </a>
-      </span>
-    </p>
-  </div>
 </div>
-<div class="sphx-glr-clear"></div></section>
+</section>
 <section id="combining-plots">
-<h2>Combining plots<a class="headerlink" href="#combining-plots" title="Permalink to this heading"></a></h2>
+<h2>Combining plots<a class="headerlink" href="#combining-plots" title="Link to this heading"></a></h2>
 <p>Have two plots that you would like to see displayed together, maybe as an animation or subplots? You’ve come
 to the right place!</p>
 <div class="toctree-wrapper compound" id="viz-plotly-combining-plots-gallery">
+<div class="nbsphinx-gallery">
+<a class="reference internal" href="combining-plots/Intro%20to%20combining%20plots.html">
+  <div><img alt="" src="../../_images/visualization_viz_module_combining-plots_Intro_to_combining_plots_29_0.png"></div>
+  <div>Intro to combining plots</div>
+</a>
 </div>
-<div class="sphx-glr-thumbcontainer">
-  <div class="figure align-center">
-    <img alt="thumbnail" src="../../_images/visualization_viz_module_combining-plots_Intro_to_multiple_plots_20_0.png" />
-    <p class="caption">
-      <span class="caption-text">
-        <a class="reference internal" href="combining-plots/Intro%20to%20multiple%20plots.html">
-          <span class="std std-ref">Intro to multiple plots</span>
-        </a>
-      </span>
-    </p>
-  </div>
 </div>
-<div class="sphx-glr-clear"></div></section>
+</section>
 <section id="do-it-yourself">
-<h2>Do it yourself<a class="headerlink" href="#do-it-yourself" title="Permalink to this heading"></a></h2>
+<h2>Do it yourself<a class="headerlink" href="#do-it-yourself" title="Link to this heading"></a></h2>
 <p>Whether you feel like you would like to customize the framework a bit to fit your needs, you are a <a class="reference internal" href="../../api/index.html#module-sisl" title="sisl"><code class="xref py py-obj docutils literal notranslate"><span class="pre">sisl</span></code></a>
-developer or you are building a framework (e.g. GUI) around <code class="xref py py-obj docutils literal notranslate"><span class="pre">sisl.viz</span></code>, this is your section!</p>
+developer or you are building a framework (e.g. GUI) around <a class="reference internal" href="../../api/viz/index.html#module-sisl.viz" title="sisl.viz"><code class="xref py py-obj docutils literal notranslate"><span class="pre">sisl.viz</span></code></a>, this is your section!</p>
 <div class="toctree-wrapper compound" id="viz-plotly-diy-gallery">
+<div class="nbsphinx-gallery">
+<a class="reference internal" href="diy/Building%20a%20new%20plot.html">
+  <div><img alt="" src="../../_images/visualization_viz_module_diy_Building_a_new_plot_29_0.png"></div>
+  <div>Building a new plot</div>
+</a>
+<a class="reference internal" href="diy/Adding%20new%20backends.html">
+  <div><img alt="" src="../../_static/nbsphinx-no-thumbnail.svg"></div>
+  <div>Adding new backends</div>
+</a>
 </div>
-<div class="sphx-glr-thumbcontainer">
-  <div class="figure align-center">
-    <img alt="thumbnail" src="../../_static/no_image.png" />
-    <p class="caption">
-      <span class="caption-text">
-        <a class="reference internal" href="diy/Adding%20new%20backends.html">
-          <span class="std std-ref">Adding new backends</span>
-        </a>
-      </span>
-    </p>
-  </div>
 </div>
-<div class="sphx-glr-clear"></div><div class="admonition note">
+<div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>Consider contributing to the package if you build a useful extension. The community will appreciate it! :)</p>
 </div>
@@ -333,7 +273,7 @@ developer or you are building a framework (e.g. GUI) around <code class="xref py
   <hr/>
 
   <div role="contentinfo">
-    <p>&#169; Copyright 2015-2023, Nick Papior.</p>
+    <p>&#169; Copyright 2015-2024, Nick Papior.</p>
   </div>
 
   Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
