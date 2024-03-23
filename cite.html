@@ -4,15 +4,18 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Citing sisl &mdash; sisl 0.1-73e3f9d</title>
+  <title>Citing sisl &mdash; sisl 0.1-ffc5539</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=80d5e7a1" />
       <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=19f00094" />
+      <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
       <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
       <link rel="stylesheet" type="text/css" href="_static/tabs.css?v=4c969af8" />
       <link rel="stylesheet" type="text/css" href="_static/plot_directive.css" />
       <link rel="stylesheet" type="text/css" href="_static/graphviz.css?v=eafc0fe6" />
       <link rel="stylesheet" type="text/css" href="_static/sg_gallery.css?v=61a4c737" />
+      <link rel="stylesheet" type="text/css" href="_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
       <link rel="stylesheet" type="text/css" href="_static/css/custom_styles.css?v=cafe85c1" />
+      <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" />
 
   
   <!--[if lt IE 9]>
@@ -21,18 +24,25 @@
   
         <script src="_static/jquery.js?v=5d32c60e"></script>
         <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-        <script src="_static/documentation_options.js?v=b3500e62"></script>
+        <script src="_static/documentation_options.js?v=fca954be"></script>
         <script src="_static/doctools.js?v=888ff710"></script>
         <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
         <script src="_static/clipboard.min.js?v=a7894cd8"></script>
         <script src="_static/copybutton.js?v=f281be69"></script>
         <script src="_static/tabs.js?v=3ee01567"></script>
+        <script>let toggleHintShow = 'Click to show';</script>
+        <script>let toggleHintHide = 'Click to hide';</script>
+        <script>let toggleOpenOnPrint = 'true';</script>
+        <script src="_static/togglebutton.js?v=4a39c7ea"></script>
+        <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+        <script src="_static/design-tabs.js?v=36754332"></script>
         <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Publications using sisl" href="publications.html" />
-    <link rel="prev" title="Other resources" href="other.html" /> 
+    <link rel="next" title="Similar solutions" href="other.html" />
+    <link rel="prev" title="0.8.0" href="changelog/v0.8.0.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -47,7 +57,7 @@
             sisl
           </a>
               <div class="version">
-                0.1-73e3f9d
+                0.1-ffc5539
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
@@ -57,39 +67,41 @@
   </form>
 </div>
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
-              <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="introduction.html">Introduction</a></li>
-<li class="toctree-l1"><a class="reference internal" href="changelog/index.html">Release notes</a></li>
-<li class="toctree-l1"><a class="reference internal" href="contribute.html">Contributing</a></li>
-<li class="toctree-l1"><a class="reference internal" href="other.html">Other resources</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Citing sisl</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#citing-basic-usage">Citing basic usage</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#citing-transport-backend">Citing transport backend</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="publications.html">Publications using sisl</a></li>
-<li class="toctree-l1"><a class="reference internal" href="references.html">References</a></li>
-</ul>
-<p class="caption" role="heading"><span class="caption-text">User Guide</span></p>
+              <p class="caption" role="heading"><span class="caption-text">User Guide</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="introduction.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="quickstart/index.html">Quickstart</a></li>
 <li class="toctree-l1"><a class="reference internal" href="tutorials.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="scripts/index.html">Command line scripts</a></li>
 <li class="toctree-l1"><a class="reference internal" href="environment.html">Environment variables</a></li>
-<li class="toctree-l1"><a class="reference internal" href="scripts/scripts.html">Command line scripts</a></li>
 <li class="toctree-l1"><a class="reference internal" href="nodes/nodes_intro.html">Nodes and workflows</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Visualization</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="visualization/viz_module/index.html"><code class="docutils literal notranslate"><span class="pre">sisl.viz</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="visualization/ase/index.html">ASE</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Toolboxes</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="toolbox/index.html">Toolboxes</a></li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">Visualization</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="visualization/ase/index.html">ASE</a></li>
-<li class="toctree-l1"><a class="reference internal" href="visualization/viz_module/index.html">The <code class="docutils literal notranslate"><span class="pre">sisl.viz</span></code> module</a></li>
+<p class="caption" role="heading"><span class="caption-text">Development details</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="contribute.html">Contributing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="changelog/index.html">Release notes</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Citing sisl</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#citing-basic-usage">Citing basic usage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#citing-transport-backend">Citing transport backend</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#publications-using-sisl">Publications using sisl</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#arxiv-publications">arXiv publications</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="other.html">Similar solutions</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Reference documentation</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="api/index.html">API documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="references.html">References</a></li>
 </ul>
 
         </div>
@@ -121,26 +133,25 @@
 <p>sisl is an open-source software package intended for the scientific community. It is
 released under the MPL-2 license.</p>
 <p>You are encouraged to cite sisl when you use it to produce scientific contributions.</p>
-<p>The sisl citation can be found through Zenodo:</p>
-<p><a class="reference external" href="https://doi.org/10.5281/zenodo.597181"><img alt="zenodo" src="https://zenodo.org/badge/doi/10.5281/zenodo.597181.svg" /></a></p>
+<p>The sisl citation can be found through Zenodo: <a class="reference external" href="https://doi.org/10.5281/zenodo.597181"><img alt="zenodo" src="https://zenodo.org/badge/doi/10.5281/zenodo.597181.svg" /></a></p>
 <p>By citing sisl you are encouraging development and exposing the software package.</p>
 <section id="citing-basic-usage">
 <h2>Citing basic usage<a class="headerlink" href="#citing-basic-usage" title="Link to this heading"></a></h2>
 <p>If you are <em>only</em> using sisl as a post-processing tool and/or tight-binding calculations
 you should cite this (Zenodo DOI):</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>@software<span class="o">{</span>zerothi_sisl,
-<span class="w">  </span><span class="nv">author</span><span class="w">       </span><span class="o">=</span><span class="w"> </span><span class="o">{</span>Papior,<span class="w"> </span>Nick<span class="o">}</span>,
-<span class="w">  </span><span class="nv">title</span><span class="w">        </span><span class="o">=</span><span class="w"> </span><span class="o">{</span>sisl:<span class="w"> </span>v&lt;fill-version&gt;<span class="o">}</span>,
-<span class="w">  </span><span class="nv">year</span><span class="w">         </span><span class="o">=</span><span class="w"> </span><span class="o">{</span><span class="m">2024</span><span class="o">}</span>,
-<span class="w">  </span><span class="nv">doi</span><span class="w">          </span><span class="o">=</span><span class="w"> </span><span class="o">{</span><span class="m">10</span>.5281/zenodo.597181<span class="o">}</span>,
-<span class="w">  </span><span class="nv">url</span><span class="w">          </span><span class="o">=</span><span class="w"> </span><span class="o">{</span>https://doi.org/10.5281/zenodo.597181<span class="o">}</span>
-<span class="o">}</span>
+<div class="highlight-bibtex notranslate"><div class="highlight"><pre><span></span><span class="nc">@software</span><span class="p">{</span><span class="nl">zerothi_sisl</span><span class="p">,</span>
+<span class="w">  </span><span class="na">author</span><span class="w">       </span><span class="p">=</span><span class="w"> </span><span class="s">{Papior, Nick}</span><span class="p">,</span>
+<span class="w">  </span><span class="na">title</span><span class="w">        </span><span class="p">=</span><span class="w"> </span><span class="s">{sisl: v&lt;fill-version&gt;}</span><span class="p">,</span>
+<span class="w">  </span><span class="na">year</span><span class="w">         </span><span class="p">=</span><span class="w"> </span><span class="s">{2024}</span><span class="p">,</span>
+<span class="w">  </span><span class="na">doi</span><span class="w">          </span><span class="p">=</span><span class="w"> </span><span class="s">{10.5281/zenodo.597181}</span><span class="p">,</span>
+<span class="w">  </span><span class="na">url</span><span class="w">          </span><span class="p">=</span><span class="w"> </span><span class="s">{https://doi.org/10.5281/zenodo.597181}</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 <p>The <em class="xref py py-obj">sgeom</em>, <em class="xref py py-obj">sgrid</em> or <em class="xref py py-obj">sdata</em> commands all print-out the above information in a suitable format:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sgeom<span class="w"> </span>--cite
-sgrid<span class="w"> </span>--cite
-sdata<span class="w"> </span>--cite
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">sgeom --cite</span>
+<span class="go">sgrid --cite</span>
+<span class="go">sdata --cite</span>
 </pre></div>
 </div>
 <p>which fill in the version for you, all yield the same output.</p>
@@ -149,28 +160,70 @@ sdata<span class="w"> </span>--cite
 <span id="citing-transport"></span><h2>Citing transport backend<a class="headerlink" href="#citing-transport-backend" title="Link to this heading"></a></h2>
 <p>When using sisl as tight-binding setup for Hamiltonians and/or dynamical matrices for
 <a class="reference external" href="https://siesta-project.org">TBtrans</a> and/or <code class="docutils literal notranslate"><span class="pre">PHtrans</span></code> you should cite these two DOI’s:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>@software<span class="o">{</span>zerothi_sisl,
-<span class="w">  </span><span class="nv">author</span><span class="w">       </span><span class="o">=</span><span class="w"> </span><span class="o">{</span>Papior,<span class="w"> </span>Nick<span class="o">}</span>,
-<span class="w">  </span><span class="nv">title</span><span class="w">        </span><span class="o">=</span><span class="w"> </span><span class="o">{</span>sisl:<span class="w"> </span>v&lt;fill-version&gt;<span class="o">}</span>,
-<span class="w">  </span><span class="nv">year</span><span class="w">         </span><span class="o">=</span><span class="w"> </span><span class="o">{</span><span class="m">2024</span><span class="o">}</span>,
-<span class="w">  </span><span class="nv">doi</span><span class="w">          </span><span class="o">=</span><span class="w"> </span><span class="o">{</span><span class="m">10</span>.5281/zenodo.597181<span class="o">}</span>,
-<span class="w">  </span><span class="nv">url</span><span class="w">          </span><span class="o">=</span><span class="w"> </span><span class="o">{</span>https://doi.org/10.5281/zenodo.597181<span class="o">}</span>
-<span class="o">}</span>
+<div class="highlight-bibtex notranslate"><div class="highlight"><pre><span></span><span class="nc">@software</span><span class="p">{</span><span class="nl">zerothi_sisl</span><span class="p">,</span>
+<span class="w">  </span><span class="na">author</span><span class="w">       </span><span class="p">=</span><span class="w"> </span><span class="s">{Papior, Nick}</span><span class="p">,</span>
+<span class="w">  </span><span class="na">title</span><span class="w">        </span><span class="p">=</span><span class="w"> </span><span class="s">{sisl: v&lt;fill-version&gt;}</span><span class="p">,</span>
+<span class="w">  </span><span class="na">year</span><span class="w">         </span><span class="p">=</span><span class="w"> </span><span class="s">{2024}</span><span class="p">,</span>
+<span class="w">  </span><span class="na">doi</span><span class="w">          </span><span class="p">=</span><span class="w"> </span><span class="s">{10.5281/zenodo.597181}</span><span class="p">,</span>
+<span class="w">  </span><span class="na">url</span><span class="w">          </span><span class="p">=</span><span class="w"> </span><span class="s">{https://doi.org/10.5281/zenodo.597181}</span>
+<span class="p">}</span>
 
-@article<span class="o">{</span>Papior2017,
-<span class="w">  </span><span class="nv">author</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">{</span>Papior,<span class="w"> </span>Nick<span class="w"> </span>and<span class="w"> </span>Lorente,<span class="w"> </span>Nicol<span class="o">{</span><span class="se">\&#39;</span><span class="o">{</span>a<span class="o">}}</span>s<span class="w"> </span>and<span class="w"> </span>Frederiksen,<span class="w"> </span>Thomas<span class="w"> </span>and<span class="w"> </span>Garc<span class="o">{</span><span class="se">\&#39;</span><span class="o">{</span>i<span class="o">}}</span>a,<span class="w"> </span>Alberto<span class="w"> </span>and<span class="w"> </span>Brandbyge,<span class="w"> </span>Mads<span class="o">}</span>,
-<span class="w">  </span><span class="nv">doi</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">{</span><span class="m">10</span>.1016/j.cpc.2016.09.022<span class="o">}</span>,
-<span class="w">  </span><span class="nv">issn</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">{</span><span class="m">00104655</span><span class="o">}</span>,
-<span class="w">  </span><span class="nv">journal</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">{</span>Computer<span class="w"> </span>Physics<span class="w"> </span>Communications<span class="o">}</span>,
-<span class="w">  </span><span class="nv">month</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">{</span>mar<span class="o">}</span>,
-<span class="w">  </span><span class="nv">number</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">{</span>July<span class="o">}</span>,
-<span class="w">  </span><span class="nv">pages</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">{</span><span class="m">8</span>--24<span class="o">}</span>,
-<span class="w">  </span><span class="nv">title</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">{{</span>Improvements<span class="w"> </span>on<span class="w"> </span>non-equilibrium<span class="w"> </span>and<span class="w"> </span>transport<span class="w"> </span>Green<span class="w"> </span><span class="k">function</span><span class="w"> </span>techniques:<span class="w"> </span>The<span class="w"> </span>next-generation<span class="w"> </span>transiesta<span class="o">}}</span>,
-<span class="w">  </span><span class="nv">volume</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">{</span><span class="m">212</span><span class="o">}</span>,
-<span class="w">  </span><span class="nv">year</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">{</span><span class="m">2017</span><span class="o">}</span>
-<span class="o">}</span>
+<span class="nc">@article</span><span class="p">{</span><span class="nl">Papior2017</span><span class="p">,</span>
+<span class="w">  </span><span class="na">author</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">{Papior, Nick and Lorente, Nicol{\&#39;{a}}s and Frederiksen, Thomas and Garc{\&#39;{i}}a, Alberto and Brandbyge, Mads}</span><span class="p">,</span>
+<span class="w">  </span><span class="na">doi</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">{10.1016/j.cpc.2016.09.022}</span><span class="p">,</span>
+<span class="w">  </span><span class="na">issn</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">{00104655}</span><span class="p">,</span>
+<span class="w">  </span><span class="na">journal</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">{Computer Physics Communications}</span><span class="p">,</span>
+<span class="w">  </span><span class="na">month</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">{mar}</span><span class="p">,</span>
+<span class="w">  </span><span class="na">number</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">{July}</span><span class="p">,</span>
+<span class="w">  </span><span class="na">pages</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">{8--24}</span><span class="p">,</span>
+<span class="w">  </span><span class="na">title</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">{{Improvements on non-equilibrium and transport Green function techniques: The next-generation transiesta}}</span><span class="p">,</span>
+<span class="w">  </span><span class="na">volume</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">{212}</span><span class="p">,</span>
+<span class="w">  </span><span class="na">year</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">{2017}</span>
+<span class="p">}</span>
 </pre></div>
 </div>
+<p>If using real-space self-energies one should additionally cite:</p>
+<div class="highlight-bibtex notranslate"><div class="highlight"><pre><span></span><span class="nc">@article</span><span class="p">{</span><span class="nl">papior2019</span><span class="p">,</span>
+<span class="w">  </span><span class="na">author</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">{Papior, Nick and Calogero, Gaetano and Leitherer, Susanne and Brandbyge, Mads}</span><span class="p">,</span>
+<span class="w">  </span><span class="na">doi</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">{10.1103/physrevb.100.195417}</span><span class="p">,</span>
+<span class="w">  </span><span class="na">number</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">{19}</span><span class="p">,</span>
+<span class="w">  </span><span class="na">source</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">{Crossref}</span><span class="p">,</span>
+<span class="w">  </span><span class="na">url</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">{https://doi.org/10.1103/physrevb.100.195417}</span><span class="p">,</span>
+<span class="w">  </span><span class="na">volume</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">{100}</span><span class="p">,</span>
+<span class="w">  </span><span class="na">journal</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">{Phys. Rev. B}</span><span class="p">,</span>
+<span class="w">  </span><span class="na">publisher</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">{American Physical Society (APS)}</span><span class="p">,</span>
+<span class="w">  </span><span class="na">title</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">{Removing all periodic boundary conditions: {Efficient} nonequilibrium Green&#39;s function calculations}</span><span class="p">,</span>
+<span class="w">  </span><span class="na">issn</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">{2469-9950, 2469-9969}</span><span class="p">,</span>
+<span class="w">  </span><span class="na">year</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">{2019}</span><span class="p">,</span>
+<span class="w">  </span><span class="na">month</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nv">nov</span><span class="p">,</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</section>
+<section id="publications-using-sisl">
+<span id="publications"></span><h2>Publications using sisl<a class="headerlink" href="#publications-using-sisl" title="Link to this heading"></a></h2>
+<p>The <a class="reference internal" href="index.html#module-sisl" title="sisl"><code class="xref py py-obj docutils literal notranslate"><span class="pre">sisl</span></code></a> tool-suite has been used one way or the other in the listed
+publications below.</p>
+<p>Please help maintaining the list complete via a <a class="reference external" href="https://github.com/zerothi/sisl/pulls">pull request</a> or
+by writing an email to <a class="reference external" href="mailto:nickpapior&#37;&#52;&#48;gmail&#46;com">nickpapior AT gmail<span>&#46;</span>com</a>.</p>
+<div class="docutils container" id="id1">
+<ol class="arabic simple" start="1">
+<li id="id2"><p>Jakob Kjærulff Svaneborg, Aleksander Bach Lorentzen, Fei Gao, Antti-Pekka Jauho, and Mads Brandbyge. Manipulation of magnetization and spin transport in hydrogenated graphene with thz pulses. <em>Frontiers in Physics</em>, 2023. URL: <a class="reference external" href="https://www.frontiersin.org/articles/10.3389/fphy.2023.1237383">https://www.frontiersin.org/articles/10.3389/fphy.2023.1237383</a>, <a class="reference external" href="https://doi.org/10.3389/fphy.2023.1237383">doi:10.3389/fphy.2023.1237383</a>.</p></li>
+<li id="id3"><p><strong>missing author in Brede2023</strong></p></li>
+</ol>
+</div>
+</section>
+<section id="arxiv-publications">
+<h2>arXiv publications<a class="headerlink" href="#arxiv-publications" title="Link to this heading"></a></h2>
+<p>These publications are as far as we know in the review process.</p>
+<ul class="simple">
+<li><p>D. Weckbecker, M. Fleischmann, R. Gupta, W. Landgraf, S. Leitherer, O. Pankratov, S. Sharma, V. Meded, S. Shallcross,
+<em>Moiré ordered current loops in the graphene twist bilayer</em>,
+<a class="reference external" href="https://doi.org/10.48550/arXiv.1901.04712">1901.04712</a></p></li>
+<li><p>Y. Guan, O.V. Yazyev,
+<em>Electronic transport in graphene with out-of-plane disorder</em>,
+<a class="reference external" href="https://doi.org/10.48550/arXiv.2210.16629">2210.16629</a></p></li>
+</ul>
 </section>
 </section>
 
@@ -178,8 +231,8 @@ sdata<span class="w"> </span>--cite
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="other.html" class="btn btn-neutral float-left" title="Other resources" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="publications.html" class="btn btn-neutral float-right" title="Publications using sisl" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="changelog/v0.8.0.html" class="btn btn-neutral float-left" title="0.8.0" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="other.html" class="btn btn-neutral float-right" title="Similar solutions" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>
